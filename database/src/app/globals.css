@@ -60,14 +60,14 @@
   transition: 0.5s ease;
   padding: 10px;
   background-color: white;
-  
+
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.User-Options:hover{
+.User-Options:hover {
   transform: scale(0.9);
 }
 .log-out-btn {
@@ -175,7 +175,7 @@
   background-repeat: no-repeat;
   height: 100vh;
 }
-.Login-Page-BG h3{
+.Login-Page-BG h3 {
   font-weight: 500;
   font-size: 17px;
   margin-top: 10px;
@@ -321,7 +321,7 @@
   text-decoration: none;
   color: #000;
 }
-.Login-Page-BG .Login-Buttons-Google button{
+.Login-Page-BG .Login-Buttons-Google button {
   display: flex;
   padding: 8px;
   margin-top: 10px;
@@ -338,7 +338,7 @@
   border-radius: 50px;
   font-weight: 500;
 }
-.Login-Page-BG .Login-Buttons-Github button{
+.Login-Page-BG .Login-Buttons-Github button {
   display: flex;
   padding: 8px;
   margin-top: 10px;
@@ -355,11 +355,11 @@
   border-radius: 50px;
   font-weight: 500;
 }
-.login-buttons img{
-width: 50px;
-border-radius: 50px;
+.login-buttons img {
+  width: 50px;
+  border-radius: 50px;
 }
-.Login-Buttons{
+.Login-Buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -1651,7 +1651,7 @@ border-radius: 50px;
   align-items: center;
   margin-top: 20px;
 }
-.Appoinments-BG .calendar .Appopinment-Details{
+.Appoinments-BG .calendar .Appopinment-Details {
   padding: 10px;
 }
 .Appoinments-BG .calendar .Appopinment-Details h4 {
@@ -1749,79 +1749,78 @@ border-radius: 50px;
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-.Create-Events-Btn input{
+.Create-Events-Btn input {
   width: 680px;
   padding: 10px;
   border-radius: 10px;
   outline: none;
-  background: #F6F6F6;
+  background: #f6f6f6;
   border: none;
   margin-top: 25px;
 }
-.Create-Events-Btn select{
+.Create-Events-Btn select {
   width: 680px;
   padding: 10px;
   border-radius: 10px;
   outline: none;
-  background: #F6F6F6;
+  background: #f6f6f6;
   border: none;
   margin-top: 25px;
 }
-.Create-Events-Btn button{
+.Create-Events-Btn button {
   width: 680px;
   padding: 10px;
   border-radius: 10px;
   outline: none;
-  background: #CDF4F9;
+  background: #cdf4f9;
   border: none;
   cursor: pointer;
   margin-top: 30px;
 }
 
-.Appoinments-BG .calendar .input-color-01{
+.Appoinments-BG .calendar .input-color-01 {
   background-color: #6dbac7;
   color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-02{
+.Appoinments-BG .calendar .input-color-02 {
   background-color: #6e6464;
-   color: white;
+  color: white;
   font-size: 20px;
-
 }
-.Appoinments-BG .calendar .input-color-03{
+.Appoinments-BG .calendar .input-color-03 {
   background-color: #6fa66d;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-04{
+.Appoinments-BG .calendar .input-color-04 {
   background-color: #b29139;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-05{
+.Appoinments-BG .calendar .input-color-05 {
   background-color: #622828;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-06{
+.Appoinments-BG .calendar .input-color-06 {
   background-color: #d67a94;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-07{
+.Appoinments-BG .calendar .input-color-07 {
   background-color: #8d4aaf;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-08{
+.Appoinments-BG .calendar .input-color-08 {
   background-color: #c8ca51;
-   color: white;
+  color: white;
   font-size: 20px;
 }
-.Appoinments-BG .calendar .input-color-09{
+.Appoinments-BG .calendar .input-color-09 {
   background-color: #5cd7c2;
-   color: white;
+  color: white;
   font-size: 20px;
 }
 
@@ -1945,21 +1944,17 @@ border-radius: 50px;
 
 /*============== Add Member ================*/
 
-@media screen and (max-width:2350px){
-  .Appoinments-BG .calendar .Events-Details{
+@media screen and (max-width: 2350px) {
+  .Appoinments-BG .calendar .Events-Details {
     display: flex;
     justify-content: center;
     margin: auto;
   }
 }
 
-
-
-
 /*=============== AI BOT ================*/
 
-
-  /* body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1970,10 +1965,25 @@ border-radius: 50px;
     font-family: Arial, sans-serif;
   } */
 
+.center-div {
+  width: 30vw;
+  height: 80vh;
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
   .center-div {
-    width: 30vw;
-    height: 80vh;
-    background-color: rgb(0, 0, 0);
+    height: 40vh;
+    width: 80vw;
+    /* background-color: rgb(102, 71, 255); */
     border-radius: 15px;
     padding: 5px;
     box-sizing: border-box;
@@ -1983,21 +1993,88 @@ border-radius: 50px;
     align-items: center;
     text-align: center;
   }
-
-  @media only screen and (max-width: 600px) {
-    .center-div {
-      height: 40vh;
-      width: 80vw;
-      /* background-color: rgb(102, 71, 255); */
-      border-radius: 15px;
-      padding: 5px;
-      box-sizing: border-box;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-  }
+}
 
 /*=============== AI BOT ================*/
+
+/* ============== Our Team ============== */
+
+.container {
+  max-width: 1500px;
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+}
+
+/* ============ Header ============ */
+
+.Our-Team-Header-Main {
+  display: flex;
+  margin: 30px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+.Our-Team-Header-Main h3 {
+  font-size: 28px;
+  font-weight: 400;
+}
+.Our-Team-Header-Main h4 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* ============ Header ============ */
+
+/* ============ Second Section ============ */
+
+.Our-Team-Second-Sec-Main {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+}
+.Our-Team-Second-Sec-Main .txt {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+.Our-Team-Second-Sec-Main img {
+  max-width: 800px;
+  width: 100%;
+  margin-top: 40px;
+  object-fit: cover;
+  object-position: top center;
+}
+.Our-Team-Second-Sec-Main h2 {
+  max-width: 530px;
+  line-height: 1.2;
+  font-size: 32px;
+  color: grey;
+  font-weight: 300;
+  width: 100%;
+}
+.Our-Team-Second-Sec-Main p {
+  max-width: 660px;
+  color: grey;
+  font-weight: 300;
+  width: 100%;
+}
+.Our-Team-Second-Sec-Main h6 {
+  color: #3fb6e0;
+  font-weight: 500;
+  width: 100%;
+}
+.Our-Team-Second-Sec-Main button {
+  padding: 10px 30px;
+  background: #a5c422;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+
+/* ============ Second Section ============ */
+
+/* ============== Our Team ============== */

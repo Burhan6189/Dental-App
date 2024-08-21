@@ -9,9 +9,9 @@ import { redirect } from "next/navigation";
 
 const TodayAppointment = async () => {
   const session = await getServerSession(authOptions)
-  if (!session) {
-    redirect('/signin?callbackUrl=/dashboard')
-  }
+  // if (!session) {
+  //   redirect('/signin?callbackUrl=/dashboard')
+  // }
 
 
 
@@ -25,7 +25,7 @@ const TodayAppointment = async () => {
 
           {/* this condition is for Super Admin and USer */}
 
-          {(session.user.Role === "Super Admin" || session.user.Role === "User") && (
+          {/* {(session.user.Role === "Super Admin" || session.user.Role === "User") && ( */}
             <>
               <a
                 style={{ textDecoration: "none" }}
@@ -46,9 +46,8 @@ const TodayAppointment = async () => {
                 </div>
               </a>
             </>
-          )
 
-          }
+          {/* } */}
 
 
           {/*  condition ends here */}
