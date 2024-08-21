@@ -2002,7 +2002,7 @@
 .container {
   max-width: 1500px;
   width: 100%;
-  padding: 10px;
+  padding: 0px 0px 0px 10px;
   margin: auto;
 }
 
@@ -2076,5 +2076,18 @@
 }
 
 /* ============ Second Section ============ */
+
+/* ============ Appointment Section ============ */
+
+.Our-Team-Appointment-Sec-Main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #3fb6e0;
+}
+
+/* ============ Appointment Section ============ */
 
 /* ============== Our Team ============== */
