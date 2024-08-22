@@ -17,6 +17,7 @@
     "custom-functions-metadata": "^1.5.3",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.16.8",
+    "lenis": "^1.1.11",
     "mongoose": "^7.0.0",
     "mongoose-bcrypt": "^1.11.0",
     "mongoose-unique-validator": "^4.0.0",
