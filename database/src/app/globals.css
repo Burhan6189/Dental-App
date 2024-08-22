@@ -2266,3 +2266,67 @@
 }
 
 /* ============= Header ============= */
+
+
+
+
+
+/* ============= Dentist Profile ============= */
+.doctor-profile{
+  background-color: #FBFBFB;
+}
+.doctor-name{
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.doctor-name p{
+  font-size: 24px;
+  font-weight: 200;
+  color: #333333;
+
+}
+.doctor-name a{
+font-size: 13px;
+padding: 0 5px;
+text-decoration: none;
+color: #333333;
+font-weight: 300;
+}
+.doctor-name span{
+font-size: 13px;
+font-weight: 300;
+color: #333333;
+}
+.icon{
+  font-size: 10px !important;
+}
+
+.doctor-main{
+  width: 80%;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-context{
+width: 500px;
+}
+.doctor-context h6{
+  font-weight:200;
+  font-size: 24px;
+}
+.doctor-context p{
+  font-weight:200;
+  font-size: 16px;
+}
+.doctor-context span{
+  font-style: italic;
+  font-size: 10px;
+  color: #1087ff;
+}
+.doctor-image{
+}
