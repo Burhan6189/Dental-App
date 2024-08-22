@@ -2210,38 +2210,59 @@
 
 /* ============= Header ============= */
 
-.Header-Main {
+.Header-Top {
+  max-width: 1500px;
+  width: 100%;
   display: flex;
+  margin: auto;
   padding: 50px 0px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
-.Header-Main h5 {
+.Header-Top h5 {
   font-weight: 500;
 }
-.Header-Main h5 span {
+.Header-Top h5 span {
   font-weight: 500;
   color: #3fb6e0;
 }
-.Header-Main .hd-i {
+.Header-Top .hd-i {
   border: 1px solid #d1d1d1;
   padding: 8px 8px 1px 8px;
   color: #7e7e7e;
   border-radius: 100%;
 }
-.Header-Main .hd-flex-1 {
+.Header-Top .hd-flex-1 {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
   text-align: right;
 }
-.Header-Main .hd-flex-2 {
+.Header-Top .hd-flex-2 {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
   text-align: left;
+}
+.Header-Links {
+  display: flex;
+  border-top: 1px solid #d1d1d1;
+  padding: 20px 0px;
+  justify-content: center;
+  gap: 45px;
+  width: 100%;
+}
+.Header-Links h3 {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+  color: black;
+}
+.Header-Links h3:hover {
+  color: #3fb6e0;
 }
 
 /* ============= Header ============= */

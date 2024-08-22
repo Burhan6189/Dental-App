@@ -9,8 +9,8 @@ import Header from "../components/Header/page";
 const OurTeam = () => {
   return (
     <>
+      <Header />
       <div className="container">
-        <Header />
         <OurTeamHeader />
         <OurTeamSecondSec />
       </div>
