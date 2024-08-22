@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/*====================== Start Header ==========================*/
+/*====================== Start Nav ==========================*/
 
 .Header .Header-Flex {
   display: flex;
@@ -85,7 +85,7 @@
   font-size: 18px;
 }
 
-/*====================== End Header ==========================*/
+/*====================== End Nav ==========================*/
 
 /*================== Start Login Signup =========================*/
 
@@ -2146,7 +2146,7 @@
 .Meet-Our-Team-Slider .person {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  text-align: center;
   flex-direction: column;
   align-items: center;
 }
@@ -2171,31 +2171,77 @@
 
 /* ============== Our Team ============== */
 
-
 @media only screen and (max-width: 768px) {
-  .container{
+  .container {
     padding: 20px !important;
   }
-  .Our-Team-Second-Sec-Main{
+  .Our-Team-Second-Sec-Main {
     flex-wrap: wrap;
     align-items: start;
     justify-content: start;
   }
 }
 @media only screen and (max-width: 425px) {
-  .Our-Team-Second-Sec-Main h2{
-  font-size: 20px;
+  .Our-Team-Second-Sec-Main h2 {
+    font-size: 20px;
   }
-  .Our-Team-Second-Sec-Main h6{
+  .Our-Team-Second-Sec-Main h6 {
     font-size: 12px;
   }
-  .Our-Team-Second-Sec-Main p{
+  .Our-Team-Second-Sec-Main p {
     font-size: 10px;
   }
-  .Our-Team-Appointment-Sec-Main h2{
-  font-size: 20px;
+  .Our-Team-Appointment-Sec-Main h2 {
+    font-size: 20px;
   }
-  .Our-Team-Appointment-Sec-Main h3{
+  .Our-Team-Appointment-Sec-Main h3 {
     font-size: 11px;
-    }  
+  }
+  .Meet-Our-Team-Slider h4 {
+    font-size: 17px;
+  }
+  .Meet-Our-Team-Slider h5 {
+    font-size: 12px;
+  }
+  .Meet-Our-Team-Slider p {
+    font-size: 10px;
+  }
 }
+
+/* ============= Header ============= */
+
+.Header-Main {
+  display: flex;
+  padding: 50px 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+.Header-Main h5 {
+  font-weight: 500;
+}
+.Header-Main h5 span {
+  font-weight: 500;
+  color: #3fb6e0;
+}
+.Header-Main .hd-i {
+  border: 1px solid #d1d1d1;
+  padding: 8px 8px 1px 8px;
+  color: #7e7e7e;
+  border-radius: 100%;
+}
+.Header-Main .hd-flex-1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+.Header-Main .hd-flex-2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+/* ============= Header ============= */
