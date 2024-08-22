@@ -1,13 +1,20 @@
 import React, { useState, useRef } from "react";
 import { IoIosCall } from "react-icons/io";
 import { IoCalendarOutline } from "react-icons/io5";
+import { FaBarsStaggered } from "react-icons/fa6";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
   const helloRef = useRef(null);
 
   const handleAddClick = () => {
     if (helloRef.current) {
-      helloRef.current.classList.add("hd-flex-1");
+      helloRef.current.classList.add("tab-menu-links-show");
+    }
+  };
+  const handleRemoveClick = () => {
+    if (helloRef.current) {
+      helloRef.current.classList.remove("tab-menu-links-show");
     }
   };
 
@@ -15,10 +22,7 @@ const Header = () => {
     <>
       <div className="Header-Main">
         <div className="Header-Top">
-          {/* <button id="add" onClick={handleAddClick}>
-            Check
-          </button> */}
-          <div id="hello" ref={helloRef} className="hd-flex-1">
+          <div className="hd-flex-1">
             <div>
               <div className="tel">
                 <h5>
@@ -52,6 +56,26 @@ const Header = () => {
                   Mn - St: <span> 8:00am - 9:00pm </span> Sn: Closed
                 </h5>
               </div>
+            </div>
+          </div>
+          <div className="tablet-menu">
+            <FaBarsStaggered size={25} onClick={handleAddClick} />
+          </div>
+        </div>
+        <div id="hello" ref={helloRef} className="tab-menu">
+          <div className="tab-menu-links">
+            <div>
+              <RxCross2 size={25} onClick={handleRemoveClick} />
+            </div>
+            <div>
+              <h3>HOME</h3>
+              <h3>PAGES</h3>
+              <h3>SERVICES</h3>
+              <h3>ABOUT</h3>
+              <h3>GALLERY</h3>
+              <h3>NEWS</h3>
+              <h3>APPOINMENT</h3>
+              <h3>CONTACTS</h3>
             </div>
           </div>
         </div>
