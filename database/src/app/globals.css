@@ -2313,7 +2313,7 @@
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .tab-menu-links-show {
   opacity: 1 !important;
@@ -2321,6 +2321,7 @@
 }
 .tab-menu-links h3 {
   font-size: 20px;
+  margin-top: 10px;
   font-weight: 500;
 }
 
