@@ -5,7 +5,9 @@ import { FaAngleRight, FaGreaterThan, FaSign } from 'react-icons/fa'
 function DentistProfile() {
   return (
     <>
+          <div className="top-container">
     <Header/>
+    </div>
     <div className='doctor-profile'>
         <div className='doctor-name'>
             <div>
