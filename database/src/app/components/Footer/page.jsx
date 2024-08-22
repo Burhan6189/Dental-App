@@ -4,7 +4,15 @@ const Footer = () => {
   return (
     <>
       <div className="Footer-Main">
-        <h1>Footer</h1>
+        <div className="container">
+          <div>
+            
+          </div>
+          <img
+            src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724342406/Dental/uxhd1gk2lsxpm0ogooep.png"
+            alt=""
+          />
+        </div>
       </div>
     </>
   );

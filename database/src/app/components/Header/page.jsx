@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+"use client";
+import React, { useRef } from "react";
 import { IoIosCall } from "react-icons/io";
 import { IoCalendarOutline } from "react-icons/io5";
 import { FaBarsStaggered } from "react-icons/fa6";

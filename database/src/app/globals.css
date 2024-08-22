@@ -2351,9 +2351,15 @@
 
 /* ============= Header ============= */
 
+/* ============= Footer ============= */
 
+.Footer-Main{
+  padding: 10px;
+  background-color: #333f48;
+  width: 100%;
+}
 
-
+/* ============= Footer ============= */
 
 /* ============= Dentist Profile ============= */
 .doctor-profile{
