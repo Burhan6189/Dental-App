@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { IoIosCall } from "react-icons/io";
 import { IoCalendarOutline } from "react-icons/io5";
 
 const Header = () => {
+  const helloRef = useRef(null);
+
+  const handleAddClick = () => {
+    if (helloRef.current) {
+      helloRef.current.classList.add("hd-flex-1");
+    }
+  };
+
   return (
     <>
       <div className="Header-Main">
         <div className="Header-Top">
-          <div className="hd-flex-1">
+          {/* <button id="add" onClick={handleAddClick}>
+            Check
+          </button> */}
+          <div id="hello" ref={helloRef} className="hd-flex-1">
             <div>
               <div className="tel">
                 <h5>

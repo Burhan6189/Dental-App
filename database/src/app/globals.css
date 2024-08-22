@@ -2180,19 +2180,20 @@
     align-items: start;
     justify-content: start;
   }
-  .Header-Top{
+  .Header-Top {
     padding: 25px 0px !important;
   }
   .Header-Links {
     display: none !important;
   }
-  .hd-flex-1{
+  .hd-flex-2 {
     display: none !important;
   }
-  .hd-flex-2{
+  .hd-flex-1 {
     display: none !important;
   }
 }
+
 @media only screen and (max-width: 425px) {
   .Our-Team-Second-Sec-Main h2 {
     font-size: 20px;
