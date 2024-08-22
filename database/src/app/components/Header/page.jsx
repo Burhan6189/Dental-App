@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef } from "react";
 import { IoIosCall } from "react-icons/io";
 import { IoCalendarOutline } from "react-icons/io5";
