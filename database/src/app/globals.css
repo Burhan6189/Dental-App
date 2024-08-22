@@ -2002,7 +2002,7 @@
 .container {
   max-width: 1500px;
   width: 100%;
-  padding: 0px 0px 0px 10px;
+  padding: 20px 20px 0px 10px;
   margin: auto;
 }
 
@@ -2044,6 +2044,7 @@
 .Our-Team-Second-Sec-Main img {
   max-width: 800px;
   width: 100%;
+  display: block;
   margin-top: 40px;
   object-fit: cover;
   object-position: top center;
@@ -2083,11 +2084,118 @@
   width: 100%;
   display: flex;
   align-items: center;
+  text-align: center;
+  padding: 40px 10px;
   justify-content: center;
   flex-direction: column;
   background-color: #3fb6e0;
 }
+.Our-Team-Appointment-Sec-Main h2 {
+  font-weight: 400;
+  color: white;
+  font-size: 30px;
+}
+.Our-Team-Appointment-Sec-Main h3 {
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  margin-bottom: 10px;
+}
+.Our-Team-Appointment-Sec-Main button {
+  background: white;
+  padding: 10px 30px;
+  border: 0;
+  font-weight: 500;
+  margin-top: 10px;
+}
 
 /* ============ Appointment Section ============ */
 
+/* ============ Meet Our Team Section ============ */
+
+.Meet-Our-Team-Header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  align-items: center;
+}
+.Meet-Our-Team-Header h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.Meet-Our-Team-Slider {
+  padding: 50px;
+}
+.Meet-Our-Team-Slider .team-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.Meet-Our-Team-Slider img {
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.Meet-Our-Team-Slider .person {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.Meet-Our-Team-Slider h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.Meet-Our-Team-Slider h5 {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  color: #3fb6e0;
+}
+.Meet-Our-Team-Slider p {
+  font-size: 12px;
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ============ Meet Our Team Section ============ */
+
 /* ============== Our Team ============== */
+
+
+@media only screen and (max-width: 768px) {
+  .container{
+    padding: 20px !important;
+  }
+  .Our-Team-Second-Sec-Main{
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .Our-Team-Second-Sec-Main h2{
+  font-size: 20px;
+  }
+  .Our-Team-Second-Sec-Main h6{
+    font-size: 12px;
+  }
+  .Our-Team-Second-Sec-Main p{
+    font-size: 10px;
+  }
+  .Our-Team-Appointment-Sec-Main h2{
+  font-size: 20px;
+  }
+  .Our-Team-Appointment-Sec-Main h3{
+    font-size: 11px;
+    }  
+}

@@ -4,7 +4,9 @@ const OurTeamAppointmentSec = () => {
   return (
     <>
       <div className="Our-Team-Appointment-Sec-Main">
-        <h1>OurTeamAppointmentSec</h1>
+        <h2>High Innovative Technology & Professional Dentists</h2>
+        <h3>Make Appointment or call 8 800 254 25 64</h3>
+        <button>Make an appointment</button>
       </div>
     </>
   );
