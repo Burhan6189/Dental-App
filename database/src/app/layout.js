@@ -6,6 +6,7 @@ import "./globals.css";
 import "../../public/css/style.css";
 import { SessionProvider, useSession } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
