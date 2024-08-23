@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.7",
+    "@mui/x-date-pickers": "^7.14.0",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@types/custom-functions-runtime": "^1.6.8",
     "bcrypt": "^5.1.1",
@@ -16,6 +20,7 @@
     "cookies-next": "^4.1.0",
     "custom-function": "^1.0.6",
     "custom-functions-metadata": "^1.5.3",
+    "dayjs": "^1.11.13",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.16.8",
     "lenis": "^1.1.11",
