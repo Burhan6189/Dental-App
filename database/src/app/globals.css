@@ -1980,8 +1980,6 @@
   text-align: center;
 }
 
-
-
 @media only screen and (max-width: 600px) {
   .center-div {
     height: 40vh;
@@ -2013,7 +2011,7 @@
   width: 100%;
   padding: 20px 20px 0px 10px;
   margin: auto;
-  margin-top: 220px;
+  margin-top: 160px;
 }
 
 /* ============ Header ============ */
@@ -2081,6 +2079,7 @@
 .Our-Team-Second-Sec-Main button {
   padding: 10px 30px;
   background: #a5c422;
+  margin-bottom: 10px;
   color: white;
   border: 0;
   border-radius: 5px;
@@ -2206,6 +2205,9 @@
   .tablet-menu {
     display: block !important;
   }
+  .top-container {
+    margin-top: 60px !important;
+  }
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
@@ -2238,13 +2240,21 @@
   .Meet-Our-Team-Slider p {
     font-size: 10px;
   }
+  .Footer-Main .Footer-Flex {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
 }
 
 /* ============= Header ============= */
 
 .Header-Main {
   width: 100%;
+  position: relative;
   background: #fff;
+}
+.Header-Main a {
+  text-decoration: none;
 }
 .Header-Top {
   width: 100%;
@@ -2311,6 +2321,7 @@
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 999;
   right: 0;
 }
 
@@ -2355,19 +2366,135 @@
 
 /* ============= Footer ============= */
 
-.Footer-Main{
-  padding: 10px;
+.Footer-Main {
+  padding: 50px 10px;
   background-color: #333f48;
   width: 100%;
+}
+.Footer-Main h3 {
+  color: white;
+  font-weight: 500;
+}
+.Footer-Main h5 {
+  color: grey;
+  font-weight: 500;
+}
+.Footer-Main p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+}
+.Footer-Main .Footer-Flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+.Footer-Main .footer-sec {
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer-Main .footer-sec {
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer-Main .footer-sec-second {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer-Main .footer-sec-third {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.Footer-Main .footer-sec-third input {
+  border: 0;
+  color: #f3f3f3;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #4f5b64;
+}
+.Footer-Main .footer-sec-third textarea {
+  border: 0;
+  color: #f3f3f3;
+  padding: 5px;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #4f5b64;
+}
+.Footer-Main .footer-sec-third button {
+  background-color: #55bde3;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: white;
+}
+.Footer-Main .footer-sec-inner {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: start;
+}
+.Footer-Main .footer-sec-inner img {
+  max-width: 65px;
+  border-radius: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.Footer-Main .footer-sec .i-flex {
+  display: flex;
+  gap: 30px;
+}
+.Footer-Main .footer-sec p {
+  font-size: 13px;
+  color: grey;
+}
+.Footer-Main .footer-sec .i {
+  font-size: 16px;
+  color: #a1aaad;
+}
+.Footer-Bottom {
+  padding: 25px 0px;
+  background-color: #2b363d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Footer-Bottom h5 {
+  color: grey;
+  font-weight: 400;
 }
 
 /* ============= Footer ============= */
 
 /* ============= Dentist Profile ============= */
-.doctor-profile{
-  background-color: #FBFBFB;
+.doctor-profile {
+  background-color: #fbfbfb;
 }
-.doctor-name{
+.doctor-name {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -2375,29 +2502,28 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.doctor-name p{
+.doctor-name p {
   font-size: 24px;
   font-weight: 200;
   color: #333333;
-
 }
-.doctor-name a{
-font-size: 13px;
-padding: 0 5px;
-text-decoration: none;
-color: #333333;
-font-weight: 300;
+.doctor-name a {
+  font-size: 13px;
+  padding: 0 5px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: 300;
 }
-.doctor-name span{
-font-size: 13px;
-font-weight: 300;
-color: #333333;
+.doctor-name span {
+  font-size: 13px;
+  font-weight: 300;
+  color: #333333;
 }
-.icon{
+.icon {
   font-size: 10px !important;
 }
 
-.doctor-main{
+.doctor-main {
   width: 80%;
   display: flex;
   margin: auto;
@@ -2405,78 +2531,96 @@ color: #333333;
   align-items: center;
   justify-content: center;
 }
-.doctor-context{
-width: 500px;
-padding: 0 20px;
-
+.doctor-context {
+  width: 500px;
+  padding: 0 20px;
 }
-.doctor-context h6{
-  font-weight:200;
+.doctor-context h6 {
+  font-weight: 200;
   font-size: 24px;
 }
-.doctor-context p{
-  font-weight:200;
+.doctor-context p {
+  font-weight: 200;
   font-size: 16px;
 }
-.doctor-context span{
+.doctor-context span {
   font-style: italic;
   font-size: 10px;
   color: #1087ff;
 }
-.doctor-image img{
+.doctor-image img {
   width: 100%;
   max-width: 500px;
 }
-.doctor-bar-main{
+.doctor-bar-main {
   width: 80%;
   margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
 }
-.doctor-bar-bar{
+.doctor-bar-bar {
   width: 70%;
 }
-.doctor-bar-bar p{
+.doctor-bar-bar p {
   padding: 10px 0;
   font-size: 14px;
   font-weight: 400;
 }
-.doctor-bar-content{
+.doctor-bar-content {
   width: 30%;
   padding: 30px 0;
 }
-.doctor-bar-content p{
+.doctor-bar-content p {
   font-size: 16px;
   padding: 0 10px;
   font-weight: 200;
 }
 
-@media only screen and (max-width: 1024px){
-  .doctor-bar-main{
+@media only screen and (max-width: 1024px) {
+  .doctor-bar-main {
     width: 92% !important;
   }
-  .doctor-name{
+  .doctor-name {
     width: 90%;
   }
-  .doctor-bar-content p{
+  .doctor-bar-content p {
     font-size: 14px !important;
   }
 }
 
-@media only screen and (max-width: 426px){
-  .doctor-bar-bar{
+@media only screen and (max-width: 426px) {
+  .doctor-bar-bar {
     width: 100% !important;
   }
-  .doctor-bar-main{
+  .doctor-bar-main {
     width: 80% !important;
   }
-  .doctor-bar-content{
+  .doctor-bar-content {
     font-size: 40px !important;
     width: 100% !important;
   }
-  .doctor-bar-content p{
-  font-size: 12px !important;
-}
+  .doctor-bar-content p {
+    font-size: 12px !important;
+  }
 }
 
+/* ============== Appoinment ============== */
 
+.Doctor-Selec-Header-Main {
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.Doctor-Selec-Header-Main h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+.Doctor-Selec-Header-Main p {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ============== Appoinment ============== */
