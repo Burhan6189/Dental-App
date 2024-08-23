@@ -11,7 +11,7 @@ const Appoinment = () => {
       <div className="top-container">
         <DoctorSelection />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -2208,6 +2208,19 @@
   .top-container {
     margin-top: 60px !important;
   }
+  .Doctor-Info-Selection-Main h5{
+    font-size: 12px !important;
+  }
+  .Doctor-Info-Selection-Main h3{
+    font-size: 18px !important;
+  }
+  .Doctor-Info-Selection-Main img{
+    max-width: 63px !important;
+    width: 100%;
+  }
+  .Doctors-Info-Main{
+    gap: 30px !important;
+  }
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
@@ -2243,6 +2256,10 @@
   .Footer-Main .Footer-Flex {
     flex-wrap: wrap;
     gap: 50px;
+  }
+  .Doctors-Info-Main {
+    padding: 20px 15px !important;
+    gap: 15px !important;
   }
 }
 
@@ -2606,6 +2623,8 @@
 
 /* ============== Appoinment ============== */
 
+/* ====== Doctor Selection Header ====== */
+
 .Doctor-Selec-Header-Main {
   text-align: center;
   width: 100%;
@@ -2622,5 +2641,100 @@
   font-size: 13px;
   font-weight: 400;
 }
+
+/* ====== Doctor Selection Header ====== */
+
+/* ====== Doctor Selection Doctor Info  ====== */
+
+.Doctor-Info-Selection-Main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 50px 0px;
+}
+
+.Doctors-Info-Main {
+  padding: 30px;
+  display: flex;
+  border-radius: 10px 10px 0px 0px;
+  max-width: 450px;
+  width: 100%;
+  justify-content: center;
+  gap: 40px;
+  border-top: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  border-left: 1px solid #d8d8d8;
+}
+.Doctors-Info-Main h5 {
+  font-weight: 500;
+  color: grey;
+}
+.Doctors-Info-Main .Main-Flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.Doctors-Info-Main img {
+  max-width: 90px;
+  border-radius: 100%;
+  width: 100%;
+}
+.Doctors-Info-Main .flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Doctors-Info-Main .flex .des {
+  border: 1px solid #dfdfdf;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.Doctors-Info-Main .flex .des h5 {
+  color: #59d4c2;
+  font-weight: 500;
+}
+.Doctors-Info-Main .flex .rating {
+  display: flex;
+  background: #013c76;
+  gap: 5px;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.Doctors-Info-Main .flex .rating .i {
+  color: #59d4c2;
+}
+.Doctors-Info-Main .flex .rating h5 {
+  color: #fff;
+  font-weight: 400;
+}
+.Doctors-Info-Main .Name h3 {
+  font-weight: 500;
+  color: #013c76;
+  font-size: 22px;
+}
+.Doctors-Info-Main .flex .i {
+  color: #013c76;
+}
+.Select-Doctor-Btn button {
+  background: #f2f6f9;
+  border: 0;
+  max-width: 450px;
+  width: 100%;
+  font-weight: 600;
+  transition: 0.5s ease-in-out;
+  color: #013c76;
+  padding: 10px 20px;
+  border-radius: 0px 0px 10px 10px;
+  cursor: pointer;
+}
+.Select-Doctor-Btn button:hover {
+  background: #59d4c2;
+  color: white;
+}
+
+/* ====== Doctor Selection Doctor Info  ====== */
 
 /* ============== Appoinment ============== */
