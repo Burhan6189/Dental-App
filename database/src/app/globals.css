@@ -1980,8 +1980,6 @@
   text-align: center;
 }
 
-
-
 @media only screen and (max-width: 600px) {
   .center-div {
     height: 40vh;
@@ -2255,6 +2253,9 @@
   position: relative;
   background: #fff;
 }
+.Header-Main a {
+  text-decoration: none;
+}
 .Header-Top {
   width: 100%;
   background: #fff;
@@ -2380,7 +2381,7 @@
 }
 .Footer-Main p {
   color: #fff;
-  font-size: 15px;  
+  font-size: 15px;
   font-weight: 300;
 }
 .Footer-Main .Footer-Flex {
@@ -2530,10 +2531,9 @@
   align-items: center;
   justify-content: center;
 }
-.doctor-context{
-width: 500px;
-padding: 0 20px;
-
+.doctor-context {
+  width: 500px;
+  padding: 0 20px;
 }
 .doctor-context h6 {
   font-weight: 200;
@@ -2548,60 +2548,79 @@ padding: 0 20px;
   font-size: 10px;
   color: #1087ff;
 }
-.doctor-image img{
+.doctor-image img {
   width: 100%;
   max-width: 500px;
 }
-.doctor-bar-main{
+.doctor-bar-main {
   width: 80%;
   margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
 }
-.doctor-bar-bar{
+.doctor-bar-bar {
   width: 70%;
 }
-.doctor-bar-bar p{
+.doctor-bar-bar p {
   padding: 10px 0;
   font-size: 14px;
   font-weight: 400;
 }
-.doctor-bar-content{
+.doctor-bar-content {
   width: 30%;
   padding: 30px 0;
 }
-.doctor-bar-content p{
+.doctor-bar-content p {
   font-size: 16px;
   padding: 0 10px;
   font-weight: 200;
 }
 
-@media only screen and (max-width: 1024px){
-  .doctor-bar-main{
+@media only screen and (max-width: 1024px) {
+  .doctor-bar-main {
     width: 92% !important;
   }
-  .doctor-name{
+  .doctor-name {
     width: 90%;
   }
-  .doctor-bar-content p{
+  .doctor-bar-content p {
     font-size: 14px !important;
   }
 }
 
-@media only screen and (max-width: 426px){
-  .doctor-bar-bar{
+@media only screen and (max-width: 426px) {
+  .doctor-bar-bar {
     width: 100% !important;
   }
-  .doctor-bar-main{
+  .doctor-bar-main {
     width: 80% !important;
   }
-  .doctor-bar-content{
+  .doctor-bar-content {
     font-size: 40px !important;
     width: 100% !important;
   }
-  .doctor-bar-content p{
-  font-size: 12px !important;
-}
+  .doctor-bar-content p {
+    font-size: 12px !important;
+  }
 }
 
+/* ============== Appoinment ============== */
 
+.Doctor-Selec-Header-Main {
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.Doctor-Selec-Header-Main h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+.Doctor-Selec-Header-Main p {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ============== Appoinment ============== */

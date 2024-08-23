@@ -1,0 +1,19 @@
+"use client";
+import React from "react";
+import Header from "../components/Header/page";
+import Footer from "../components/Footer/page";
+import DoctorSelection from "../components/Appoinment/DoctorSelection";
+
+const Appoinment = () => {
+  return (
+    <>
+      <Header />
+      <div className="top-container">
+        <DoctorSelection />
+      </div>
+      {/* <Footer /> */}
+    </>
+  );
+};
+
+export default Appoinment;
