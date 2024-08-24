@@ -5,8 +5,8 @@ import Fullcalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import * as bootstrap from "bootstrap"
-import "bootstrap/dist/css/"
+import * as bootstrap from "bootstrap";
+import "bootstrap/dist/css/";
 
 const Calendar = () => {
   return (
@@ -19,7 +19,7 @@ const Calendar = () => {
           center: "title",
           end: "dayGridMonth, timeGridWeek, timeGridDay", // will normally be on the right. if RTL, will be on the left
         }}
-        height={'90vh'}
+        height={"90vh"}
       />
     </>
   );
