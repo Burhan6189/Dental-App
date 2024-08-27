@@ -31,7 +31,7 @@ function DoctorProfile() {
                 <span>Senior Doctor</span>
                 <br/>
                 <br />
-                <p>Types of bridges may vary, depending upon how they are fabricated and the way they anchor to the adjacent teeth. Types of bridges may vary, depending upon how they are fabricated and the way. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iste nobis voluptates, non facilis harum incidunt consectetur deleniti ullam hic deserunt velit ipsum minima ab eum natus recusandae asperiores architecto?    </p>
+                <p>Types of bridges may vary, depending upon how they are fabricated and the way they anchor to the adjacent teeth. Types of bridges may vary, depending upon how they are fabricated and the way. </p>
             </div>
         </div>
 

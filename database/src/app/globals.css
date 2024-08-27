@@ -2496,6 +2496,7 @@
 }
 .doctor-name {
   width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -2524,15 +2525,16 @@
 }
 
 .doctor-main {
-  width: 80%;
+  width: 85%;
   display: flex;
   margin: auto;
+  gap: 30px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 .doctor-context {
-  width: 500px;
+  width: 400px;
   padding: 0 20px;
 }
 .doctor-context h6 {
@@ -2550,24 +2552,31 @@
 }
 .doctor-image img {
   width: 100%;
-  max-width: 500px;
+  object-fit: contain;
+  max-width: 350px;
 }
 .doctor-bar-main {
-  width: 80%;
+  width: 100%;
   margin: 50px auto;
   display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 .doctor-bar-bar {
-  width: 70%;
+  width: 60%;
+  max-width: 750px;
 }
 .doctor-bar-bar p {
-  padding: 10px 0;
   font-size: 14px;
   font-weight: 400;
+  padding: 10px 0;
+
 }
 .doctor-bar-content {
   width: 30%;
+  max-width: 350px;
   padding: 30px 0;
 }
 .doctor-bar-content p {
@@ -2587,7 +2596,14 @@
     font-size: 14px !important;
   }
 }
-
+@media only screen and (max-width: 769px) {
+  .doctor-image img {
+    max-width: 300px;
+  }
+  .doctor-context {
+    width: 300px;
+  }
+}
 @media only screen and (max-width: 426px) {
   .doctor-bar-bar {
     width: 100% !important;
@@ -2624,3 +2640,72 @@
 }
 
 /* ============== Appoinment ============== */
+
+
+/* ============== Rating and reviews ============== */
+
+.rating-main{
+padding: 50px 0;
+display: flex;
+justify-content: center;
+margin: auto;
+width: 100%;
+/* border: 1px solid black; */
+max-width: 1200px;
+}
+.single-rating{
+  width: 45%;
+}
+
+.showsame{
+  
+  padding: 10px 0;
+  text-align:center;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content:space-between  ;
+  width: 100%;
+  max-width: 450px;
+}
+.all-rating{
+  width: 45%;
+  background-color: #FFFBEB;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.rating-number{
+  width: 15px;
+  /* border: 1px solid black; */
+}
+.sars{
+color: #FBBF24;
+font-size: 30px;
+}
+.all-rating-text{
+  font-size:40px;
+  font-weight: 500 ;
+  color:#FBBF24 ;
+}
+.review-main{
+  padding: 50px 0;
+width: 100%;
+margin: auto;
+text-align: center;
+/* border: 1px solid black; */
+max-width: 1200px;
+}
+.review{
+  border: 1px solid black;
+  height: 40vh;
+}
+.review-user{
+  display: flex;
+}
+.review-image{
+  width: 200px; 
+}
