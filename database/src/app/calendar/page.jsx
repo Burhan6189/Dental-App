@@ -1,6 +1,6 @@
 
 'use client'
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -10,15 +10,15 @@ import interactionPlugin from "@fullcalendar/interaction";
 function generateFutureEvents() {
   const events = [];
   const currentDate = new Date();
-  const daysToGenerate = 365; // Generate events for the next 365 days
-
+  const daysToGenerate = 30; // Generate events for the next 365 days
+  const counts = 8;
   for (let i = 0; i < daysToGenerate; i++) {
     const date = new Date(currentDate);
     date.setDate(currentDate.getDate() + i);
 
     events.push({
       id: `event-${i}`, // Unique ID for each event
-      title: `8  Available `,      //  on ${date.toDateString()}`,
+      title: `${counts}  Available `,      //  on ${date.toDateString()}`,
 
       date: date.toISOString().split("T")[0], // Format as YYYY-MM-DD
       // extendedProps: {
@@ -27,17 +27,24 @@ function generateFutureEvents() {
     });
   }
 
-  return events;
+  return {
+    events, counts
+  }
 }
 
 function MyCalendar() {
   const calendarRef = useRef(null);
-  const events = generateFutureEvents();
+  const events = generateFutureEvents().events;
+  const {counts} = generateFutureEvents();
 
+const [selecteddate, setselectedate] = useState('');
 
-  const handleDateClick = (info) => {
-    const today = info.date.toISOString().split('T')[0]
-    console.log(today)
+  
+  const handleDateClick = (date) => {
+    const today =  date.dateStr;
+setselectedate(today);
+console.log(today)
+    
 
   }
 
@@ -56,19 +63,29 @@ function MyCalendar() {
   };
 
 
+  const mydong = ["2024-09-02","2024-09-03","2024-09-04","2024-09-05"]
+
+
   useEffect(() => {
     // Access FullCalendar instance
     const calendarApi = calendarRef.current.getApi();
 
+    
     // Find the event for the specific date you want to change (e.g., 2024-09-01)
-    const eventToUpdate = calendarApi.getEvents().find(event => event.startStr === "2024-09-02");
 
-    if (eventToUpdate) {
-      // Update the event's title and custom value
-      eventToUpdate.setProp("title", "only 1 available");
-      eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
-    }
-  }, []);
+    mydong.map((items)=>{
+      const eventToUpdate = calendarApi.getEvents().find(event => event.startStr === items);
+
+      if (eventToUpdate) {
+        // Update the event's title and custom value
+        eventToUpdate.setProp("title", `only ${counts-1} available`);
+        eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
+      }
+
+    })
+
+  
+  }, [mydong]);
 
 
 
