@@ -53,7 +53,7 @@ console.log(today)
     const dayOfWeek = eventDate.getDay();
 
     // Check if the event is on Saturday (6) or Sunday (0)
-    if (dayOfWeek === 6 || dayOfWeek === 0) {
+    if (dayOfWeek === 6 || dayOfWeek === 0 ) {
       // Hide the title by setting the innerHTML of the element to an empty string
       const eventTitleElement = info.el.querySelector(".fc-event-title");
       if (eventTitleElement) {
