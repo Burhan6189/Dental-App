@@ -16,7 +16,7 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@mui/material": "^5.16.7",
-    "@mui/x-date-pickers": "^7.14.0",
+    "@mui/x-date-pickers": "^7.15.0",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@types/custom-functions-runtime": "^1.6.8",
     "bcrypt": "^5.1.1",

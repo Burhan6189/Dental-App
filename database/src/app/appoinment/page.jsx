@@ -8,7 +8,7 @@ const Appoinment = () => {
   return (
     <>
       <Header />
-      <div className="top-container">
+      <div className="container">
         <DoctorSelection />
       </div>
       <Footer />
