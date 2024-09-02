@@ -5,14 +5,18 @@ import Footer from "../components/Footer/page";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticTimePicker } from "@mui/x-date-pickers/StaticTimePicker";
+// import { DesktopTimePicker } from "@mui/x-date-pickers/DesktopTimePicker";
 
 const time = () => {
   return (
     <>
       <Header />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <div className="container">
-          <StaticTimePicker orientation="landscape" />
+        <div className="Time-Pick-Main">
+          <div className="time">
+            <StaticTimePicker orientation="landscape" />
+            {/* <DesktopTimePicker /> */}
+          </div>
         </div>
       </LocalizationProvider>
       <Footer />
