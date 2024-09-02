@@ -2773,6 +2773,7 @@
   text-transform: uppercase;
 }
 .continue-btn {
+  text-decoration: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -2783,6 +2784,7 @@
   border: none;
   background-color: #4abae2;
   color: white;
+  width: 20%;
 }
 
 /* =============== Calendar =============== */

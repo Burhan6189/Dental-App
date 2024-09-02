@@ -127,7 +127,9 @@ function MyCalendar() {
             events={events}
             // eventMouseEnter={handleEventMouseEnter}
           />
-          <button className="continue-btn">Select Appointment Time</button>
+          <a href="/calendar" className="continue-btn">
+            Select Appointment Time{" "}
+          </a>
         </div>
       </div>
       <Footer />
