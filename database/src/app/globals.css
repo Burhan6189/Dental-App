@@ -2267,7 +2267,6 @@
 
 .Header-Main {
   width: 100%;
-  position: relative;
   background: #fff;
 }
 .Header-Main a {
@@ -2333,6 +2332,14 @@
   font-size: 15px;
   transition: 0.2s ease-in-out;
   color: black;
+}
+.Header-Links a {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+  color: black;
+  text-decoration: none;
 }
 .Header-Links h3:hover {
   color: #3fb6e0;
@@ -2759,6 +2766,11 @@
 
 .Calendar-Section-Main {
   padding: 50px 0px;
+}
+.Calendar-Section-Main h2 {
+  padding: 10px 0px;
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 /* =============== Calendar =============== */

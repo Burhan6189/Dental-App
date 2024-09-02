@@ -88,6 +88,7 @@ function MyCalendar() {
       <Header />
       <div className="container">
         <div className="Calendar-Section-Main">
+          <h2>Select Appointment Date</h2>
           <FullCalendar
             ref={calendarRef} // Reference to FullCalendar instance
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
