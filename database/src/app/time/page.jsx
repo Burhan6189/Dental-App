@@ -14,7 +14,7 @@ const time = () => {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div className="Time-Pick-Main">
           <div className="time">
-            <StaticTimePicker orientation="landscape" />
+            <StaticTimePicker orientation="portrait" />
             {/* <DesktopTimePicker /> */}
           </div>
         </div>
