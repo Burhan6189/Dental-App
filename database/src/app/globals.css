@@ -136,77 +136,21 @@
 
 /*================== Start Login Signup =========================*/
 
-.Login-Signup-Page-BG {
-  background-image: url("/img/Login-Signup-BG1.jpg");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  background-repeat: no-repeat;
+.Login-Main {
   height: 100vh;
-}
-
-.Login-Signup-Page-BG .Logo {
-  padding: 250px 15px 70px 15px;
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
-}
-
-.Login-Signup-Page-BG .Logo img {
+  max-width: 1200px;
   width: 100%;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button {
-  max-width: 500px;
-  padding: 10px;
   margin: auto;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button button a {
-  width: 100%;
-  margin-top: 10px;
-  background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 50px;
-  padding: 7px;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button button {
-  border: none;
   display: flex;
-  width: 100%;
-  background: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
 }
-
-.Login-Signup-Page-Texts {
-  margin-top: 100px;
-}
-
-.Login-Signup-Page-Texts p {
-  margin: auto;
-  max-width: 750px;
-  padding: 10px;
-  line-height: 1.5;
-}
-
-.Login-Signup-Page-Texts h3 {
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-top: 10px;
-}
-
-.Login-Signup-Page-Button h3 {
-  font-weight: 400;
-  margin-bottom: 5px;
+.Login-Main input {
+  padding: 5px 20px;
+  
 }
 
 /*================== End Login Signup =========================*/
