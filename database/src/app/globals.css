@@ -2208,17 +2208,17 @@
   .top-container {
     margin-top: 60px !important;
   }
-  .Doctor-Info-Selection-Main h5{
+  .Doctor-Info-Selection-Main h5 {
     font-size: 12px !important;
   }
-  .Doctor-Info-Selection-Main h3{
+  .Doctor-Info-Selection-Main h3 {
     font-size: 18px !important;
   }
-  .Doctor-Info-Selection-Main img{
+  .Doctor-Info-Selection-Main img {
     max-width: 63px !important;
     width: 100%;
   }
-  .Doctors-Info-Main{
+  .Doctors-Info-Main {
     gap: 30px !important;
   }
 }
@@ -2589,7 +2589,6 @@
   font-size: 14px;
   font-weight: 400;
   padding: 10px 0;
-
 }
 .doctor-bar-content {
   width: 30%;
@@ -2753,38 +2752,44 @@
 
 /* ====== Doctor Selection Doctor Info  ====== */
 
-/* ============== Appoinment ============== */
+/* =============== Calendar =============== */
 
+.Calendar-Section-Main {
+  padding: 70px 0px;
+}
+
+/* =============== Calendar =============== */
+
+/* ============== Appoinment ============== */
 
 /* ============== Rating and reviews ============== */
 
-.rating-main{
-padding: 50px 0;
-display: flex;
-justify-content: center;
-margin: auto;
-width: 100%;
-/* border: 1px solid black; */
-max-width: 1200px;
+.rating-main {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  /* border: 1px solid black; */
+  max-width: 1200px;
 }
-.single-rating{
+.single-rating {
   width: 45%;
 }
 
-.showsame{
-  
+.showsame {
   padding: 10px 0;
-  text-align:center;
+  text-align: center;
   /* border: 1px solid black; */
   display: flex;
   align-items: center;
-  justify-content:space-between  ;
+  justify-content: space-between;
   width: 100%;
   max-width: 450px;
 }
-.all-rating{
+.all-rating {
   width: 45%;
-  background-color: #FFFBEB;
+  background-color: #fffbeb;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -2792,34 +2797,34 @@ max-width: 1200px;
   justify-content: center;
   gap: 10px;
 }
-.rating-number{
+.rating-number {
   width: 15px;
   /* border: 1px solid black; */
 }
-.sars{
-color: #FBBF24;
-font-size: 30px;
+.sars {
+  color: #fbbf24;
+  font-size: 30px;
 }
-.all-rating-text{
-  font-size:40px;
-  font-weight: 500 ;
-  color:#FBBF24 ;
+.all-rating-text {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fbbf24;
 }
-.review-main{
+.review-main {
   padding: 50px 0;
-width: 100%;
-margin: auto;
-text-align: center;
-/* border: 1px solid black; */
-max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* border: 1px solid black; */
+  max-width: 1200px;
 }
-.review{
+.review {
   border: 1px solid black;
   height: 40vh;
 }
-.review-user{
+.review-user {
   display: flex;
 }
-.review-image{
-  width: 200px; 
+.review-image {
+  width: 200px;
 }

@@ -86,45 +86,47 @@ function MyCalendar() {
   return (
     <>
       <Header />
-      <div className="container">
-        <FullCalendar
-          ref={calendarRef} // Reference to FullCalendar instance
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView={"dayGridMonth"}
-          headerToolbar={{
-            start: "today prev,next",
-            center: "title",
-            end: "dayGridMonth,timeGridWeek,timeGridDay",
-          }}
-          dayCellClassNames={(date) => {
-            const dayOfWeek = date.date.getDay();
-            const formattedDate = date.date.toISOString().split("T")[0];
-            if (dayOfWeek === 6 || dayOfWeek === 0) {
-              return "fc-day-disabled";
-            }
-            // if (formattedDate === "2024-08-27") {
-            //   return "fc-day-disabled"
-            // }
-            if (date.date < new Date()) {
-              return "fc-day-disabled";
-            }
-            return "";
-          }}
-          height={"90vh"}
-          dateClick={handleDateClick}
-          selectable={true}
-          selectAllow={(selectInfo) => {
-            const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
-            const startDate = selectInfo.start.getTime(); // Start date of the selection
-            const dayOfWeek = selectInfo.start.getDay(); // Day of the week (0=Sunday, 6=Saturday)
+      <div className="top-container">
+        <div className="Calendar-Section-Main">
+          <FullCalendar
+            ref={calendarRef} // Reference to FullCalendar instance
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            initialView={"dayGridMonth"}
+            headerToolbar={{
+              start: "today prev,next",
+              center: "title",
+              end: "",
+            }}
+            dayCellClassNames={(date) => {
+              const dayOfWeek = date.date.getDay();
+              const formattedDate = date.date.toISOString().split("T")[0];
+              if (dayOfWeek === 6 || dayOfWeek === 0) {
+                return "fc-day-disabled";
+              }
+              // if (formattedDate === "2024-08-27") {
+              //   return "fc-day-disabled"
+              // }
+              if (date.date < new Date()) {
+                return "fc-day-disabled";
+              }
+              return "";
+            }}
+            height={"90vh"}
+            dateClick={handleDateClick}
+            selectable={true}
+            selectAllow={(selectInfo) => {
+              const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
+              const startDate = selectInfo.start.getTime(); // Start date of the selection
+              const dayOfWeek = selectInfo.start.getDay(); // Day of the week (0=Sunday, 6=Saturday)
 
-            // Allow selection only if it's today or later, and not on Saturday (6) or Sunday (0)
-            return startDate >= today && dayOfWeek !== 0 && dayOfWeek !== 6;
-          }}
-          eventDidMount={handleEventDidMount}
-          events={events}
-          // eventMouseEnter={handleEventMouseEnter}
-        />
+              // Allow selection only if it's today or later, and not on Saturday (6) or Sunday (0)
+              return startDate >= today && dayOfWeek !== 0 && dayOfWeek !== 6;
+            }}
+            eventDidMount={handleEventDidMount}
+            events={events}
+            // eventMouseEnter={handleEventMouseEnter}
+          />
+        </div>
       </div>
       <Footer />
     </>
