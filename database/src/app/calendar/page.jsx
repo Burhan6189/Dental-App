@@ -26,6 +26,7 @@ function generateFutureEvents() {
       // },
     });
   }
+  
 
   return {
     events, counts
@@ -35,7 +36,7 @@ function generateFutureEvents() {
 function MyCalendar() {
   const calendarRef = useRef(null);
   const events = generateFutureEvents().events;
-  
+
   const {counts} = generateFutureEvents();
 
 const [selecteddate, setselectedate] = useState('');
