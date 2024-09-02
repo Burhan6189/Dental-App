@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Header from "../components/Header/page";
 import Footer from "../components/Footer/page";
@@ -11,7 +11,9 @@ const time = () => {
     <>
       <Header />
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <StaticTimePicker orientation="landscape" />
+        <div className="container">
+          <StaticTimePicker orientation="landscape" />
+        </div>
       </LocalizationProvider>
       <Footer />
     </>
