@@ -86,7 +86,7 @@ function MyCalendar() {
   return (
     <>
       <Header />
-      <div className="top-container">
+      <div className="container">
         <div className="Calendar-Section-Main">
           <FullCalendar
             ref={calendarRef} // Reference to FullCalendar instance

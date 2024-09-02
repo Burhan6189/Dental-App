@@ -2313,6 +2313,9 @@
   text-align: left;
 }
 .Header-Links {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
   display: flex;
   border-top: 1px solid #e9e9e9;
   padding: 15px 0px;
@@ -2334,13 +2337,13 @@
 .Header-Links h3:hover {
   color: #3fb6e0;
 }
-.Fixed-Header {
+/* .Fixed-Header {
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
   right: 0;
-}
+} */
 
 .tab-menu {
   position: fixed;
@@ -2755,7 +2758,7 @@
 /* =============== Calendar =============== */
 
 .Calendar-Section-Main {
-  padding: 70px 0px;
+  padding: 50px 0px;
 }
 
 /* =============== Calendar =============== */

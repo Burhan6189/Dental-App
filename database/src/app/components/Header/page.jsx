@@ -83,20 +83,19 @@ const Header = () => {
               </div>
             </div>
           </div>
-
-          <div className="Header-Links">
-            <h3>HOME</h3>
-            <h3>PAGES</h3>
-            <h3>SERVICES</h3>
-            <h3>ABOUT</h3>
-            <h3>GALLERY</h3>
-            <h3>NEWS</h3>
-            <a href="/appoinment">
-              <h3>APPOINMENT</h3>
-            </a>
-            <h3>CONTACTS</h3>
-          </div>
         </div>
+      </div>{" "}
+      <div className="Header-Links">
+        <h3>HOME</h3>
+        <h3>PAGES</h3>
+        <h3>SERVICES</h3>
+        <h3>ABOUT</h3>
+        <h3>GALLERY</h3>
+        <h3>NEWS</h3>
+        <a href="/appoinment">
+          <h3>APPOINMENT</h3>
+        </a>
+        <h3>CONTACTS</h3>
       </div>
     </>
   );
