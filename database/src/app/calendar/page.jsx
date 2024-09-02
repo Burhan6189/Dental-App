@@ -113,7 +113,7 @@ console.log(today)
         }
         return "";
       }}
-      height={"75vh"}
+      height={"70vh"}
 
       dateClick={handleDateClick}
       selectable={true}
