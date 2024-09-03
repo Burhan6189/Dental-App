@@ -55,7 +55,6 @@ const login = () => {
             <h3>Or Login With</h3>
             <div className="other-login-btn">
               <GoogleSignInButton />
-              <GithubSignInButton />
               <FacebookSignInButton />
             </div>
           </div>
