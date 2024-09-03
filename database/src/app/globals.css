@@ -137,6 +137,7 @@
 /* ============= Home ============= */
 
 .Home {
+  position: relative;
   padding: 20px;
   background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725353549/Dental/r3kqvkhfgyx0wtuk6vij.jpg");
   background-size: cover;
@@ -168,6 +169,10 @@
   box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
 }
 .Home .content {
+ position: absolute;
+ bottom: 0%;
+ left: 50%;
+ transform: translate(-50%,-50%);
   display: flex;
   align-items: center;
   flex-direction: column;
