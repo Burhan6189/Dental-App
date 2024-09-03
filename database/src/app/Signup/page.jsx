@@ -1,15 +1,15 @@
 "use client";
-import React, { useState } from "react";
-import bcrypt from "bcryptjs";
+import React, { useEffect, useState } from "react";
+import GoogleSignInButton from "../components/GoogleSignInButton";
+import FacebookSignInButton from "../components/FacebookSignInButton";
 import toast from "react-hot-toast";
 
-const Signup = () => {
+const signup = () => {
   const [Username, setUsername] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Status, setStatus] = useState("");
   const [Role, setRole] = useState("");
-
 
   const myfun = async () => {
     if (Username == "" || Email == "" || Password == "" || Role == "") {
@@ -32,7 +32,12 @@ const Signup = () => {
 
         const data = await fetch("/api/projects", {
           method: "POST",
-          body: JSON.stringify({ Username, Email, Password: hashedPassword, Role }),
+          body: JSON.stringify({
+            Username,
+            Email,
+            Password: hashedPassword,
+            Role,
+          }),
         });
 
         toast.success("Successfully registered");
@@ -43,86 +48,37 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <div className="Signup-Page-BG">
-        <div className="Logo">
-          <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
+    <div className="Home">
+      <div className="L-Header">
+        <img
+          src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
+          alt="dentario"
+        />
+      </div>
+      <div>
+        <h2>Sign up</h2>
+        <input type="text" placeholder="Username" required />
+        <input type="text" placeholder="Email" required />
+        <input type="text" placeholder="Password" required />
+        <a href="/login">
+          <button className="login-btn">Sign up</button>
+        </a>
+        <h3>Or Sign With</h3>
+        <div className="other-login-btn">
+          <GoogleSignInButton />
+          <FacebookSignInButton />
         </div>
-        <div className="Signup-Page-Input-1">
-          <input
-            type="text"
-            value={Username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-            name="name"
-            id="name"
-            className="input-field"
-            placeholder="Username"
-            autoComplete="off"
-          />
-          <label for="name" className="input-label">
-            Username
-          </label>
-        </div>
-        <div className="Signup-Page-Input-2">
-          <input
-            type="text"
-            value={Email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            name="name"
-            id="name"
-            className="input-field"
-            placeholder="Email"
-            autoComplete="off"
-          />
-          <label for="name" className="input-label">
-            Email
-          </label>
-        </div>
-        <div className="Signup-Page-Input-3">
-          <input
-            type="text"
-            value={Password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            name="name"
-            id="name"
-            className="input-field"
-            placeholder="Password"
-            autoComplete="off"
-          />
-          <label for="name" className="input-label">
-            Password
-          </label>
-        </div>
-
-        <select name="" id="" onChange={(e) => { setRole(e.target.value) }}>
-
-          <option >Select Your Role</option>
-          <option>Super Admin</option>
-          <option>User</option>
-          <option>Checker</option>
-        </select>
-
-        <div className="Signup-Button">
-          <button onClick={myfun}>Login</button>
-        </div>
-        
-        <div className="Signup-Page-Texts">
-          <p>
-            Limited Time Offer. Get Scaling & Polishing By Hygienist For Just
-            £75. Incl. Book Now. Book Online Your Consultation Now Or Call Us
-            Now. Friendly Dental Team
-          </p>
-          <h3>www.confidentdp.com</h3>
-        </div>
+      </div>
+      <div className="content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
+          veritatis exercitationem tempora voluptas delectus et, dolores
+          distinctio
+        </p>
+        <h3>www.dentario.com</h3>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default signup;

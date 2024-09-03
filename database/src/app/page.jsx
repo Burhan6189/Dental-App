@@ -94,7 +94,7 @@ const Page = () => {
         <a href="/login">
           <button className="login-btn">Log in</button>
         </a>
-        <a href="/login">
+        <a href="/signup">
           <button className="login-btn">Sign up</button>
         </a>
       </div>
@@ -106,13 +106,13 @@ const Page = () => {
         </p>
         <h3>www.dentario.com</h3>
       </div>
-      <button
+      {/* <button
         onClick={() =>
           sendPushNotification("Notification Title", "Notification Body")
         }
       >
         Send Notification
-      </button>
+      </button> */}
     </div>
   );
 };
