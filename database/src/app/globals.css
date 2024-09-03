@@ -137,7 +137,11 @@
 /* ============= Home ============= */
 
 .Home {
-  max-width: 1200px;
+  padding: 20px;
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725353549/Dental/r3kqvkhfgyx0wtuk6vij.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -147,19 +151,54 @@
   width: 100%;
   height: 100vh;
 }
-.Home h1{
-  font-size: 70px;
-color: 73cae8;
+.Home .Home-Container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
 }
 .Home .L-Header {
   width: 100%;
   background-color: white;
   position: absolute;
   top: 0%;
+  left: 0%;
   padding: 20px 0px 15px 0px;
   -webkit-box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
+}
+.Home .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  margin-top: 90px;
+}
+.Home h1 {
+  letter-spacing: 20px;
+  font-size: 70px;
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: 20px;
+}
+.Home h3 {
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #313131;
+}
+.Home a {
+  text-decoration: none;
+  color: #313131;
+  border-radius: 10px;
+  padding: 5px 80px;
+  margin: 10px;
+  background-color: #ddf1fa;
+  border: 1px solid #9fe1ff ;
 }
 
 /* ============= Home ============= */
@@ -2279,6 +2318,20 @@ color: 73cae8;
   .Doctors-Info-Main {
     padding: 20px 15px !important;
     gap: 15px !important;
+  }
+  .Home h1 {
+    letter-spacing: 9px;
+    font-size: 30px;
+  }
+  .Home a {
+    padding: 5px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 70%;
+
   }
 }
 
