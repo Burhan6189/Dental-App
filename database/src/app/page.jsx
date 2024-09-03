@@ -72,17 +72,15 @@ const page = () => {
   //   requestNotificationPermission();
   // }, []);
 
-
-  // <button 
+  // <button
   //       onClick={() => sendPushNotification(
-       
+
   //         "Notification Title",
   //         "Notification Body"
   //       )}
   //     >
   //       Send Notification
   //     </button>
-
 
   return (
     <div className="Home">
@@ -95,10 +93,10 @@ const page = () => {
       <div>
         <h1>WELCOME</h1>
         <a href="/login">
-          <button>Log in</button>
+          <button className="login-btn">Log in</button>
         </a>
         <a href="/login">
-          <button>Sign up</button>
+          <button className="login-btn">Sign up</button>
         </a>
       </div>
       <div className="content">

@@ -42,28 +42,22 @@ const login = () => {
           <div className="L-Header">
             <img
               src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
-              alt=""
+              alt="dentario"
             />
           </div>
           <div>
             <h2>Log in</h2>
-            <input type="text" placeholder="Username" name="" id="" />
-            <input type="text" placeholder="Password" name="" id="" />
+            <input type="text" placeholder="Username" required/>
+            <input type="text" placeholder="Password" required/>
             <a href="/login">
-              <button>Log in</button>
+              <button className="login-btn">Log in</button>
             </a>
             <h3>Or Login With</h3>
-            {/* <div className="Login-Buttons">
-              <div className="Login-Buttons-Google">
-                <GoogleSignInButton />
-              </div>
-              <div className="Login-Buttons-Github">
-                <GithubSignInButton />
-              </div>
-              <div className="Login-Buttons-Github">
-                <FacebookSignInButton />
-              </div>
-            </div> */}
+            <div className="other-login-btn">
+              <GoogleSignInButton />
+              <GithubSignInButton />
+              <FacebookSignInButton />
+            </div>
           </div>
           <div className="content">
             <p>
