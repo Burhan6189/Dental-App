@@ -37,56 +37,44 @@ const login = () => {
   };
   if (!session)
     return (
-      <div className="Login-Main">
-        <img
-          src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
-          alt=""
-        />
-        <input
-          type="text"
-          value={Username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          name="name"
-          id="name"
-          placeholder="Username"
-          autoComplete="off"
-        />
-        <input
-          type="password"
-          value={Password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          name="password"
-          id="password"
-          placeholder="Paswword"
-          autoComplete="off"
-        />
-        <button onClick={myfun}>Login</button>
-        <h3>or Login with </h3>
-        <div className="Login-Buttons">
-          <div className="Login-Buttons-Google">
-            <GoogleSignInButton />
+      <>
+        <div className="Home">
+          <div className="L-Header">
+            <img
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
+              alt=""
+            />
           </div>
-          <div className="Login-Buttons-Github">
-            <GithubSignInButton />
+          <div>
+            <h2>Log in</h2>
+            <input type="text" placeholder="Username" name="" id="" />
+            <input type="text" placeholder="Password" name="" id="" />
+            <a href="/login">
+              <button>Log in</button>
+            </a>
+            <h3>Or Login With</h3>
+            {/* <div className="Login-Buttons">
+              <div className="Login-Buttons-Google">
+                <GoogleSignInButton />
+              </div>
+              <div className="Login-Buttons-Github">
+                <GithubSignInButton />
+              </div>
+              <div className="Login-Buttons-Github">
+                <FacebookSignInButton />
+              </div>
+            </div> */}
           </div>
-          <div className="Login-Buttons-Github">
-            <FacebookSignInButton />
+          <div className="content">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
+              veritatis exercitationem tempora voluptas delectus et, dolores
+              distinctio
+            </p>
+            <h3>www.dentario.com</h3>
           </div>
         </div>
-
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-            quia molestiae delectus sed labore in ab adipisci tenetur nostrum
-            est odit quas perferendis blanditiis expedita.
-          </p>
-          <h3>www.dentario.com</h3>
-        </div>
-      </div>
+      </>
     );
 };
 

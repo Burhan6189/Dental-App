@@ -74,24 +74,28 @@ const page = () => {
 
   return (
     <div className="Home">
-      <div className="Home-Container">
-        <div className="L-Header">
-          <img
-            src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
-            alt=""
-          />
-        </div>
+      <div className="L-Header">
+        <img
+          src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
+          alt=""
+        />
+      </div>
+      <div>
         <h1>WELCOME</h1>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign up</a>
-        <div className="content">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
-            veritatis exercitationem tempora voluptas delectus et, dolores
-            distinctio
-          </p>
-          <h3>www.dentario.com</h3>
-        </div>
+        <a href="/login">
+          <button>Log in</button>
+        </a>
+        <a href="/login">
+          <button>Sign up</button>
+        </a>
+      </div>
+      <div className="content">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
+          veritatis exercitationem tempora voluptas delectus et, dolores
+          distinctio
+        </p>
+        <h3>www.dentario.com</h3>
       </div>
     </div>
   );
