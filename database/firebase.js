@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, onMessage } from "firebase/messaging";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,7 +17,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Messaging and export it
-const messaging = getMessaging(app);
+let messaging;
 
-export { messaging };
+if (typeof window !== 'undefined') {
+  messaging = getMessaging(app);
+
+  onMessage(messaging, (payload) => {
+    console.log('Message received. ', payload);
+  });
+}
+
+export { app, messaging };
+
