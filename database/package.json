@@ -48,6 +48,7 @@
     "react-rating-stars-component": "^2.2.0",
     "reactjs": "^1.0.0",
     "reactjs-popup": "^2.0.6",
-    "swiper": "^11.1.10"
+    "swiper": "^11.1.10",
+    "web-push": "^3.6.7"
   }
 }

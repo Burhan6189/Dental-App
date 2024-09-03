@@ -6,7 +6,7 @@ const serviceAccount = {
   type: process.env.FIREBASE_TYPE,
   project_id: process.env.FIREBASE_PROJECT_ID,
   private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'), // Replace escaped newlines
+  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'), // Replace escaped newlines with actual newlines
   client_email: process.env.FIREBASE_CLIENT_EMAIL,
   client_id: process.env.FIREBASE_CLIENT_ID,
   auth_uri: process.env.FIREBASE_AUTH_URI,
@@ -24,32 +24,27 @@ if (!getApps().length) {
 
 const messaging = getMessaging();
 
-export async function POST(req, res) {
-  try {
-    const { token, title, body } = await req.json(); // Assuming you are using a JSON body
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    try {
+      const { token, title, body } = req.body; // Assuming the request payload is in JSON format
 
-    const message = {
-      token: token,
-      notification: {
-        title: title,
-        body: body,
-      },
-    };
+      const message = {
+        token: token,
+        notification: {
+          title: title,
+          body: body,
+        },
+      };
 
-    const response = await messaging.send(message);
-    return new Response(JSON.stringify({ message: 'Success', response }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+      const response = await messaging.send(message);
+      return res.status(200).json({ message: 'Success', response });
 
-  } catch (error) {
-    return new Response(JSON.stringify({ message: error.message }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  } else {
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
