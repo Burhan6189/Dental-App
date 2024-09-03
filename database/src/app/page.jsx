@@ -1,5 +1,5 @@
 "use client";
-import { messaging } from "../../firebase";
+// import { messaging } from "../../firebase";
 import React, { useEffect, useState } from "react";
 
 const page = () => {
