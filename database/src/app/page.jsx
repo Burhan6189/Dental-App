@@ -72,6 +72,18 @@ const page = () => {
   //   requestNotificationPermission();
   // }, []);
 
+
+  // <button 
+  //       onClick={() => sendPushNotification(
+       
+  //         "Notification Title",
+  //         "Notification Body"
+  //       )}
+  //     >
+  //       Send Notification
+  //     </button>
+
+
   return (
     <div className="Home">
       <div className="Home-Container">
