@@ -2574,3 +2574,122 @@
 .review-image {
   width: 200px;
 }
+
+/* ================ Home ================ */
+
+/* =========== Banner =========== */
+
+.Banner-Swiper-BG {
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725444182/Dental/wr7b5oycuibsegf5bpta.jpg");
+  /* height: 60vh; */
+  padding: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 40px 0px 0px 0px;
+}
+.Banner-Swiper-BG .home-slider-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap-reverse; */
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  margin: 0px !important;
+}
+.Banner-Swiper-BG .home-slider-slide .content {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.Banner-Swiper-BG .home-slider-slide h3 {
+  line-height: 1.2;
+  font-size: 35px;
+  font-weight: 300;
+  max-width: 550px;
+  width: 100%;
+}
+.Banner-Swiper-BG .home-slider-slide p {
+  max-width: 700px;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+}
+.Banner-Swiper-BG .home-slider-slide img {
+  max-width: 750px;
+  width: 100%;
+  border-radius: 10px;
+}
+.Banner-Swiper-BG .home-slider-slide button {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background: #a5c422;
+  transition: 0.5s ease-in-out;
+}
+.Banner-Swiper-BG .home-slider-slide button:hover {
+  background: #77cbe9;
+}
+
+/* =========== Banner =========== */
+
+/* =========== Quality Section =========== */
+
+.QualitySec-Main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+  color: white;
+}
+.QualitySec-Main img {
+  max-width: 60px;
+  width: 100%;
+}
+.QualitySec-Main p {
+  font-weight: 300;
+  font-size: 13px;
+  max-width: 450px;
+  width: 100%;
+}
+.QualitySec-Main h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.QualitySec-Main .box-1 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #3fb6e0;
+}
+.QualitySec-Main .box-2 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #a7c526;
+}
+.QualitySec-Main .box-3 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #333f48;
+}
+
+/* =========== Quality Section =========== */
+
+/* ================ Home ================ */
