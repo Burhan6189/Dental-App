@@ -2631,10 +2631,11 @@
   color: white;
   cursor: pointer;
   background: #a5c422;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .Banner-Swiper-BG .home-slider-slide button:hover {
   background: #77cbe9;
+  transform: scale(1.05);
 }
 
 /* =========== Banner =========== */
@@ -2739,11 +2740,12 @@
   color: white;
   cursor: pointer;
   background: #a5c422;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
   margin-top: 20px;
 }
 .Mini-About-Main button:hover {
   background: #77cbe9;
+  transform: scale(1.05);
 }
 
 /* =========== Mini About Section =========== */
