@@ -2750,4 +2750,58 @@
 
 /* =========== Mini About Section =========== */
 
+/* =========== Services Section =========== */
+
+.Services-Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  margin-top: 40px;
+}
+.Services-Header p {
+  font-size: 13px;
+  font-weight: 400;
+}
+.Services-Header h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.Services-Flex {
+  flex-wrap: wrap;
+  padding: 40px 0px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-evenly;
+}
+.Services-Flex img {
+  max-width: 70px;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 50%;
+  width: 100%;
+}
+.Services-Flex .box {
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+}
+.Services-Flex .box h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.Services-Flex .box p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* =========== Services Section =========== */
+
 /* ================ Home ================ */

@@ -8,6 +8,7 @@ import { SessionProvider, useSession } from "next-auth/react";
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import Loader from "./components/Loader";
+import ScrollToTop from "./components/Scrolltotop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Loader />
+        <ScrollToTop />
         <SessionProvider>
           <Toaster
             toastOptions={{
