@@ -7,7 +7,7 @@ const QualitySec = () => {
         <div className="box-1">
           <div>
             <img
-              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725460997/Dental/Icons/sc45lsqrqvprpe9u0wif.png"
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725461928/Dental/Icons/lifniyyn1r7rhmorhyb4.png"
               alt=""
             />
           </div>
@@ -22,7 +22,7 @@ const QualitySec = () => {
         <div className="box-2">
           <div>
             <img
-              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725460997/Dental/Icons/sc45lsqrqvprpe9u0wif.png"
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725461927/Dental/Icons/vo6cfae1nrnjv2aa9i5c.png"
               alt=""
             />
           </div>
@@ -37,7 +37,7 @@ const QualitySec = () => {
         <div className="box-3">
           <div>
             <img
-              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725460997/Dental/Icons/sc45lsqrqvprpe9u0wif.png"
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725461927/Dental/Icons/ti7d6iecjjersmklidms.png"
               alt=""
             />
           </div>
