@@ -1824,6 +1824,9 @@
 }
 .Meet-Our-Team-Slider {
   padding: 50px;
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
 }
 .Meet-Our-Team-Slider .team-slide {
   display: flex;
@@ -2812,7 +2815,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 30px 0px;
+  margin: 30px 0px 0px 0px;
 }
 .Visits-Main .flex {
   display: flex;
@@ -2851,5 +2854,40 @@
 }
 
 /* =========== Visits Section =========== */
+
+/* =========== Reviews Section =========== */
+
+.Reviews-Slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+  margin: 80px 0px;
+}
+.Reviews-Slider .review-slide img {
+  max-width: 55px;
+  border-radius: 50%;
+  width: 100%;
+}
+.Reviews-Slider .review-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+}
+.Reviews-Slider .review-slide .content {
+  margin: auto;
+  max-width: 1000px;
+}
+.Reviews-Slider .review-slide .content p span {
+  font-size: 40px;
+}
+
+/* =========== Reviews Section =========== */
 
 /* ================ Home ================ */
