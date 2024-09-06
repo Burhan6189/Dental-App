@@ -2804,4 +2804,52 @@
 
 /* =========== Services Section =========== */
 
+/* =========== Visits Section =========== */
+
+.Visits-Main {
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725444182/Dental/wr7b5oycuibsegf5bpta.jpg");
+  padding: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 30px 0px;
+}
+.Visits-Main .flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Visits-Main .flex .i {
+  color: #a5c422;
+}
+.Visits-Main h3 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  max-width: 480px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.Visits-Main p {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0px;
+}
+.Visits-Main button {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background: #a5c422;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+.Visits-Main button:hover {
+  background: #77cbe9;
+  transform: scale(1.05);
+}
+
+/* =========== Visits Section =========== */
+
 /* ================ Home ================ */
