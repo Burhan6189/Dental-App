@@ -1912,6 +1912,24 @@
   .Doctors-Info-Main {
     gap: 30px !important;
   }
+  .QualitySec-Main .box-1 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .QualitySec-Main .box-2 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .QualitySec-Main .box-3 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .Mini-About-Main .Mini-About-Flex{
+    flex-wrap: wrap;
+  }
+  .Banner-Swiper-BG .home-slider-slide{
+    flex-wrap: wrap-reverse;
+  }
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
@@ -1964,6 +1982,27 @@
     margin: auto;
     margin-bottom: 5px;
     width: 70%;
+  }
+  .Banner-Swiper-BG .home-slider-slide h3{
+    font-size: 20px !important;
+  }
+  .Banner-Swiper-BG .home-slider-slide p{
+    font-size: 11px !important;
+  }
+  .QualitySec-Main h4{
+    font-size: 16px !important;
+  }
+  .QualitySec-Main p{
+    font-size: 11px !important;
+  }
+  .Services-Flex .box{
+    padding: 10px;
+  }
+  .Visits-Main h3{
+    font-size: 22px !important;
+  }
+  .Visits-Main p{
+    font-size: 12px !important;
   }
 }
 
@@ -2650,6 +2689,7 @@
   align-items: center;
   justify-content: space-evenly;
   text-align: left;
+  flex-wrap: wrap;
   color: white;
 }
 .QualitySec-Main img {
@@ -2704,6 +2744,7 @@
   padding: 50px 10px;
 }
 .Mini-About-Main .Mini-About-Flex {
+  padding: 20px;
   justify-content: center;
   align-items: center;
   gap: 20px;
