@@ -1924,10 +1924,10 @@
     padding: 50px 20px !important;
     max-width: 100% !important;
   }
-  .Mini-About-Main .Mini-About-Flex{
+  .Mini-About-Main .Mini-About-Flex {
     flex-wrap: wrap;
   }
-  .Banner-Swiper-BG .home-slider-slide{
+  .Banner-Swiper-BG .home-slider-slide {
     flex-wrap: wrap-reverse;
   }
 }
@@ -1983,25 +1983,25 @@
     margin-bottom: 5px;
     width: 70%;
   }
-  .Banner-Swiper-BG .home-slider-slide h3{
+  .Banner-Swiper-BG .home-slider-slide h3 {
     font-size: 20px !important;
   }
-  .Banner-Swiper-BG .home-slider-slide p{
+  .Banner-Swiper-BG .home-slider-slide p {
     font-size: 11px !important;
   }
-  .QualitySec-Main h4{
+  .QualitySec-Main h4 {
     font-size: 16px !important;
   }
-  .QualitySec-Main p{
+  .QualitySec-Main p {
     font-size: 11px !important;
   }
-  .Services-Flex .box{
+  .Services-Flex .box {
     padding: 10px;
   }
-  .Visits-Main h3{
+  .Visits-Main h3 {
     font-size: 22px !important;
   }
-  .Visits-Main p{
+  .Visits-Main p {
     font-size: 12px !important;
   }
 }
@@ -2932,3 +2932,69 @@
 /* =========== Reviews Section =========== */
 
 /* ================ Home ================ */
+
+/* ================ Sidebar ================ */
+
+.Sidebar-Main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f7f9;
+}
+.Sidebar-Main .icon {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  border-bottom: 1px solid #dad7cd;
+  border-right: 1px solid #dad7cd;
+}
+.Sidebar-Main .icon .tooth {
+  color: #1876ff;
+}
+.Right-Menu {
+  border-right: 1px solid #dad7cd;
+  background: white;
+  position: fixed;
+  top: 61px;
+  left: 0;
+  height: 94vh;
+  padding: 15px;
+}
+.Right-Menu .i {
+  color: grey;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.Right-Menu .i:hover {
+  color: #313131;
+}
+.Right-Menu .Right-Menu-Flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.Right-Menu .Right-Menu-Flex .flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.Upperbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  left: 56px;
+  padding: 15.5px;
+  border-bottom: 1px solid #dad7cd;
+}
+.Dashboard-Content {
+  padding: 80px;
+}
+
+/* ================ Sidebar ================ */
