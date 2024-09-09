@@ -2941,29 +2941,24 @@
   height: 100vh;
   background-color: #f6f7f9;
 }
-.Sidebar-Main .icon {
-  background: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 15px;
-  border-bottom: 1px solid #dad7cd;
-  border-right: 1px solid #dad7cd;
-}
-.Sidebar-Main .icon .tooth {
-  color: #1876ff;
-}
 .Right-Menu {
-  border-right: 1px solid #dad7cd;
-  background: white;
+  display: flex;
+  align-items: start;
+  justify-content: center;
   position: fixed;
-  top: 61px;
+  top: 0px;
   left: 0;
-  height: 94vh;
-  padding: 15px;
+  height: 100vh;
+  z-index: 0;
 }
+
 .Right-Menu .i {
   color: grey;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.i-logo {
+  color: #3fb6e0;
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
@@ -2973,9 +2968,14 @@
 .Right-Menu .Right-Menu-Flex {
   display: flex;
   align-items: center;
+  padding: 20px 15px;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  background-color: white;
+  -webkit-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
 }
 .Right-Menu .Right-Menu-Flex .flex {
   display: flex;
@@ -2989,12 +2989,138 @@
   position: fixed;
   top: 0;
   background-color: white;
-  left: 56px;
-  padding: 15.5px;
-  border-bottom: 1px solid #dad7cd;
+  left: 0px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
 }
-.Dashboard-Content {
-  padding: 80px;
+.Upperbar .Upper-Flex {
+  padding: 0px 6px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Upperbar .Upper-Flex .flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.Upperbar .Upper-Flex h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+.Upperbar .Upper-Flex h3 span {
+  font-size: 22px;
+  font-weight: 300;
+}
+.Upperbar .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .flex-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .search-bar input {
+  border: none;
+  outline: none;
+}
+.Upperbar .Upper-Flex img {
+  max-width: 40px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.Upperbar .Upper-Flex h5 {
+  font-size: 13px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+.Upperbar .Upper-Flex h6 {
+  font-size: 11px;
+  font-weight: 500;
+}
+.i-trans {
+  color: transparent;
+}
+.Appointment-Filter {
+  transform: translateX(0%);
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+  margin: 55px 0px;
+  background-color: white;
+  height: 100vh;
+  z-index: -2;
+}
+.Appointment-Filter h5 {
+  font-weight: 500;
+}
+.Appointment-Filter h4 {
+  width: 170px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.Appointment-Filter .filter-main {
+  margin-top: 15px;
+}
+.Appointment-Filter .checkbox-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.Appointment-Filter .second-section {
+  margin-top: 60px;
+}
+.Appointment-Filter .second-section .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Appointment-Filter .second-section p {
+  font-size: 13px;
+  background-color: grey;
+  font-weight: 500;
+  padding: 0px 7px;
+  border-radius: 2px;
+  color: white;
+}
+.Appointment-Filter .second-section .filter-main .patient-info img {
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+.Appointment-Filter .second-section .filter-main .patient-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 7px;
+  margin-top: 20px;
+}
+.Appointment-Filter .second-section .filter-main .patient-info h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+.Appointment-Filter .second-section .filter-main .patient-info h6 {
+  font-size: 11px;
+  font-weight: 500;
+  color: grey;
 }
 
 /* ================ Sidebar ================ */
