@@ -5,31 +5,38 @@ import GoogleSignInButton from "../components/GoogleSignInButton";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import GithubSignInButton from "../components/GithubSignInButton";
+import bcrypt from 'bcryptjs'
 import FacebookSignInButton from "../components/FacebookSignInButton";
 import toast from "react-hot-toast";
 
 const login = () => {
-  const [Username, setUsername] = useState("");
+  const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+
   const router = useRouter();
   const { data: session } = useSession();
+
   useEffect(() => {
     if (session) router.replace("/dashboard");
   }, [session, router]);
-  const myfun = async () => {
-    if (Username == "" || Password == "") {
+
+  const myfun = async (event) => {
+
+    event.preventDefault()
+
+    if (Email === "" || Password === "") {
       toast.error("Both Fields are Required");
-    } else if (Username != "" && Password != "") {
+    } else if (Email!== "" && Password !== "") {
       const res = await signIn("credentials", {
         redirect: false,
-        Username,
+        Email,
         Password,
       });
       if (res?.error) {
         toast.error("Wrong Crendentials");
         // alert("wrong credentials")
       }
-      if (res?.url) {
+      if (res?.ok) {
         toast.success("Successfully Login");
         router.replace("/dashboard");
       }
@@ -47,11 +54,11 @@ const login = () => {
           </div>
           <div>
             <h2>Log in</h2>
-            <input type="text" placeholder="Username" required/>
-            <input type="text" placeholder="Password" required/>
-            <a href="/login">
-              <button className="login-btn">Log in</button>
-            </a>
+            <input type="text" onChange={e=>setEmail(e.target.value)} placeholder="Email" required/>
+            <input type="password" onChange={e=>setPassword(e.target.value)} placeholder="Password" required/>
+            
+              <button onClick={myfun} className="login-btn">Log in</button>
+       
             <h3>Or Login With</h3>
             <div className="other-login-btn">
               <GoogleSignInButton />

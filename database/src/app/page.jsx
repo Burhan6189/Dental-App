@@ -91,10 +91,10 @@ const Page = () => {
       </div>
       <div>
         <h1>WELCOME</h1>
-        <a href="/login">
+        <a href="/Login">
           <button className="login-btn">Log in</button>
         </a>
-        <a href="/signup">
+        <a href="/Signup">
           <button className="login-btn">Sign up</button>
         </a>
       </div>
