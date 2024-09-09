@@ -36,7 +36,7 @@ export const authOptions = {
 
       credentials: {
 
-        Username: { label: "Username", type: "text", placeholder: "jsmith" },
+        Email: { label: "Email", type: "text", placeholder: "jsmith@gmail.com" },
         Password: { label: "Password", type: "password" },
 
       },
@@ -53,7 +53,7 @@ export const authOptions = {
 
         try {
 
-          const user = await snupModel.findOne({Username: credentials.Username});
+          const user = await snupModel.findOne({Email: credentials.Email});
             
           
   
@@ -98,8 +98,10 @@ export const authOptions = {
     async jwt({ token, user }) {
       // Persist the OAuth access_token and or the user id to the token right after signin
       if (user) {
-        token.Username = user.Username;
+        
         token.Email = user.Email;
+        token.FirtName = user.FirtName;
+        token.LastName = user.LastName;
         token.Role = user.Role;
       }
       console.log("this is token", token);
@@ -109,9 +111,9 @@ export const authOptions = {
     async session({ session, token}) {
       // Send properties to the client, like an access_token and user id from a provider.
       if(token){
-
-        session.user.Username = token.Username;
         session.user.Email = token.Email;
+        session.user.FirtName = token.FirtName;
+        session.user.LastName = token.LastName;
         session.user.Role = token.Role;
 
       }
