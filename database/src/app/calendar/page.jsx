@@ -13,12 +13,23 @@ const Calendar = () => {
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={"dayGridMonth"}
+        past
         headerToolbar={{
           start: "today prev,next", // will normally be on the left. if RTL, will be on the right
           center: "title",
           end: "dayGridMonth, timeGridWeek, timeGridDay", // will normally be on the right. if RTL, will be on the left
         }}
         height={"95vh"}
+        dayCellClassNames={(arg) => {
+          if (arg.date < new Date()) {
+            console.log("hdafef", arg.date)
+            return ['disabled-date'];
+
+          }
+          else{
+          return [];
+        }
+        }}
       />
     </>
   );

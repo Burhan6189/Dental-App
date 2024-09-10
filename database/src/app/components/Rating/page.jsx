@@ -102,7 +102,7 @@ function RatingReview() {
       <div className='review'>
       <div className='review-user'>
         <div className='review-image'>
-        <img src="" alt="" />
+        <img src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1723910025/Burakia/Collections/ejspx1zm6ywd8fnah2vy.jpg" alt="" />
         </div>
         <div className="review-content">
         <h6>Robert Karmazov</h6>
