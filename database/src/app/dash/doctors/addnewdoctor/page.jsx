@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import NewDoctorDetails from "@/app/components/Dash/Doctors/NewDoctorDetails";
 import Sidebar from "@/app/components/Dash/Doctors/Sidebar";
 import React from "react";
 
@@ -7,7 +8,7 @@ const addnewdoctor = () => {
     <>
       <Sidebar />
       <div className="dash-items-main">
-        <div>addnewdoctor</div>
+        <NewDoctorDetails />
       </div>
     </>
   );
