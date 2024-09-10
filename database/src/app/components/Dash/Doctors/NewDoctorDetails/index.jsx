@@ -8,7 +8,7 @@ const NewDoctorDetails = () => {
         <div className="Add-Doctor-flex">
           <div className="img-flex">
             <img
-              src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725977779/Dental/xgaxqrodvhinonj8teyy.jpg"
               alt=""
             />
             <button>
