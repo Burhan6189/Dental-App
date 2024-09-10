@@ -1930,10 +1930,19 @@
   .Banner-Swiper-BG .home-slider-slide {
     flex-wrap: wrap-reverse;
   }
+  .Upperbar .Upper-Flex .upper-flex {
+    display: none !important;
+  }
+  .Upperbar .search-bar {
+    display: none !important;
+  }
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
-    display: none;
+    display: none !important;
+  }
+  .mob-menu {
+    display: none !important;
   }
 }
 
@@ -3008,6 +3017,11 @@
   align-items: center;
   gap: 50px;
 }
+.Upperbar .Upper-Flex .upper-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
 .Upperbar .Upper-Flex h3 {
   font-size: 22px;
   font-weight: 500;
@@ -3156,6 +3170,25 @@
 .filter-hide {
   transform: translateX(-150%);
   opacity: 0;
+}
+.dash-mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+.dash-mobile-menu img {
+  max-width: 40px;
+  width: 100%;
+  border-radius: 50%;
+}
+.dash-mobile-menu h5 {
+  font-size: 11px;
+  line-height: 1;
+}
+.dash-mobile-menu h6 {
+  font-size: 10px;
+  font-weight: 400;
 }
 
 /* ================ Sidebar ================ */

@@ -14,6 +14,7 @@ import { IoIosSearch } from "react-icons/io";
 import { BsBell } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { LiaFilterSolid } from "react-icons/lia";
+import { IoIosMenu } from "react-icons/io";
 /* ======== Icons ======== */
 
 const Sidebar = () => {
@@ -174,6 +175,18 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
+        <div className="dash-mobile-menu">
+          <div className="flex-2">
+            <img
+              src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+              alt=""
+            />
+            <div>
+              <h5>Burhan Ahmad</h5>
+              <h6>Senior Dentist</h6>
+            </div>
+          </div>
+        </div>
         <div className="Upperbar">
           <div className="Upper-Flex">
             <div className="flex">
@@ -186,7 +199,10 @@ const Sidebar = () => {
                 <input type="text" placeholder="Search Appointment" />
               </div>
             </div>
-            <div className="flex">
+            <div className="mob-menu">
+              <IoIosMenu size={26} />
+            </div>
+            <div className="upper-flex">
               <div>
                 <BsBell size={22} />
               </div>
