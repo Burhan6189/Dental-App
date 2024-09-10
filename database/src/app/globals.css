@@ -3221,6 +3221,10 @@
 }
 .Add-Doctor-Details .Add-Doctor-flex img {
   max-width: 416px;
+  max-height: 416px;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   width: 100%;
   border-radius: 5px;
   object-fit: cover;
