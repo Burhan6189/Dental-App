@@ -2963,7 +2963,7 @@
   transition: 0.5s ease-in-out;
 }
 .Right-Menu .i:hover {
-  color: #313131;
+  color: #3fb6e0;
 }
 .Right-Menu .Right-Menu-Flex {
   display: flex;
@@ -3096,7 +3096,7 @@
 }
 .Appointment-Filter .second-section p {
   font-size: 13px;
-  background-color: grey;
+  background-color: #3fb6e0;
   font-weight: 500;
   padding: 0px 7px;
   border-radius: 2px;
