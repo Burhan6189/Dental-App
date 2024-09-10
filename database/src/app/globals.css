@@ -2973,9 +2973,9 @@
   height: 100%;
   justify-content: space-between;
   background-color: white;
-  -webkit-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
-  -moz-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
-  box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
 }
 .Right-Menu .Right-Menu-Flex .flex {
   display: flex;
@@ -3057,14 +3057,15 @@
   color: transparent;
 }
 .Appointment-Filter {
+  position: relative;
   transform: translateX(0%);
   max-width: 700px;
   width: 100%;
-  padding: 30px;
   margin: 55px 0px;
   background-color: white;
   height: 100vh;
   z-index: -2;
+  transition: 0.5s ease-in-out;
 }
 .Appointment-Filter h5 {
   font-weight: 500;
@@ -3085,7 +3086,8 @@
   margin-bottom: 10px;
 }
 .Appointment-Filter .second-section {
-  margin-top: 60px;
+  margin-top: 30px;
+  padding: 5px 30px;
 }
 .Appointment-Filter .second-section .flex {
   display: flex;
@@ -3121,6 +3123,35 @@
   font-size: 11px;
   font-weight: 500;
   color: grey;
+}
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+  background: #3fb6e0;
+  color: white;
+  /* width: 50%; */
+  margin-top: 7px;
+}
+.filter-show-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  padding: 10px;
+  background: #3fb6e0;
+  color: white;
+  /* width: 50%; */
+  margin-top: 7px;
+  z-index: -2;
+}
+.filter-hide {
+  transform: translateX(-150%);
 }
 
 /* ================ Sidebar ================ */

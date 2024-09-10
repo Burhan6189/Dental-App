@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 /* ======== Icons ======== */
 import { FaTooth } from "react-icons/fa";
@@ -12,10 +12,22 @@ import { RxCube } from "react-icons/rx";
 import { FiCreditCard } from "react-icons/fi";
 import { IoIosSearch } from "react-icons/io";
 import { BsBell } from "react-icons/bs";
-import { IoIosArrowForward } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
+import { LiaFilterSolid } from "react-icons/lia";
 /* ======== Icons ======== */
 
 const Sidebar = () => {
+  const apointfilters = useRef(null);
+  const FiltersHide = () => {
+    if (apointfilters.current) {
+      apointfilters.current.classList.add("filter-hide");
+    }
+  };
+  const FiltersShow = () => {
+    if (apointfilters.current) {
+      apointfilters.current.classList.remove("filter-hide");
+    }
+  };
   return (
     <>
       <div className="Sidebar-Main">
@@ -35,8 +47,14 @@ const Sidebar = () => {
               <IoSettingsOutline className="i" size={25} />
             </div>
           </div>
-          <div className="Appointment-Filter">
-            <div>
+          <div onClick={FiltersShow} className="filter-show-btn">
+            <LiaFilterSolid size={17} />
+          </div>
+          <div ref={apointfilters} className="Appointment-Filter">
+            <div onClick={FiltersHide} className="filter-btn">
+              <RxCross2 size={17} />
+            </div>
+            <div className="second-section">
               <h5>AVAILABLE DOCTOR</h5>
               <div className="filter-main">
                 <div className="checkbox-flex">
