@@ -36,12 +36,24 @@ const Sidebar = () => {
           <div className="Right-Menu-Flex">
             <div className="flex">
               <BiCategory className="i-trans" size={25} />
-              <BiCategory className="i" size={25} />
-              <FiClipboard className="i" size={25} />
-              <GoPerson className="i" size={25} />
-              <IoCalendarClearOutline className="i" size={25} />
-              <RxCube className="i" size={25} />
-              <FiCreditCard className="i" size={25} />
+              <a href="/dash">
+                <BiCategory className="i" size={25} />
+              </a>
+              <a href="/dash">
+                <FiClipboard className="i" size={25} />
+              </a>
+              <a href="/dash/doctors">
+                <GoPerson className="i" size={25} />
+              </a>
+              <a href="/dash">
+                <IoCalendarClearOutline className="i" size={25} />
+              </a>
+              <a href="/dash">
+                <RxCube className="i" size={25} />
+              </a>
+              <a href="/dash">
+                <FiCreditCard className="i" size={25} />
+              </a>
             </div>
             <div className="flex">
               <BsQuestionCircle className="i" size={25} />
