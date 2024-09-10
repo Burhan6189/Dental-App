@@ -29,7 +29,6 @@ const NewDoctorDetails = () => {
               uploadPreset="Dentist-profile"
               onSuccess={(result) => setImage(result.info.secure_url)}
             >
-              Upload Image
               <ImFilePicture size={20} />
             </CldUploadButton>
           </div>
