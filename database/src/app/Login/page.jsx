@@ -1,108 +1,81 @@
-
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { setCookie } from "cookies-next";
 import GoogleSignInButton from "../components/GoogleSignInButton";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import GithubSignInButton from "../components/GithubSignInButton";
+import bcrypt from 'bcryptjs'
 import FacebookSignInButton from "../components/FacebookSignInButton";
 import toast from "react-hot-toast";
 
-
-const Login = () => {
-
-  const [Username, setUsername] = useState("");
+const login = () => {
+  const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-
 
   const router = useRouter();
   const { data: session } = useSession();
 
   useEffect(() => {
-    if (session)
-      router.replace("/dashboard");
-  }, [session, router])
+    if (session) router.replace("/dashboard");
+  }, [session, router]);
 
+  const myfun = async (event) => {
 
+    event.preventDefault()
 
-  const myfun = async () => {
-
-
-    if (Username == "" || Password == "") {
-
+    if (Email === "" || Password === "") {
       toast.error("Both Fields are Required");
-    }
-
-    else if (Username != "" && Password != "") {
-
-      const res = await signIn('credentials', {
+    } else if (Email!== "" && Password !== "") {
+      const res = await signIn("credentials", {
         redirect: false,
-        Username,
-        Password
+        Email,
+        Password,
       });
-
       if (res?.error) {
-
         toast.error("Wrong Crendentials");
         // alert("wrong credentials")
       }
-      if (res?.url) {
-        toast.success("Successfully Login")
-        router.replace("/dashboard")
+      if (res?.ok) {
+        toast.success("Successfully Login");
+        router.replace("/dashboard");
       }
-
     }
-
-  }
-
-
+  };
   if (!session)
     return (
-      <div>
-
-        <div className='Login-Page-BG'>
-
-          <div className='Logo' >
-
-            <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
+      <>
+        <div className="Home">
+          <div className="L-Header">
+            <img
+              src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724328624/Dental/br89tje5rehfzf7lnrhz.png"
+              alt="dentario"
+            />
           </div>
-          <div className='Login-Page-Input-1'>
-            <input type="text" value={Username} onChange={(e) => { setUsername(e.target.value) }} name='name' id='name' className='input-field' placeholder='Username' autoComplete='off' />
-            <label for='name' className='input-label'>Username</label>
+          <div>
+            <h2>Log in</h2>
+            <input type="text" onChange={e=>setEmail(e.target.value)} placeholder="Email" required/>
+            <input type="password" onChange={e=>setPassword(e.target.value)} placeholder="Password" required/>
+            
+              <button onClick={myfun} className="login-btn">Log in</button>
+       
+            <h3>Or Login With</h3>
+            <div className="other-login-btn">
+              <GoogleSignInButton />
+              <FacebookSignInButton />
+            </div>
           </div>
-          <div className='Login-Page-Input-2'>
-            <input type="password" value={Password} onChange={(e) => { setPassword(e.target.value) }} name='password' id='password' className='input-field' placeholder='Paswword' autoComplete='off' />
-            <label for='password' className='input-label'>Password</label>
-          </div>
-          <div className="Login-Button">
-
-            <button onClick={myfun}>
-              Login
-            </button>
-          </div>
-          <h3>or Login with </h3>
-          <div className="Login-Buttons">
-
-            <div className="Login-Buttons-Google"><GoogleSignInButton /></div>
-            <div className="Login-Buttons-Github"><GithubSignInButton /></div>
-            <div className="Login-Buttons-Github"><FacebookSignInButton /></div>
-
-          </div>
-
-          <div className="Login-Page-Texts">
+          <div className="content">
             <p>
-              Limited Time Offer. Get Scaling & Polishing By Hygienist for Just
-              £75. Incl. Book Now. Book Online Your Consultation Now Or Call Us
-              Now. Friendly Dental Team
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
+              veritatis exercitationem tempora voluptas delectus et, dolores
+              distinctio
             </p>
-            <h3>www.confidentdp.com</h3>
+            <h3>www.dentario.com</h3>
           </div>
-
         </div>
-
-      </div>
+      </>
     );
 };
 
-export default Login;
+export default login;

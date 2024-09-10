@@ -4,6 +4,16 @@ import mongoose from "mongoose"
 import { NextResponse } from "next/server";
 
 
+export const GET = async (request, content) => {
+
+    await mongoose.connect(DBcon);
+    const myid = content.params.appointid;
+    const filter = { _id: myid };
+    const updatedata = await AppointModel.findOne(filter);
+
+    return NextResponse.json(updatedata);
+
+}
 
 export const PUT = async (request, content) => {
 

@@ -16,7 +16,7 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@mui/material": "^5.16.7",
-    "@mui/x-date-pickers": "^7.14.0",
+    "@mui/x-date-pickers": "^7.15.0",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@types/custom-functions-runtime": "^1.6.8",
     "bcrypt": "^5.1.1",
@@ -26,6 +26,8 @@
     "custom-function": "^1.0.6",
     "custom-functions-metadata": "^1.5.3",
     "dayjs": "^1.11.13",
+    "firebase": "^10.13.1",
+    "firebase-admin": "^12.4.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.16.8",
     "fullcalendar": "^6.1.15",
@@ -46,6 +48,7 @@
     "react-rating-stars-component": "^2.2.0",
     "reactjs": "^1.0.0",
     "reactjs-popup": "^2.0.6",
-    "swiper": "^11.1.10"
+    "swiper": "^11.1.12",
+    "web-push": "^3.6.7"
   }
 }

@@ -6,6 +6,52 @@
   font-family: "Poppins", sans-serif;
 }
 
+.Loader {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 100%;
+  z-index: 9999;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderani 5s;
+  opacity: 0;
+}
+
+@keyframes loaderani {
+  0% {
+    opacity: 1;
+    top: 0%;
+  }
+  10% {
+    opacity: 1;
+    top: 0%;
+  }
+  20% {
+    opacity: 1;
+    top: 0%;
+  }
+  30% {
+    opacity: 1;
+    top: 0%;
+  }
+  40% {
+    opacity: 1;
+    top: 0%;
+  }
+  90% {
+    opacity: 0;
+    top: 100%;
+  }
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}
+
 /*====================== Start Nav ==========================*/
 
 .Header .Header-Flex {
@@ -88,462 +134,104 @@
 
 /*====================== End Nav ==========================*/
 
-/*================== Start Login Signup =========================*/
+/* ============= Home ============= */
 
-.Login-Signup-Page-BG {
-  background-image: url("/img/Login-Signup-BG1.jpg");
-  background-position: center;
+.Home {
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725353549/Dental/r3kqvkhfgyx0wtuk6vij.jpg");
   background-size: cover;
-  text-align: center;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  background-position: center;
   background-repeat: no-repeat;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
   height: 100vh;
 }
-
-.Login-Signup-Page-BG .Logo {
-  padding: 250px 15px 70px 15px;
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
-}
-
-.Login-Signup-Page-BG .Logo img {
+.Home .L-Header {
   width: 100%;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button {
-  max-width: 500px;
-  padding: 10px;
-  margin: auto;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button button a {
-  width: 100%;
-  margin-top: 10px;
   background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 50px;
-  padding: 7px;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
+  padding: 20px 0px 15px 0px;
+  -webkit-box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 35px 30px -29px rgba(0, 0, 0, 0.1);
 }
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button button {
-  border: none;
+.Home .content {
   display: flex;
-  width: 100%;
-  background: none;
-}
-
-.Login-Signup-Page-Texts {
-  margin-top: 100px;
-}
-
-.Login-Signup-Page-Texts p {
-  margin: auto;
-  max-width: 750px;
-  padding: 10px;
-  line-height: 1.5;
-}
-
-.Login-Signup-Page-Texts h3 {
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-top: 10px;
-}
-
-.Login-Signup-Page-Button h3 {
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-/*================== End Login Signup =========================*/
-
-/*================== Start Login =========================*/
-
-.Login-Page-BG {
-  background-image: url("/img/Login-Signup-BG1.jpg");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  overflow-y: auto;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-.Login-Page-BG h3 {
-  font-weight: 500;
-  font-size: 17px;
-  margin-top: 10px;
-}
-.Login-Page-BG .Logo {
-  padding: 250px 15px 70px 15px;
-  padding-bottom: 70px;
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
-}
-
-.Login-Page-BG .Logo img {
-  width: 100%;
-}
-
-.Login-Page-Input-1 {
-  max-width: 400px;
-  margin: auto;
   align-items: center;
-  /* text-align: center; */
-  padding: 10px;
-  min-height: 80px;
-  justify-content: center;
-  position: relative;
-  display: flex;
-}
-
-.Login-Page-Input-2 {
-  max-width: 400px;
-  padding: 10px;
-  margin: auto;
-  align-items: center;
-  min-height: 80px;
-  justify-content: center;
-  position: relative;
-  display: flex;
-}
-
-.Login-Page-BG button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  outline: none;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  padding: 7px;
-  font-weight: 500;
-}
-
-.Login-Page-BG button a {
-  text-decoration: none;
-  color: black;
-}
-
-.field-group {
-  width: 600px;
-  position: relative;
-  padding-top: 15px;
-}
-
-.input-field {
-  width: 100%;
-  outline: 0;
-  text-align: center;
-  border: 0;
-  border-bottom: 2px solid #999999;
-  padding: 10px 0;
-  background: transparent;
-  font-size: 20px;
-  color: #000;
-  transition: 0.3s ease;
-}
-
-.input-label {
-  display: block;
-  position: absolute;
-  top: 0;
-  font-size: 1em;
-  color: #333333;
-  /* text-transform: uppercase; */
-  transition: 0.3s ease;
-}
-
-.input-field::placeholder {
-  color: transparent;
-}
-
-.input-field:placeholder-shown ~ .input-label {
-  font-size: 20px;
-  top: 30px;
-}
-
-.input-field:focus {
-  border-image: linear-gradient(to right, #637a73, #637a73);
-  border-image-slice: 1;
-}
-
-.input-field:focus ~ .input-label {
-  display: block;
-  position: absolute;
-  top: 0;
-  font-size: 1em;
-  color: #637a73;
-}
-
-.Login-Page-Texts {
-  margin-top: 100px;
-}
-
-.Login-Page-Texts p {
-  margin: auto;
-  max-width: 750px;
-  padding: 10px;
-  line-height: 1.5;
-}
-
-.Login-Page-Texts h3 {
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-top: 10px;
-}
-
-.Login-Page-Button h3 {
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-.Login-Page-BG .Login-Button {
-  max-width: 350px;
-  text-align: center;
-  padding: 10px;
-  margin: auto;
-}
-
-.Login-Page-BG .Login-Button a {
-  text-decoration: none;
-  color: #000;
-}
-.Login-Page-BG .Login-Buttons-Google button {
-  display: flex;
-  padding: 8px;
-  margin-top: 10px;
-  background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  outline: none;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  font-weight: 500;
-}
-.Login-Page-BG .Login-Buttons-Github button {
-  display: flex;
-  padding: 8px;
-  margin-top: 10px;
-  background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  justify-content: center;
-  outline: none;
-  align-items: center;
-  gap: 11px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  font-weight: 500;
-}
-.login-buttons img {
-  width: 50px;
-  border-radius: 50px;
-}
-.Login-Buttons {
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 15px;
-  align-items: center;
-}
-
-/*================== End Login =========================*/
-
-/*================== Start Signup =========================*/
-
-.Signup-Page-BG {
-  background-image: url("/img/Login-Signup-BG1.jpg");
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  overflow-y: auto;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-.Signup-Page-BG .Logo {
-  padding: 250px 15px 70px 15px;
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
-}
-
-.Signup-Page-BG .Logo img {
+  justify-content: center;
+  max-width: 800px;
   width: 100%;
+  padding-bottom: 20px;
 }
-
-.Signup-Page-Input-1 {
-  max-width: 400px;
-  margin: auto;
-  align-items: center;
-  min-height: 70px;
-  justify-content: center;
-  position: relative;
-  padding: 0 15px;
-  display: flex;
+.Home h1 {
+  letter-spacing: 20px;
+  font-size: 70px;
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: 20px;
 }
-
-.Signup-Page-Input-2 {
-  max-width: 400px;
-  margin: auto;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  min-height: 70px;
-  justify-content: center;
-  position: relative;
-  display: flex;
-  padding: 0 15px;
+.Home h2 {
+  letter-spacing: 5px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: 20px;
 }
-
-.Signup-Page-Input-3 {
-  max-width: 400px;
-  margin: auto;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  min-height: 70px;
-  justify-content: center;
-  position: relative;
-  padding: 0 15px;
-  display: flex;
+.Home h3 {
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #313131;
 }
-
-.Signup-Page-BG button {
-  width: 100%;
-  margin-top: 10px;
+.Home a {
+  text-decoration: none;
+}
+.Home input {
+  width: 85%;
+  padding: 10px;
   outline: none;
-  background-color: white;
-  border: #dcdcdc 1px solid;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  background: white;
+  border: 1px solid #ddf1fa;
+  border-radius: 5px;
+  margin: 5px;
+  transition: 0.5s ease-in-out;
+}
+.Home input:focus {
+  border: 1px solid #3fb6e0;
+}
+.Home .login-btn {
   cursor: pointer;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  padding: 7px;
-  font-weight: 500;
-}
-.Signup-Page-BG select {
-  width: 370px;
+  text-decoration: none;
+  color: #313131;
+  border-radius: 10px;
   outline: none;
-  background: transparent;
-  border: 0;
-  font-size: 18px;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 2px solid #999999;
+  padding: 5px 30px;
+  margin: 10px;
+  background-color: #ddf1fa;
+  border: 1px solid #9fe1ff;
 }
-.Signup-Page-BG button a {
-  text-decoration: none;
-  color: black;
+.Home .other-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0px;
 }
-
-.field-group {
-  max-width: 600px;
-  position: relative;
-  padding-top: 15px;
+.Home .other-login-btn img {
+  width: 40px;
+  border-radius: 50px;
 }
-
-.input-field {
-  width: 100%;
-  outline: 0;
-  text-align: center;
-  border: 0;
-  border-bottom: 2px solid #999999;
-  padding: 10px 0;
-  background: transparent;
-  font-size: 20px;
-  color: #000;
-  transition: 0.3s ease;
+.Home .other-login-btn button {
+  background-color: white;
+  border: 0px;
 }
 
-.input-label {
-  display: block;
-  position: absolute;
-  top: 0;
-  font-size: 1em;
-  color: #333333;
-  /* text-transform: uppercase; */
-  transition: 0.3s ease;
-}
-
-.input-field::placeholder {
-  color: transparent;
-}
-
-.input-field:placeholder-shown ~ .input-label {
-  font-size: 20px;
-  top: 25px;
-}
-
-.input-field:focus {
-  border-image: linear-gradient(to right, #637a73, #637a73);
-  border-image-slice: 1;
-}
-
-.input-field:focus ~ .input-label {
-  display: block;
-  position: absolute;
-  top: 0;
-  font-size: 1em;
-  color: #637a73;
-}
-
-.Signup-Page-Texts {
-  margin-top: 100px;
-  padding: 0 15px;
-}
-
-.Signup-Page-Texts p {
-  margin: auto;
-  max-width: 750px;
-  line-height: 1.5;
-}
-
-.Signup-Page-Texts h3 {
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-top: 10px;
-}
-
-.Signup-Page-Button h3 {
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-
-.Signup-Page-BG .Signup-Button {
-  max-width: 350px;
-  text-align: center;
-  padding: 10px;
-  margin: auto;
-}
-
-.Signup-Page-BG .Signup-Button a {
-  text-decoration: none;
-  color: #000;
-}
-
-/*================== End Signup =========================*/
+/* ============= Home ============= */
 
 /*================== Start Patient Details ===============*/
 
@@ -2136,6 +1824,9 @@
 }
 .Meet-Our-Team-Slider {
   padding: 50px;
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
 }
 .Meet-Our-Team-Slider .team-slide {
   display: flex;
@@ -2208,23 +1899,50 @@
   .top-container {
     margin-top: 60px !important;
   }
-  .Doctor-Info-Selection-Main h5{
+  .Doctor-Info-Selection-Main h5 {
     font-size: 12px !important;
   }
-  .Doctor-Info-Selection-Main h3{
+  .Doctor-Info-Selection-Main h3 {
     font-size: 18px !important;
   }
-  .Doctor-Info-Selection-Main img{
+  .Doctor-Info-Selection-Main img {
     max-width: 63px !important;
     width: 100%;
   }
-  .Doctors-Info-Main{
+  .Doctors-Info-Main {
     gap: 30px !important;
+  }
+  .QualitySec-Main .box-1 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .QualitySec-Main .box-2 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .QualitySec-Main .box-3 {
+    padding: 50px 20px !important;
+    max-width: 100% !important;
+  }
+  .Mini-About-Main .Mini-About-Flex {
+    flex-wrap: wrap;
+  }
+  .Banner-Swiper-BG .home-slider-slide {
+    flex-wrap: wrap-reverse;
+  }
+  .Upperbar .Upper-Flex .upper-flex {
+    display: none !important;
+  }
+  .Upperbar .search-bar {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
-    display: none;
+    display: none !important;
+  }
+  .mob-menu {
+    display: none !important;
   }
 }
 
@@ -2261,13 +1979,46 @@
     padding: 20px 15px !important;
     gap: 15px !important;
   }
+  .Home h1 {
+    letter-spacing: 9px;
+    font-size: 30px;
+  }
+  .Home a {
+    padding: 5px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 70%;
+  }
+  .Banner-Swiper-BG .home-slider-slide h3 {
+    font-size: 20px !important;
+  }
+  .Banner-Swiper-BG .home-slider-slide p {
+    font-size: 11px !important;
+  }
+  .QualitySec-Main h4 {
+    font-size: 16px !important;
+  }
+  .QualitySec-Main p {
+    font-size: 11px !important;
+  }
+  .Services-Flex .box {
+    padding: 10px;
+  }
+  .Visits-Main h3 {
+    font-size: 22px !important;
+  }
+  .Visits-Main p {
+    font-size: 12px !important;
+  }
 }
 
 /* ============= Header ============= */
 
 .Header-Main {
   width: 100%;
-  position: relative;
   background: #fff;
 }
 .Header-Main a {
@@ -2313,6 +2064,9 @@
   text-align: left;
 }
 .Header-Links {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
   display: flex;
   border-top: 1px solid #e9e9e9;
   padding: 15px 0px;
@@ -2331,16 +2085,24 @@
   transition: 0.2s ease-in-out;
   color: black;
 }
+.Header-Links a {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+  color: black;
+  text-decoration: none;
+}
 .Header-Links h3:hover {
   color: #3fb6e0;
 }
-.Fixed-Header {
+/* .Fixed-Header {
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
   right: 0;
-}
+} */
 
 .tab-menu {
   position: fixed;
@@ -2589,7 +2351,6 @@
   font-size: 14px;
   font-weight: 400;
   padding: 10px 0;
-
 }
 .doctor-bar-content {
   width: 30%;
@@ -2753,38 +2514,79 @@
 
 /* ====== Doctor Selection Doctor Info  ====== */
 
-/* ============== Appoinment ============== */
+/* =============== Calendar =============== */
 
+.Calendar-Section-Main {
+  padding: 50px 0px;
+}
+.Calendar-Section-Main h2 {
+  padding: 10px 0px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.continue-btn {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4abae2;
+  color: white;
+  width: 20%;
+}
+
+/* =============== Calendar =============== */
+
+/* =============== Time =============== */
+
+.Time-Pick-Main {
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.Time-Pick-Main .time {
+  margin: 100px 0px;
+}
+
+/* =============== Time =============== */
+
+/* ============== Appoinment ============== */
 
 /* ============== Rating and reviews ============== */
 
-.rating-main{
-padding: 50px 0;
-display: flex;
-justify-content: center;
-margin: auto;
-width: 100%;
-/* border: 1px solid black; */
-max-width: 1200px;
+.rating-main {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  /* border: 1px solid black; */
+  max-width: 1200px;
 }
-.single-rating{
+.single-rating {
   width: 45%;
 }
 
-.showsame{
-  
+.showsame {
   padding: 10px 0;
-  text-align:center;
+  text-align: center;
   /* border: 1px solid black; */
   display: flex;
   align-items: center;
-  justify-content:space-between  ;
+  justify-content: space-between;
   width: 100%;
   max-width: 450px;
 }
-.all-rating{
+.all-rating {
   width: 45%;
-  background-color: #FFFBEB;
+  background-color: #fffbeb;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -2792,45 +2594,602 @@ max-width: 1200px;
   justify-content: center;
   gap: 10px;
 }
-.rating-number{
+.rating-number {
   width: 15px;
   /* border: 1px solid black; */
 }
-.sars{
-color: #FBBF24;
-font-size: 30px;
+.sars {
+  color: #fbbf24;
+  font-size: 30px;
 }
-.all-rating-text{
-  font-size:40px;
-  font-weight: 500 ;
-  color:#FBBF24 ;
+.all-rating-text {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fbbf24;
 }
-.review-main{
+.review-main {
   padding: 50px 0;
-width: 100%;
-margin: auto;
-text-align: center;
-/* border: 1px solid black; */
-max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* border: 1px solid black; */
+  max-width: 1200px;
 }
-.review{
+.review {
   border: 1px solid black;
   height: 40vh;
 }
-.review-user{
+.review-user {
   display: flex;
 }
-.review-image img{
-  max-width: 200px; 
-  width: 100%;
-  clip-path: circle(50% at 50% 50%);
+.review-image {
+  width: 200px;
+}
 
+/* ================ Home ================ */
+
+/* =========== Banner =========== */
+
+.Banner-Swiper-BG {
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725444182/Dental/wr7b5oycuibsegf5bpta.jpg");
+  /* height: 60vh; */
+  padding: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 40px 0px 0px 0px;
 }
-.disabled-date {
-  pointer-events: none; /* Disable click */
-  opacity: 0.5;         /* Visually indicate that the date is disabled */
-  background-color: #f0f0f0; /* Optional: Change the background color */
+.Banner-Swiper-BG .home-slider-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap-reverse; */
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  margin: 0px !important;
 }
-.review-content{
-  max-width: 800px;
+.Banner-Swiper-BG .home-slider-slide .content {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
+.Banner-Swiper-BG .home-slider-slide h3 {
+  line-height: 1.2;
+  font-size: 35px;
+  font-weight: 300;
+  max-width: 550px;
+  width: 100%;
+}
+.Banner-Swiper-BG .home-slider-slide p {
+  max-width: 700px;
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+}
+.Banner-Swiper-BG .home-slider-slide img {
+  max-width: 750px;
+  width: 100%;
+  border-radius: 10px;
+}
+.Banner-Swiper-BG .home-slider-slide button {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background: #a5c422;
+  transition: 0.3s ease-in-out;
+}
+.Banner-Swiper-BG .home-slider-slide button:hover {
+  background: #77cbe9;
+  transform: scale(1.05);
+}
+
+/* =========== Banner =========== */
+
+/* =========== Quality Section =========== */
+
+.QualitySec-Main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: left;
+  flex-wrap: wrap;
+  color: white;
+}
+.QualitySec-Main img {
+  max-width: 60px;
+  width: 100%;
+}
+.QualitySec-Main p {
+  font-weight: 300;
+  font-size: 13px;
+  max-width: 450px;
+  width: 100%;
+}
+.QualitySec-Main h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.QualitySec-Main .box-1 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #3fb6e0;
+}
+.QualitySec-Main .box-2 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #a7c526;
+}
+.QualitySec-Main .box-3 {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  max-width: 33.33%;
+  width: 100%;
+  padding: 70px 20px;
+  background-color: #333f48;
+}
+
+/* =========== Quality Section =========== */
+
+/* =========== Mini About Section =========== */
+
+.Mini-About-Main .Mini-About-Hd {
+  width: 100%;
+  text-align: center;
+  padding: 50px 10px;
+}
+.Mini-About-Main .Mini-About-Flex {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+.Mini-About-Main .Mini-About-Flex img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+.Mini-About-Main .Mini-About-Flex .icon {
+  max-width: 35px;
+  width: 100%;
+  border-radius: 10px;
+}
+.Mini-About-Main .inner-flex {
+  display: flex;
+  margin-top: 14px;
+  align-items: center;
+  gap: 10px;
+}
+.Mini-About-Main .Mini-About-Hd h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.Mini-About-Main p {
+  font-size: 13px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  font-weight: 400;
+}
+.Mini-About-Main button {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background: #a5c422;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+.Mini-About-Main button:hover {
+  background: #77cbe9;
+  transform: scale(1.05);
+}
+
+/* =========== Mini About Section =========== */
+
+/* =========== Services Section =========== */
+
+.Services-Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  margin-top: 40px;
+}
+.Services-Header p {
+  font-size: 13px;
+  font-weight: 400;
+}
+.Services-Header h2 {
+  font-size: 30px;
+  font-weight: 500;
+}
+.Services-Flex {
+  flex-wrap: wrap;
+  padding: 40px 0px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-evenly;
+}
+.Services-Flex img {
+  max-width: 70px;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 50%;
+  width: 100%;
+}
+.Services-Flex .box {
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+}
+.Services-Flex .box h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.Services-Flex .box p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* =========== Services Section =========== */
+
+/* =========== Visits Section =========== */
+
+.Visits-Main {
+  background-image: url("https://res.cloudinary.com/dgtk4rthy/image/upload/v1725444182/Dental/wr7b5oycuibsegf5bpta.jpg");
+  padding: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 30px 0px 0px 0px;
+}
+.Visits-Main .flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Visits-Main .flex .i {
+  color: #a5c422;
+}
+.Visits-Main h3 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  max-width: 480px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.Visits-Main p {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0px;
+}
+.Visits-Main button {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background: #a5c422;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+.Visits-Main button:hover {
+  background: #77cbe9;
+  transform: scale(1.05);
+}
+
+/* =========== Visits Section =========== */
+
+/* =========== Reviews Section =========== */
+
+.Reviews-Slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+  margin: 80px 0px;
+}
+.Reviews-Slider .review-slide img {
+  max-width: 55px;
+  border-radius: 50%;
+  width: 100%;
+}
+.Reviews-Slider .review-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+}
+.Reviews-Slider .review-slide .content {
+  margin: auto;
+  max-width: 1000px;
+}
+.Reviews-Slider .review-slide .content p span {
+  font-size: 40px;
+}
+
+/* =========== Reviews Section =========== */
+
+/* ================ Home ================ */
+
+/* ================ Sidebar ================ */
+
+.Sidebar-Main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f7f9;
+}
+.Right-Menu {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+.Right-Menu .i {
+  color: grey;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.i-logo {
+  color: #3fb6e0;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.Right-Menu .i:hover {
+  color: #3fb6e0;
+}
+.Right-Menu .Right-Menu-Flex {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  background-color: white;
+  -webkit-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 11px 0px 25px 0px rgba(0, 0, 0, 0.03);
+}
+.Right-Menu .Right-Menu-Flex .flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.Upperbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  left: 0px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.04);
+}
+.Upperbar .Upper-Flex {
+  padding: 0px 6px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Upperbar .Upper-Flex .flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.Upperbar .Upper-Flex .upper-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.Upperbar .Upper-Flex h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+.Upperbar .Upper-Flex h3 span {
+  font-size: 22px;
+  font-weight: 300;
+}
+.Upperbar .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .flex-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.Upperbar .search-bar input {
+  border: none;
+  outline: none;
+}
+.Upperbar .Upper-Flex img {
+  max-width: 40px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.Upperbar .Upper-Flex h5 {
+  font-size: 13px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+.Upperbar .Upper-Flex h6 {
+  font-size: 11px;
+  font-weight: 500;
+}
+.i-trans {
+  color: transparent;
+}
+.Appointment-Filter {
+  position: relative;
+  transform: translateX(0%);
+  max-width: 700px;
+  width: 100%;
+  margin: 55px 0px;
+  background-color: white;
+  height: 100vh;
+  z-index: -2;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+.Appointment-Filter h5 {
+  font-weight: 500;
+}
+.Appointment-Filter h4 {
+  width: 170px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.Appointment-Filter .filter-main {
+  margin-top: 15px;
+}
+.Appointment-Filter .checkbox-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.Appointment-Filter .second-section {
+  margin-top: 30px;
+  padding: 5px 30px;
+}
+.Appointment-Filter .second-section .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Appointment-Filter .second-section p {
+  font-size: 13px;
+  background-color: #3fb6e0;
+  font-weight: 500;
+  padding: 0px 7px;
+  border-radius: 2px;
+  color: white;
+}
+.Appointment-Filter .second-section .filter-main .patient-info img {
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+.Appointment-Filter .second-section .filter-main .patient-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 7px;
+  margin-top: 20px;
+}
+.Appointment-Filter .second-section .filter-main .patient-info h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+.Appointment-Filter .second-section .filter-main .patient-info h6 {
+  font-size: 11px;
+  font-weight: 500;
+  color: grey;
+}
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+  background: #3fb6e0;
+  color: white;
+  /* width: 50%; */
+  margin-top: 7px;
+  cursor: pointer;
+}
+.filter-show-btn {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  padding: 10px;
+  background: #3fb6e0;
+  color: white;
+  /* width: 50%; */
+  margin-top: 7px;
+  z-index: -2;
+}
+.filter-hide {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+.dash-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+.dash-mobile-menu img {
+  max-width: 40px;
+  width: 100%;
+  border-radius: 50%;
+}
+.dash-mobile-menu h5 {
+  font-size: 11px;
+  line-height: 1;
+}
+.dash-mobile-menu h6 {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+/* ================ Sidebar ================ */
