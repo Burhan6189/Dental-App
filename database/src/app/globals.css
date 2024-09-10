@@ -3065,6 +3065,7 @@
   background-color: white;
   height: 100vh;
   z-index: -2;
+  opacity: 1;
   transition: 0.5s ease-in-out;
 }
 .Appointment-Filter h5 {
@@ -3152,6 +3153,7 @@
 }
 .filter-hide {
   transform: translateX(-150%);
+  opacity: 0;
 }
 
 /* ================ Sidebar ================ */
