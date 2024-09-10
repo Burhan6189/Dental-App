@@ -3231,7 +3231,7 @@
   flex-direction: column;
   gap: 5px;
 }
-.Add-Doctor-Details .Add-Doctor-flex .img-flex button {
+.Add-Doctor-Details .Add-Doctor-flex .img-flex .Upload-btn {
   width: 100%;
   padding: 7px 5px 2px 5px;
   outline: none;
