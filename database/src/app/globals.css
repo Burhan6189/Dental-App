@@ -3206,6 +3206,7 @@
   background: #f6f7f9;
   height: 94vh;
   width: 100%;
+  text-align: center;
 }
 .Add-Doctor-Details .Add-Doctor-flex {
   display: flex;
@@ -3219,7 +3220,7 @@
   gap: 10px;
 }
 .Add-Doctor-Details .Add-Doctor-flex img {
-  max-width: 400px;
+  max-width: 460px;
   width: 100%;
   border-radius: 5px;
 }
@@ -3260,6 +3261,9 @@
   cursor: pointer;
 }
 .Add-Doctor-Details input:focus {
+  border: 1px solid #3fb6e0;
+}
+.Add-Doctor-Details textarea:focus {
   border: 1px solid #3fb6e0;
 }
 

@@ -12,11 +12,17 @@ const NewDoctorDetails = () => {
             />
           </div>
           <div className="fields-flex">
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Desigination" />
-            <input type="text" placeholder="Department" />
-            <input type="text" placeholder="Location" />
-            <textarea name="" id="" rows={9} placeholder="Description"></textarea>
+            <input type="text" placeholder="Name" required />
+            <input type="text" placeholder="Desigination" required />
+            <input type="text" placeholder="Department" required />
+            <input type="text" placeholder="Location" required />
+            <textarea
+              name=""
+              id=""
+              rows={9}
+              placeholder="Description"
+              required
+            ></textarea>
             <button>Add Doctors</button>
           </div>
         </div>
