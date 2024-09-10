@@ -1,13 +1,13 @@
 "use client";
-import DoctorDetails from "@/app/components/Dash/Doctors/NewDoctorDetails";
 import Sidebar from "@/app/components/Dash/Doctors/Sidebar";
+import AllDoctors from "@/app/components/Dash/Doctors/AllDoctors";
 import React from "react";
 
 const doctors = () => {
   return (
     <>
       <Sidebar />
-      <DoctorDetails />
+      <AllDoctors />
     </>
   );
 };

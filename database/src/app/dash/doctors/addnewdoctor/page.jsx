@@ -7,9 +7,7 @@ const addnewdoctor = () => {
   return (
     <>
       <Sidebar />
-      <div className="dash-items-main">
-        <NewDoctorDetails />
-      </div>
+      <NewDoctorDetails />
     </>
   );
 };
