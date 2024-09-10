@@ -1,4 +1,4 @@
-'use'
+'use client'
 import { CldUploadButton } from "next-cloudinary";
 import React, { useState } from "react";
 import { ImFilePicture } from "react-icons/im";
