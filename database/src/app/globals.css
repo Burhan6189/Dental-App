@@ -2372,7 +2372,7 @@
   .doctor-bar-content p {
     font-size: 14px !important;
   }
-  .Add-Doctor-Details .Add-Doctor-flex .fields-flex{
+  .Add-Doctor-Details .Add-Doctor-flex .fields-flex {
     max-width: 415px !important;
   }
 }
@@ -3395,16 +3395,20 @@
 }
 
 .All-Doctors-Main .All-Doctors-Flex .Doctor-card .flex-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  text-align: center;
   color: grey;
   background-color: #fff;
   width: 100%;
   padding: 5px 10px;
   border-radius: 0px 0px 5px 0px;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .flex-2 button {
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 17px;
   cursor: pointer;
+  outline: none;
 }
 .new-doctor-btn {
   display: flex;
@@ -3422,6 +3426,35 @@
 }
 .new-doctor-btn h4 {
   font-weight: 500;
+}
+.popup-arrow {
+  color: #c2e7f3;
+}
+.popup-content {
+  background: #ecf1ff;
+  width: 100px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: #c2e7f3 0px 0px 3px;
+  border-radius: 5px;
+  color: #3fb6e0;
+  padding: 5px 5px;
+}
+.popup-content .option {
+  background: white;
+  display: flex;
+  padding: 3px 10px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+.popup-content .option p {
+  font-size: 12px;
+  color: #313131;
 }
 
 /* ================ All Doctor Details ================ */
