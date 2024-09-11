@@ -39,22 +39,26 @@ const Page = () => {
     const requestNotificationPermission = async () => {
       if (typeof window !== "undefined" && "serviceWorker" in navigator) {
         const permission = await Notification.requestPermission();
-  
+
         if (permission === "granted") {
           console.log("Notification permission granted.");
-  
+
           try {
             // Register the service worker and get the FCM token
-            const serviceWorkerRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-            const currentToken = await getToken(messaging, { 
-              vapidKey: 'BGLXT4ptpoW3Uf4AdBgQSisQJl8p4_obvvXC925xltmnzVpHuPanLnaP_xPozTnl9yRSe8yszWesiCjlnvt6dts',
+            const serviceWorkerRegistration =
+              await navigator.serviceWorker.register(
+                "/firebase-messaging-sw.js"
+              );
+            const currentToken = await getToken(messaging, {
+              vapidKey:
+                "BGLXT4ptpoW3Uf4AdBgQSisQJl8p4_obvvXC925xltmnzVpHuPanLnaP_xPozTnl9yRSe8yszWesiCjlnvt6dts",
               serviceWorkerRegistration,
             });
-  
+
             if (currentToken) {
               console.log("FCM token:", currentToken);
               setRegistrationToken(currentToken);
-  
+
               // Send the token to your server or save it for later use
             } else {
               console.log(
@@ -64,7 +68,7 @@ const Page = () => {
           } catch (err) {
             console.error("An error occurred while retrieving token. ", err);
           }
-  
+
           // Handle incoming messages
           onMessage(messaging, (payload) => {
             console.log("Message received. ", payload);
@@ -77,7 +81,7 @@ const Page = () => {
         console.log("This browser doesn't support the required APIs.");
       }
     };
-  
+
     requestNotificationPermission();
   }, []);
 
@@ -91,12 +95,14 @@ const Page = () => {
       </div>
       <div>
         <h1>WELCOME</h1>
-        <a href="/Login">
-          <button className="login-btn">Log in</button>
-        </a>
-        <a href="/Signup">
-          <button className="login-btn">Sign up</button>
-        </a>
+        <div className="btn-flex">
+          <a href="/Login">
+            <button className="login-btn">Log in</button>
+          </a>
+          <a href="/Signup">
+            <button className="login-btn">Sign up</button>
+          </a>
+        </div>
       </div>
       <div className="content">
         <p>

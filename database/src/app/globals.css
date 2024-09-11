@@ -209,10 +209,17 @@
   color: #313131;
   border-radius: 10px;
   outline: none;
-  padding: 5px 30px;
-  margin: 10px;
+  padding: 5px 10px;
+  width: 200px;
   background-color: #ddf1fa;
   border: 1px solid #9fe1ff;
+}
+.Home .btn-flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .Home .other-login-btn {
   display: flex;
@@ -1981,15 +1988,6 @@
   .Home h1 {
     letter-spacing: 9px;
     font-size: 30px;
-  }
-  .Home a {
-    padding: 5px 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    margin-bottom: 5px;
-    width: 70%;
   }
   .Banner-Swiper-BG .home-slider-slide h3 {
     font-size: 20px !important;
