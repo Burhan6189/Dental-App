@@ -67,7 +67,11 @@ const Sidebar = () => {
             <div className="flex">
               <FaTooth className="i-logo" size={25} />
               <div>
-                <h3>Dashboard</h3>
+                <h3>All Doctors</h3>
+              </div>
+              <div className="search-bar">
+                <IoIosSearch size={22} />
+                <input type="text" placeholder="Search Doctor" />
               </div>
             </div>
             <div className="mob-menu">
@@ -89,7 +93,7 @@ const Sidebar = () => {
                 />
                 <div>
                   <h5>Burhan Ahmad</h5>
-                  <h6>Senior Dentist</h6>
+                  <h6>Admin</h6>
                 </div>
               </div>
             </div>
