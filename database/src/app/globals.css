@@ -2372,6 +2372,9 @@
   .doctor-bar-content p {
     font-size: 14px !important;
   }
+  .Add-Doctor-Details .Add-Doctor-flex .fields-flex{
+    max-width: 415px !important;
+  }
 }
 @media only screen and (max-width: 769px) {
   .doctor-image img {
@@ -3203,13 +3206,13 @@
 
 .Add-Doctor-Details {
   padding: 10px;
-  background: #f6f7f9;
-  height: 100vh;
+  height: 94.4vh;
   width: 100%;
   text-align: center;
 }
 .Add-Doctor-Details .Add-Doctor-flex {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   margin: auto;
@@ -3218,6 +3221,7 @@
   height: 100%;
   justify-content: center;
   gap: 10px;
+  padding: 10px;
 }
 .Add-Doctor-Details .Add-Doctor-flex img {
   max-width: 416px;
@@ -3251,7 +3255,8 @@
   align-items: start;
   flex-direction: column;
   gap: 10px;
-  width: 40%;
+  max-width: 600px;
+  width: 100%;
 }
 .Add-Doctor-Details input {
   width: 100%;

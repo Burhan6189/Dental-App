@@ -1,7 +1,10 @@
 import React from "react";
+
+/* =========== Icons =========== */
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
+/* =========== Icons =========== */
 
 const Doctors = () => {
   return (
@@ -9,6 +12,156 @@ const Doctors = () => {
       <div className="dash-items-main">
         <div className="All-Doctors-Main">
           <div className="All-Doctors-Flex">
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/dash/doctors">
+              <div className="Doctor-card">
+                <div className="content">
+                  <img
+                    src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1725983016/re3cdyxnyvtnpuwyxwbs.jpg"
+                    alt=""
+                  />
+                  <h4>Dr. Albert Miles</h4>
+                  <p>1288 Natalie BrooK Apt. 966</p>
+                  <div className="desigination">
+                    <h5>NUROLOGIST</h5>
+                  </div>
+                </div>
+                <div className="option-flex">
+                  <div className="flex-1">
+                    <FaStar />
+                    <h5>4.5</h5>
+                  </div>
+                  <div className="flex-2">
+                    <FaUserDoctor />
+                    <h5>About Me</h5>
+                  </div>
+                </div>
+              </div>
+            </a>
             <a href="/dash/doctors">
               <div className="Doctor-card">
                 <div className="content">
