@@ -3388,12 +3388,29 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #3fb6e0;
+  color: grey;
   background-color: #fff;
   width: 100%;
   padding: 5px 10px;
   border-radius: 0px 0px 5px 0px;
   cursor: pointer;
+}
+.new-doctor-btn {
+  display: flex;
+  align-items: center;
+  background: #3fb6e0;
+  color: white;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 99;
+  border-radius: 20px;
+}
+.new-doctor-btn h4 {
+  font-weight: 500;
 }
 
 /* ================ All Doctor Details ================ */

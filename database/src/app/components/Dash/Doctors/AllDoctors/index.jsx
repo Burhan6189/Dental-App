@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
+import { FiPlus } from "react-icons/fi";
 
 const Doctors = () => {
   return (
@@ -123,7 +124,7 @@ const Doctors = () => {
                 </div>
               </div>
             </div>
-             <div className="Doctor-card">
+            <div className="Doctor-card">
               <div className="content">
                 <img
                   src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724339543/Dental/uifaul8xygqr1ml0ba6d.png"
@@ -149,6 +150,12 @@ const Doctors = () => {
           </div>
         </div>
       </div>
+      <a href="/dash/doctors/addnewdoctor">
+        <div className="new-doctor-btn">
+          <FiPlus size={20} />
+          <h4>Add New Doctor</h4>
+        </div>
+      </a>
     </>
   );
 };
