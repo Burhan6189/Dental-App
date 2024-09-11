@@ -3291,4 +3291,111 @@
 
 /* ================ Add Doctor Details ================ */
 
+/* ================ All Doctor Details ================ */
+
+.All-Doctors-Main {
+  height: 94.4vh;
+  width: 100%;
+  padding: 40px 30px;
+}
+.All-Doctors-Flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 25px;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card {
+  padding: 10px;
+  max-width: 280px;
+  width: 100%;
+  background: #fcfcfc;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 200px;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card img {
+  max-width: 95px;
+  max-height: 95px;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 3px;
+  -webkit-box-shadow: 0px 6px 14px 0px rgba(63, 181, 224, 0.479);
+  -moz-box-shadow: 0px 6px 14px 0px rgba(63, 181, 224, 0.479);
+  box-shadow: 0px 6px 14px 0px rgba(63, 181, 224, 0.479);
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card h4 {
+  font-weight: 500;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card h5 {
+  font-weight: 600;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card p {
+  font-weight: 400;
+  font-size: 12px;
+  color: grey;
+}
+.All-Doctors-Main .All-Doctors-Flex .desigination {
+  padding: 5px 20px;
+  width: 100%;
+  background: #ecf1ff;
+  color: #3fb6e0;
+  border-radius: 5px;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .option-flex {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .option-flex h5 {
+  font-weight: 500;
+}
+
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .flex-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #f3955d;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px 10px;
+  border-right: 1px solid #b9c2d0;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.All-Doctors-Main .All-Doctors-Flex .Doctor-card .flex-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #3fb6e0;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 0px 0px 5px 0px;
+  cursor: pointer;
+}
+
+/* ================ All Doctor Details ================ */
+
 /* ================ Dashboard ================ */
