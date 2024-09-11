@@ -8,33 +8,25 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 /* =========== Icons =========== */
 
-
 export const getServerSideProps = async () => {
-
-  const data = await fetch('/api/doctors');
+  const data = await fetch("/api/doctors");
   const jsondata = await data.json();
 
   return {
     props: {
-      doctorsdata: jsondata
-    }
-  }
-}
-
-
+      doctorsdata: jsondata,
+    },
+  };
+};
 
 const Doctors = ({ doctorsdata }) => {
-  console.log(doctorsdata)
+  console.log(doctorsdata);
   return (
     <>
       <div className="dash-items-main">
         <div className="All-Doctors-Main">
           <div className="All-Doctors-Flex">
-
-
-            {doctorsdata?.map(items => (
-
-
+            {doctorsdata?.map((items) => (
               <div className="Doctor-card">
                 <a href="/dash/doctors">
                   <div className="content">
@@ -78,9 +70,6 @@ const Doctors = ({ doctorsdata }) => {
                 </div>
               </div>
             ))}
-
-
-
           </div>
         </div>
       </div>
