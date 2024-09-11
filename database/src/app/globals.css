@@ -3307,6 +3307,11 @@
   width: 100%;
   margin: auto;
 }
+.All-Doctors-Flex a {
+  max-width: 279px;
+  width: 100%;
+  text-decoration: none;
+}
 .All-Doctors-Main .All-Doctors-Flex .Doctor-card {
   padding: 10px;
   max-width: 279px;
@@ -3343,6 +3348,7 @@
 }
 .All-Doctors-Main .All-Doctors-Flex .Doctor-card h4 {
   font-weight: 500;
+  color: #313131;
 }
 .All-Doctors-Main .All-Doctors-Flex .Doctor-card h5 {
   font-weight: 600;
