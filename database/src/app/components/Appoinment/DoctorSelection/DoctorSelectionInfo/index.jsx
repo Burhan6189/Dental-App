@@ -4,72 +4,61 @@ import { GrDocumentUser } from "react-icons/gr";
 import { MdOutlineLocationOn } from "react-icons/md";
 
 const DoctorSelectionInfo = () => {
+  const [doctors, setdoctors] = useState([]);
 
-
-  const [doctors,setdoctors] = useState([]);
-
-  useEffect(()=>{
-
-    const fun = async()=>{
-      const data = await fetch('/api/doctors');
+  useEffect(() => {
+    const fun = async () => {
+      const data = await fetch("/api/doctors");
       const jsondata = await data.json();
-      setdoctors(jsondata)
-    }
-fun();
-  },[])
-
-
+      setdoctors(jsondata);
+    };
+    fun();
+  }, []);
 
   return (
     <>
       <div className="Doctor-Info-Selection-Main">
-
-
-{
-  doctors?.map((items)=>{
-    return(
-
-      <div>
-      <div className="Doctors-Info-Main">
-        <div>
-          <img
-            src={items?.Image}
-            alt=""
-          />
-        </div>
-        <div className="Main-Flex">
-          <div className="flex">
-            <div className="des">
-              <h5>{items?.Department}</h5>
+        {doctors?.map((items) => {
+          return (
+            <div>
+              <div className="Doctors-Info-Main">
+                <div>
+                  <img src={items?.Image} alt="" />
+                </div>
+                <div className="Main-Flex">
+                  <div className="flex">
+                    <div className="des">
+                      <h5>{items?.Department}</h5>
+                    </div>
+                    <div className="rating">
+                      <FaStar className="i" />
+                      <h5>(124)</h5>
+                    </div>
+                  </div>
+                  <div className="Name">
+                    <h3>{items?.Name}</h3>
+                  </div>
+                  <div className="flex">
+                    <GrDocumentUser className="i" />
+                    <h5>{items?.Desigination}</h5>
+                  </div>
+                  <div className="flex">
+                    <MdOutlineLocationOn className="i" />
+                    <h5>{items?.Location}</h5>
+                  </div>
+                  <div>
+                    <a href="#">
+                      <button className="view-profile-btn">View Profile</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="Select-Doctor-Btn">
+                <button>Book An Appointment</button>
+              </div>
             </div>
-            <div className="rating">
-              <FaStar className="i" />
-              <h5>(124)</h5>
-            </div>
-          </div>
-          <div className="Name">
-            <h3>{items?.Name}</h3>
-          </div>
-          <div className="flex">
-            <GrDocumentUser className="i" />
-            <h5>{items?.Desigination}</h5>
-          </div>
-          <div className="flex">
-            <MdOutlineLocationOn className="i" />
-            <h5>{items?.Location}</h5>
-          </div>
-        </div>
-      </div>
-      <div className="Select-Doctor-Btn">
-        <button>Book An Appointment</button>
-      </div>
-    </div>
-    )
-  })
-
-
-}
-
+          );
+        })}
       </div>
     </>
   );

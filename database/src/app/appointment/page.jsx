@@ -4,7 +4,7 @@ import Header from "../components/Header/page";
 import Footer from "../components/Footer/page";
 import DoctorSelection from "../components/Appoinment/DoctorSelection";
 
-const Appoinment = () => {
+const Appointment = () => {
   return (
     <>
       <Header />
@@ -16,4 +16,4 @@ const Appoinment = () => {
   );
 };
 
-export default Appoinment;
+export default Appointment;
