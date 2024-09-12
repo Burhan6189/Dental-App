@@ -20,7 +20,6 @@ function generateFutureEvents() {
     events.push({
       id: `event-${i}`, // Unique ID for each event
       title: `${counts}  Available `, //  on ${date.toDateString()}`,
-
       date: date.toISOString().split("T")[0], // Format as YYYY-MM-DD
       // extendedProps: {
       //   customValue: `Custom value for ${date.toDateString()}`,
