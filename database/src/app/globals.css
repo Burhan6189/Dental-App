@@ -2637,34 +2637,33 @@
 
   justify-content: space-evenly;
 }
-.review-content{
+.review-content {
   display: flex;
   text-align: left;
   flex-direction: column;
   gap: 5px;
   width: 70%;
 }
-.review-content a{
-text-decoration: none;
-color: rgb(69, 66, 215);
+.review-content a {
+  text-decoration: none;
+  color: rgb(69, 66, 215);
 }
-.rating{
+.rating {
   align-content: center;
   /* width: 15%; */
 }
 .review-image {
-  width: 10%; 
-
+  width: 10%;
 }
-.review-image img{
+.review-image img {
   width: 100%;
   border-radius: 100px;
   border: 1px solid rgb(241, 233, 233);
 }
-#myElement{
+#myElement {
   margin: 10px;
   padding: 5px;
-  background-color:#48B9E1;
+  background-color: #48b9e1;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -3503,51 +3502,44 @@ color: rgb(69, 66, 215);
 
 /* ================ Dashboard ================ */
 
-
-
-
-.calendar-container{
-
-
-  .event-card {
-    display: flex;
-    align-items: center;
-  }
-  
-  .event-card img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-    border-radius: 50%;
-  }
-  
-  .event-popup {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background: white;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .popup-content img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.calendar-container .event-card {
+  display: flex;
+  align-items: center;
+}
+.calendar-container .event-card img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+.calendar-container .event-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.calendar-container .popup-content {
+  max-width: 700px;
+  width: 100%;
+}
+.calendar-container .popup-content img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.calendar-container .calendar-popup-btn button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
