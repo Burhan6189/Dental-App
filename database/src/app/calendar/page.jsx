@@ -42,13 +42,14 @@ function MyCalendar(context) {
   const calendarRef = useRef(null);
   const events = generateFutureEvents().events;
   const [selectedTime, setSelectedTime] = useState(null);
-
+  const [availableTimes, setAvailableTimes] = useState([]);
   const { doctorname } = context.searchParams;
 
   const { counts } = generateFutureEvents();
   const router = useRouter();
   const [selecteddate, setselectedate] = useState("");
-
+  const newdata = new Date
+const todaydate =newdata.toISOString().split('T').at(0)
   
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
@@ -64,6 +65,7 @@ function MyCalendar(context) {
     }
   };
   console.log(selecteddate)
+
 
   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
@@ -113,21 +115,31 @@ else{
   }
 
 
+ 
+
+
 
   const handleDateClick = (date) => {
-    const selected = date.dateStr;
-    setselectedate(selected);
+  
+    if(date.dateStr>=todaydate && date.date.getDay()!==0 && date.date.getDay()!==6){
+    
+      const selected = date.dateStr;
+      setselectedate(selected);
+      // Load available times for the selected date
+      const times = getTimeSlotsForDate(selected);
+      setAvailableTimes(times);
+    }
 
-    // Load available times for the selected date
-    const times = getTimeSlotsForDate(selected);
-    setAvailableTimes(times);
+
   };
+
 
 
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
   };
 
+  
 
   return (
     <>
@@ -176,8 +188,8 @@ else{
           // eventMouseEnter={handleEventMouseEnter}
           />
 
-
-{selecteddate && (
+           {/* Show available times if a date is selected */}
+          {selecteddate && (
             <div className="time-selection">
               <h3>Select a Time for {selecteddate}</h3>
               <div className="available-times">
@@ -198,8 +210,6 @@ else{
             </div>
           )}
 
-
-
           {/* Display selected date and time */}
           {selecteddate && selectedTime && (
             <div className="selected-date-time">
@@ -207,10 +217,11 @@ else{
                 <strong>Selected Date:</strong> {selecteddate}
               </p>
               <p>
-                <strong>Selected Time:</strong> {selectedTime}
+              <strong>Selected Time:</strong>  {selectedTime.start} - {selectedTime.end}
               </p>
             </div>
           )}
+
 
 
           <a onClick={forwardfun} className="continue-btn">
