@@ -1,9 +1,11 @@
-"use client";
-import React, { useState } from "react";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
+'use client'
+import React, { useState } from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction'; // For handling click events
+ 
+
 
 const MyCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -43,13 +45,16 @@ const MyCalendar = () => {
       start: "2024-09-16T11:00:00",
       end: "2024-09-16T12:00:00",
       extendedProps: {
-        doctor: "Dr. Marvin",
-        imageUrl: "https://via.placeholder.com/40",
-        description: "Dentures Treatment for Jerome Bell",
-        contact: "+5647382910",
-        email: "jerome@example.com",
+        doctor: 'Dr. Marvin',
+        imageUrl: 'https://via.placeholder.com/40',
+        description: 'Dentures Treatment for Jerome Bell',
+        contact: '+5647382910',
+        email: 'jerome@example.com',
       },
     },
+ 
+  
+
   ];
 
   const handleEventClick = (clickInfo) => {
@@ -66,6 +71,7 @@ const MyCalendar = () => {
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
         events={events}
+        weekends={false}
         eventClick={handleEventClick}
         headerToolbar={{
           left: "prev,next today",
@@ -79,6 +85,7 @@ const MyCalendar = () => {
             <div className="event-details">
               <strong>{eventInfo.event.title}</strong>
             </div>
+            
           </div>
         )}
       />

@@ -1,9 +1,12 @@
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { GrDocumentUser } from "react-icons/gr";
 import { MdOutlineLocationOn } from "react-icons/md";
 
 const DoctorSelectionInfo = () => {
+
+  const router =useRouter();
   const [doctors, setdoctors] = useState([]);
 
   useEffect(() => {
@@ -14,6 +17,12 @@ const DoctorSelectionInfo = () => {
     };
     fun();
   }, []);
+
+  const selectedfun = (doctorname)=>{
+
+    router.push('/calendar?doctorname='+doctorname)
+
+  }
 
   return (
     <>
@@ -47,14 +56,14 @@ const DoctorSelectionInfo = () => {
                     <h5>{items?.Location}</h5>
                   </div>
                   <div>
-                    <a href="#">
+                    <a href={"/dentistprofile/"+items?._id}>
                       <button className="view-profile-btn">View Profile</button>
                     </a>
                   </div>
                 </div>
               </div>
               <div className="Select-Doctor-Btn">
-                <button>Book An Appointment</button>
+                <button onClick={()=>selectedfun(items?.Name)}>Book An Appointment</button>
               </div>
             </div>
           );
