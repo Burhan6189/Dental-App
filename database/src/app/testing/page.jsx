@@ -4,7 +4,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'; // For handling click events
-
+ 
 
 
 const MyCalendar = () => {
@@ -49,8 +49,11 @@ const MyCalendar = () => {
         description: 'Dentures Treatment for Jerome Bell',
         contact: '+5647382910',
         email: 'jerome@example.com',
-      },
+      }
     },
+ 
+  
+
   ];
 
   const handleEventClick = (clickInfo) => {
@@ -65,8 +68,9 @@ const MyCalendar = () => {
     <div className="calendar-container">
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        initialView="timeGridWeek"
+        initialView="dayGridMonth"
         events={events}
+        weekends={false}
         eventClick={handleEventClick}
         headerToolbar={{
           left: 'prev,next today',
@@ -79,6 +83,7 @@ const MyCalendar = () => {
             <div className="event-details">
               <strong>{eventInfo.event.title}</strong>
             </div>
+            
           </div>
         )}
       />
