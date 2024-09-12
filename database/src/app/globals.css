@@ -2650,7 +2650,7 @@ color: rgb(69, 66, 215);
 }
 .rating{
   align-content: center;
-  width: 15%;
+  /* width: 15%; */
 }
 .review-image {
   width: 10%; 
