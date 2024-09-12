@@ -2529,6 +2529,7 @@
 
 .Calendar-Section-Main {
   padding: 50px 0px;
+  position: relative;
 }
 .Calendar-Section-Main h2 {
   padding: 10px 0px;
@@ -2548,6 +2549,25 @@
   background-color: #4abae2;
   color: white;
   width: 20%;
+}
+.time-selection{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-image: url(https://images.pexels.com/photos/11285444/pexels-photo-11285444.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  top: 30%;
+  left: 25%;
+ flex-direction: column;
+  display: flex;
+  z-index: 100;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons-for-date{
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* =============== Calendar =============== */

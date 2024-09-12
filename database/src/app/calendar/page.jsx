@@ -96,11 +96,7 @@ const todaydate =newdata.toISOString().split('T').at(0)
     return ["9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"]; // Example time slots
   };
 
-  const handleSelect = (selectionInfo) => {
-    const start = selectionInfo.startStr;
-    const end = selectionInfo.endStr;
-    setSelectedTime({ start, end });
-  };
+
 
 
   const forwardfun =(event)=>{
@@ -172,8 +168,7 @@ else{
             }}
             height={"90vh"}
             dateClick={handleDateClick}
-            selectable={true}
-            select={handleSelect} // Handle time selection
+       
 
             selectAllow={(selectInfo) => {
               const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
@@ -191,6 +186,7 @@ else{
            {/* Show available times if a date is selected */}
           {selecteddate && (
             <div className="time-selection">
+            <div className="time-show">
               <h3>Select a Time for {selecteddate}</h3>
               <div className="available-times">
                 {availableTimes.length > 0 ? (
@@ -208,19 +204,26 @@ else{
                 )}
               </div>
             </div>
+                      {selecteddate && selectedTime && (
+                        <div className="selected-date-time">
+                          <p>
+                            <strong>Selected Date:</strong> {selecteddate}
+                          </p>
+                          <p>
+                          <strong>Selected Time:</strong>  {selectedTime}
+                          </p>
+                        </div>
+                      )}
+                      <div className="buttons-for-date">
+                      <button>Continue</button>
+                      <button onClick={()=>{setselectedate(''); setSelectedTime('')}}>Close</button>
+                  
+                      </div>
+                      </div>
           )}
 
           {/* Display selected date and time */}
-          {selecteddate && selectedTime && (
-            <div className="selected-date-time">
-              <p>
-                <strong>Selected Date:</strong> {selecteddate}
-              </p>
-              <p>
-              <strong>Selected Time:</strong>  {selectedTime.start} - {selectedTime.end}
-              </p>
-            </div>
-          )}
+
 
 
 
