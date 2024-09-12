@@ -1,12 +1,13 @@
 "use client"
 
 import ProgressBar from '@ramonak/react-progress-bar'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactStars from "react-rating-stars-component";
 import { FaAngleRight, FaStar } from 'react-icons/fa'
 import Rating from 'react-rating'
 
 function RatingReview() {
+
   return (
 <>
     <div className="rating-main">
@@ -98,11 +99,15 @@ function RatingReview() {
 
     </div>
     <div className="review-main">
-      <button>ADD Review</button>
+      <button id='myElement'>ADD Review</button>
+      <div className="reviewhead">
+        
+
+      </div>
       <div className='review'>
       <div className='review-user'>
         <div className='review-image'>
-        <img src="" alt="" />
+        <img src="https://res.cloudinary.com/dgtk4rthy/image/upload/v1724339543/Dental/uifaul8xygqr1ml0ba6d.png" alt="" />
         </div>
         <div className="review-content">
         <h6>Robert Karmazov</h6>
@@ -116,12 +121,14 @@ function RatingReview() {
         value={2}
         activeColor="#FBBF24"
        char={<FaStar/>}/>
+       <p>Sep 09,2024</p>
         </div>
       </div>
         <div>
 
         </div>
       </div>
+      
     </div>
 
 </>

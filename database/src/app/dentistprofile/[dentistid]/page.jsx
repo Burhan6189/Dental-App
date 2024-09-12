@@ -6,12 +6,15 @@ import RatingReview from '@/app/components/Rating/page'
 import React from 'react'
 import { FaAngleRight, FaGreaterThan, FaSign } from 'react-icons/fa'
 
-function DentistProfile() {
+function DentistProfile(context) {
+
+  const id = context.params.dentistid
+
   return (
    <>
     <Header/>
     <div className='top-container'></div>
-    <DoctorProfile/>
+    <DoctorProfile id={id}/>
     <RatingReview/>
     <Footer/>
 

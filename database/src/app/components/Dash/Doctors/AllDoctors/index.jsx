@@ -65,7 +65,7 @@ const Doctors = () => {
             {doctordata?.map((items) => {
               return (
                 <div className="Doctor-card">
-                  <a href="/dash/doctors">
+                  <a href={"/dentistprofile/"+items?._id}>
                     <div className="content">
                       <img
                         src={items?.Image}
