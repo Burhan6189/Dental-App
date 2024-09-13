@@ -50,10 +50,14 @@ function MyCalendar(context) {
   const todaydate = newdata.toISOString().split("T").at(0);
 const {data:session} = useSession();
 
-console.log('hello', session)
 
   const [btnactive,setbtnactive] =useState(null);
-
+  const [treatmentname, settreatmentname] =useState('');
+  const [treatmentdec, settreatmentdec] =useState('');
+  const [PatientName,setPatientName] =useState('');
+  const [Email,setEmail] = useState('');
+  const [Phone,setPhone]=useState('');
+  const [Image, setImage]=useState('');
 
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
@@ -68,7 +72,7 @@ console.log('hello', session)
       }
     }
   };
-  console.log(selecteddate);
+
 
   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
@@ -92,6 +96,17 @@ console.log('hello', session)
       });
     }
   }, [mydong]);
+
+
+  useEffect(()=>{
+    if(session){
+      setPatientName(session?.user?.FirstName+" "+session?.user?.LastName || session?.user?.name);
+      setEmail(session?.user?.Email || session.user?.email);
+      setPhone(session?.user?.Phone);
+      setImage(session.user?.image || 'https://res.cloudinary.com/dgtk4rthy/image/upload/v1726243691/FHGROUPOC/vg1dgip9oxpqikwad15s.png');
+    }
+  },[session])
+
 
   const getTimeSlotsForDate = (date) => {
     // Here you can have logic to generate or fetch available time slots for the date
@@ -124,6 +139,32 @@ console.log('hello', session)
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
   };
+
+
+  const submitappoint =async(event)=>{
+    event.preventDefault();
+    if(selecteddate!=="" && selectedTime!=="" && treatmentname!=="" && doctorname!=="" && PatientName!=="" && Email!==""){
+
+      const postdata = await fetch('/api/appoint',{
+        method:"POST",
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({DoctorName:doctorname,PatientName,Email,Phone,Date:selecteddate,Time:selectedTime, Treatment:treatmentname, Treatment_Desc:treatmentdec, Image})
+      });
+      if(postdata.ok){
+        toast.success('success');
+        router.push('/thankyou');
+      }
+      else{
+        toast.error('Something went wrong');
+      }
+     
+    }
+    else{
+      toast.error('All fields are required');
+    }
+  }
 
   return (
     <>
@@ -192,19 +233,20 @@ console.log('hello', session)
                 )}
               </div>
               {selecteddate && selectedTime && (
-                <div className="selected-el">
-                  <select name="" id="">
-                    <option>Choose Treatment</option>
-                    <option> Teeth Cleaning</option>
-                    <option> Fillings</option>
-                    <option>Root Canal Therapy</option>
-                    <option>Dental Crowns</option>
-                    <option>Dental Bridges</option>
-                    <option>Tooth Extractions</option>
-                    <option> Dental Implants</option>
+                <div  className="selected-el">
+                  <select onChange={e=>settreatmentname(e.target.value)} name="" id="">
+                    <option selected disabled>Choose Treatment</option>
+                    <option value="Teeth Cleaning"> Teeth Cleaning</option>
+                    <option value="Fillings"> Fillings</option>
+                    <option value='Root Canal Therapy'>Root Canal Therapy</option>
+                    <option value='Dental Crowns'>Dental Crowns</option>
+                    <option value='Dental Bridges'>Dental Bridges</option>
+                    <option value='Tooth Extractions'>Tooth Extractions</option>
+                    <option value='Dental Implants'> Dental Implants</option>
                   </select>
                   <textarea
-                    name=""
+                  onChange={e=>settreatmentdec(e.target.value)}
+                    name="treatmentDesc"
                     id=""
                     placeholder="Brief Your Issue"
                     cols={40}
@@ -215,11 +257,12 @@ console.log('hello', session)
                 </div>
               )}
               <div className="Continue-Btn">
-                <button>Confirm</button>
+                <button onClick={submitappoint}>Confirm</button>
                 <button
                   onClick={() => {
                     setselectedate("");
                     setSelectedTime("");
+                    settreatmentname('');
                   }}
                 >
                   Close
