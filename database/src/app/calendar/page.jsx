@@ -42,13 +42,14 @@ function MyCalendar(context) {
   const calendarRef = useRef(null);
   const events = generateFutureEvents().events;
   const [selectedTime, setSelectedTime] = useState(null);
-
+  const [availableTimes, setAvailableTimes] = useState([]);
   const { doctorname } = context.searchParams;
 
   const { counts } = generateFutureEvents();
   const router = useRouter();
   const [selecteddate, setselectedate] = useState("");
-
+  const newdata = new Date
+const todaydate =newdata.toISOString().split('T').at(0)
   
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
@@ -64,6 +65,7 @@ function MyCalendar(context) {
     }
   };
   console.log(selecteddate)
+
 
   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
@@ -94,11 +96,7 @@ function MyCalendar(context) {
     return ["9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"]; // Example time slots
   };
 
-  const handleSelect = (selectionInfo) => {
-    const start = selectionInfo.startStr;
-    const end = selectionInfo.endStr;
-    setSelectedTime({ start, end });
-  };
+
 
 
   const forwardfun =(event)=>{
@@ -113,21 +111,31 @@ else{
   }
 
 
+ 
+
+
 
   const handleDateClick = (date) => {
-    const selected = date.dateStr;
-    setselectedate(selected);
+  
+    if(date.dateStr>=todaydate && date.date.getDay()!==0 && date.date.getDay()!==6){
+    
+      const selected = date.dateStr;
+      setselectedate(selected);
+      // Load available times for the selected date
+      const times = getTimeSlotsForDate(selected);
+      setAvailableTimes(times);
+    }
 
-    // Load available times for the selected date
-    const times = getTimeSlotsForDate(selected);
-    setAvailableTimes(times);
+
   };
+
 
 
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
   };
 
+  
 
   return (
     <>
@@ -160,8 +168,7 @@ else{
             }}
             height={"90vh"}
             dateClick={handleDateClick}
-            selectable={true}
-            select={handleSelect} // Handle time selection
+       
 
             selectAllow={(selectInfo) => {
               const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
@@ -176,9 +183,10 @@ else{
           // eventMouseEnter={handleEventMouseEnter}
           />
 
-
-{selecteddate && (
+           {/* Show available times if a date is selected */}
+          {selecteddate && (
             <div className="time-selection">
+            <div className="time-show">
               <h3>Select a Time for {selecteddate}</h3>
               <div className="available-times">
                 {availableTimes.length > 0 ? (
@@ -196,21 +204,27 @@ else{
                 )}
               </div>
             </div>
+                      {selecteddate && selectedTime && (
+                        <div className="selected-date-time">
+                          <p>
+                            <strong>Selected Date:</strong> {selecteddate}
+                          </p>
+                          <p>
+                          <strong>Selected Time:</strong>  {selectedTime}
+                          </p>
+                        </div>
+                      )}
+                      <div className="buttons-for-date">
+                      <button>Continue</button>
+                      <button onClick={()=>{setselectedate(''); setSelectedTime('')}}>Close</button>
+                  
+                      </div>
+                      </div>
           )}
-
-
 
           {/* Display selected date and time */}
-          {selecteddate && selectedTime && (
-            <div className="selected-date-time">
-              <p>
-                <strong>Selected Date:</strong> {selecteddate}
-              </p>
-              <p>
-                <strong>Selected Time:</strong> {selectedTime}
-              </p>
-            </div>
-          )}
+
+
 
 
           <a onClick={forwardfun} className="continue-btn">
