@@ -1,6 +1,3 @@
-
-
-
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
@@ -48,9 +45,9 @@ function MyCalendar(context) {
   const { counts } = generateFutureEvents();
   const router = useRouter();
   const [selecteddate, setselectedate] = useState("");
-  const newdata = new Date
-const todaydate =newdata.toISOString().split('T').at(0)
-  
+  const newdata = new Date();
+  const todaydate = newdata.toISOString().split("T").at(0);
+
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
     const dayOfWeek = eventDate.getDay();
@@ -64,8 +61,7 @@ const todaydate =newdata.toISOString().split('T').at(0)
       }
     }
   };
-  console.log(selecteddate)
-
+  console.log(selecteddate);
 
   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
@@ -75,7 +71,7 @@ const todaydate =newdata.toISOString().split('T').at(0)
 
     // Find the event for the specific date you want to change (e.g., 2024-09-01)
 
-    if (doctorname == 'Dr Bushra') {
+    if (doctorname == "Dr Bushra") {
       mydong.map((items) => {
         const eventToUpdate = calendarApi
           .getEvents()
@@ -90,52 +86,37 @@ const todaydate =newdata.toISOString().split('T').at(0)
     }
   }, [mydong]);
 
-
   const getTimeSlotsForDate = (date) => {
     // Here you can have logic to generate or fetch available time slots for the date
     return ["9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"]; // Example time slots
   };
 
-
-
-
-  const forwardfun =(event)=>{
-event.preventDefault();
-if(doctorname!=="" && selecteddate!==""){
-
-  router.push(`/time?doctorname=${doctorname}&&date=${selecteddate}`)
-}
-else{
-  toast.error('Please Select Date')
-}
-  }
-
-
- 
-
-
+  const forwardfun = (event) => {
+    event.preventDefault();
+    if (doctorname !== "" && selecteddate !== "") {
+      router.push(`/time?doctorname=${doctorname}&&date=${selecteddate}`);
+    } else {
+      toast.error("Please Select Date");
+    }
+  };
 
   const handleDateClick = (date) => {
-  
-    if(date.dateStr>=todaydate && date.date.getDay()!==0 && date.date.getDay()!==6){
-    
+    if (
+      date.dateStr >= todaydate &&
+      date.date.getDay() !== 0 &&
+      date.date.getDay() !== 6
+    ) {
       const selected = date.dateStr;
       setselectedate(selected);
       // Load available times for the selected date
       const times = getTimeSlotsForDate(selected);
       setAvailableTimes(times);
     }
-
-
   };
-
-
 
   const handleTimeSelect = (time) => {
     setSelectedTime(time);
   };
-
-  
 
   return (
     <>
@@ -168,8 +149,6 @@ else{
             }}
             height={"90vh"}
             dateClick={handleDateClick}
-       
-
             selectAllow={(selectInfo) => {
               const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
               const startDate = selectInfo.start.getTime(); // Start date of the selection
@@ -180,53 +159,50 @@ else{
             }}
             eventDidMount={handleEventDidMount}
             events={events}
-          // eventMouseEnter={handleEventMouseEnter}
+            // eventMouseEnter={handleEventMouseEnter}
           />
 
-           {/* Show available times if a date is selected */}
+          {/* Show available times if a date is selected */}
           {selecteddate && (
             <div className="time-selection">
-            <div className="time-show">
               <h3>Select a Time for {selecteddate}</h3>
-              <div className="available-times">
-                {availableTimes.length > 0 ? (
-                  availableTimes.map((time) => (
-                    <button
-                      key={time}
-                      className={`time-slot ${time === selectedTime ? "selected" : ""}`}
-                      onClick={() => handleTimeSelect(time)}
-                    >
-                      {time}
-                    </button>
-                  ))
-                ) : (
-                  <p>No available times for this date.</p>
-                )}
-              </div>
+              {availableTimes.length > 0 ? (
+                availableTimes.map((time) => (
+                  <button
+                    key={time}
+                    className={`time-slot ${
+                      time === selectedTime ? "selected" : ""
+                    }`}
+                    onClick={() => handleTimeSelect(time)}
+                  >
+                    {time}
+                  </button>
+                ))
+              ) : (
+                <p>No available times for this date.</p>
+              )}
+              {selecteddate && selectedTime && (
+                <div>
+                  <p>
+                    <strong>Selected Date:</strong> {selecteddate}
+                  </p>
+                  <p>
+                    <strong>Selected Time:</strong> {selectedTime}
+                  </p>
+                </div>
+              )}
+              <button>Continue</button>
+              <button
+                onClick={() => {
+                  setselectedate("");
+                  setSelectedTime("");
+                }}
+              >
+                Close
+              </button>
             </div>
-                      {selecteddate && selectedTime && (
-                        <div className="selected-date-time">
-                          <p>
-                            <strong>Selected Date:</strong> {selecteddate}
-                          </p>
-                          <p>
-                          <strong>Selected Time:</strong>  {selectedTime}
-                          </p>
-                        </div>
-                      )}
-                      <div className="buttons-for-date">
-                      <button>Continue</button>
-                      <button onClick={()=>{setselectedate(''); setSelectedTime('')}}>Close</button>
-                  
-                      </div>
-                      </div>
           )}
-
           {/* Display selected date and time */}
-
-
-
-
           <a onClick={forwardfun} className="continue-btn">
             Select Appointment Time{" "}
           </a>
@@ -238,13 +214,6 @@ else{
 }
 
 export default MyCalendar;
-
-
-
-
-
-
-
 
 // "use client";
 // import React, { useRef, useEffect, useState } from "react";
@@ -281,11 +250,6 @@ export default MyCalendar;
 
 // function MyCalendar(context) {
 
-
-
-
- 
-
 //   const { counts } = generateFutureEvents();
 //   const calendarRef = useRef(null);
 //   const events = generateFutureEvents().events;
@@ -321,21 +285,20 @@ export default MyCalendar;
 //     setSelectedTime({ start, end });
 //   };
 
-
 //   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
 //     useEffect(() => {
 //       // Access FullCalendar instance
 //       const calendarApi = calendarRef.current.getApi();
-  
+
 //       // Find the event for the specific date you want to change (e.g., 2024-09-01)
-  
+
 //       if (doctorname == 'Dr Bushra') {
 //         mydong.map((items) => {
 //           const eventToUpdate = calendarApi
 //             .getEvents()
 //             .find((event) => event.startStr === items);
-  
+
 //           if (eventToUpdate) {
 //             // Update the event's title and custom value
 //             eventToUpdate.setProp("title", `only ${counts - 1} available`);
@@ -344,13 +307,11 @@ export default MyCalendar;
 //         });
 //       }
 //     }, [mydong]);
-  
-
 
 //   const handleEventDidMount = (info) => {
 //         const eventDate = new Date(info.event.startStr);
 //         const dayOfWeek = eventDate.getDay();
-    
+
 //         // Check if the event is on Saturday (6) or Sunday (0)
 //         if (dayOfWeek === 6 || dayOfWeek === 0) {
 //           // Hide the title by setting the innerHTML of the element to an empty string
@@ -360,8 +321,6 @@ export default MyCalendar;
 //           }
 //         }
 //       };
-
-
 
 //   const forwardfun = (event) => {
 //     event.preventDefault();
@@ -387,7 +346,7 @@ export default MyCalendar;
 //               center: "title",
 //               end: "",
 //             }}
-    
+
 //             dayCellClassNames={(date) => {
 //                             const dayOfWeek = date.date.getDay();
 //                             const formattedDate = date.date.toISOString().split("T")[0];
@@ -409,14 +368,13 @@ export default MyCalendar;
 //                             const today = new Date().setHours(0, 0, 0, 0); // Today's date without time
 //                             const startDate = selectInfo.start.getTime(); // Start date of the selection
 //                             const dayOfWeek = selectInfo.start.getDay(); // Day of the week (0=Sunday, 6=Saturday)
-              
+
 //                             // Allow selection only if it's today or later, and not on Saturday (6) or Sunday (0)
 //                             return startDate >= today && dayOfWeek !== 0 && dayOfWeek !== 6;
 //                           }}
 //                           selectable={true}
 //                                       select={handleSelect} // Handle time selection
-                          
-                      
+
 //             events={events}
 //           />
 
