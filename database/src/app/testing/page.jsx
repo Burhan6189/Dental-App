@@ -1,11 +1,9 @@
-'use client'
-import React, { useState } from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction'; // For handling click events
- 
-
+"use client";
+import React, { useState } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
 
 const MyCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -25,36 +23,7 @@ const MyCalendar = () => {
         contact: "+123456789",
         email: "courtney@example.com",
       },
-    },
-    {
-      id: "2",
-      title: "Whitening - Jenny",
-      start: "2024-09-16T10:00:00",
-      end: "2024-09-16T12:00:00",
-      extendedProps: {
-        doctor: "Dr. Jenny",
-        imageUrl: "https://via.placeholder.com/40",
-        description: "Whitening Treatment for Jenny",
-        contact: "+987654321",
-        email: "jenny@example.com",
-      },
-    },
-    {
-      id: "3",
-      title: "Dentures - Jerome Bell",
-      start: "2024-09-16T11:00:00",
-      end: "2024-09-16T12:00:00",
-      extendedProps: {
-        doctor: 'Dr. Marvin',
-        imageUrl: 'https://via.placeholder.com/40',
-        description: 'Dentures Treatment for Jerome Bell',
-        contact: '+5647382910',
-        email: 'jerome@example.com',
-      },
-    },
- 
-  
-
+    }
   ];
 
   const handleEventClick = (clickInfo) => {
@@ -78,14 +47,13 @@ const MyCalendar = () => {
           center: "title",
           right: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
-        height={"100vh"}
+        height={"90vh"}
         eventContent={(eventInfo) => (
           <div className="event-card">
             <img src={eventInfo.event.extendedProps.imageUrl} alt="Doctor" />
             <div className="event-details">
-              <strong>{eventInfo.event.title}</strong>
+              <h5>{eventInfo.event.title}</h5>
             </div>
-            
           </div>
         )}
       />
@@ -109,7 +77,9 @@ const MyCalendar = () => {
             <p>
               <strong>Email:</strong> {selectedEvent.extendedProps.email}
             </p>
-            <button className="calendar-popup-btn" onClick={handleClosePopup}>Close</button>
+            <button className="calendar-popup-btn" onClick={handleClosePopup}>
+              Close
+            </button>
           </div>
         </div>
       )}
