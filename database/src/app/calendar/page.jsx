@@ -8,6 +8,7 @@ import Header from "../components/Header/page";
 import Footer from "../components/Footer/page";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { useSession } from "next-auth/react";
 
 // Utility function to generate events for all future dates
 function generateFutureEvents() {
@@ -47,7 +48,9 @@ function MyCalendar(context) {
   const [selecteddate, setselectedate] = useState("");
   const newdata = new Date();
   const todaydate = newdata.toISOString().split("T").at(0);
+const {data:session} = useSession();
 
+console.log('hello', session)
 
   const [btnactive,setbtnactive] =useState(null);
 
@@ -92,7 +95,7 @@ function MyCalendar(context) {
 
   const getTimeSlotsForDate = (date) => {
     // Here you can have logic to generate or fetch available time slots for the date
-    return ["9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM"]; // Example time slots
+    return ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM","3:00 PM","4:00 PM"]; // Example time slots
   };
 
   const forwardfun = (event) => {
@@ -212,7 +215,7 @@ function MyCalendar(context) {
                 </div>
               )}
               <div className="Continue-Btn">
-                <button>Continue</button>
+                <button>Confirm</button>
                 <button
                   onClick={() => {
                     setselectedate("");
