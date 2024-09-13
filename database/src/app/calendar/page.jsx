@@ -166,21 +166,21 @@ function MyCalendar(context) {
           {selecteddate && (
             <div className="time-selection">
               <h3>Select a Time for {selecteddate}</h3>
-              {availableTimes.length > 0 ? (
-                availableTimes.map((time) => (
-                  <button
-                    key={time}
-                    className={`time-slot ${
-                      time === selectedTime ? "selected" : ""
-                    }`}
-                    onClick={() => handleTimeSelect(time)}
-                  >
-                    {time}
-                  </button>
-                ))
-              ) : (
-                <p>No available times for this date.</p>
-              )}
+              <div className="time-btn-flex">
+                {availableTimes.length > 0 ? (
+                  availableTimes.map((time) => (
+                    <button
+                      key={time}
+                      className="time-selection-btn"
+                      onClick={() => handleTimeSelect(time)}
+                    >
+                      {time}
+                    </button>
+                  ))
+                ) : (
+                  <p>No available times for this date.</p>
+                )}
+              </div>
               {selecteddate && selectedTime && (
                 <div>
                   <p>
@@ -191,15 +191,17 @@ function MyCalendar(context) {
                   </p>
                 </div>
               )}
-              <button>Continue</button>
-              <button
-                onClick={() => {
-                  setselectedate("");
-                  setSelectedTime("");
-                }}
-              >
-                Close
-              </button>
+              <div className="Continue-Btn">
+                <button>Continue</button>
+                <button
+                  onClick={() => {
+                    setselectedate("");
+                    setSelectedTime("");
+                  }}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           )}
           {/* Display selected date and time */}
