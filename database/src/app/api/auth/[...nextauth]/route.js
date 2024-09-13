@@ -100,8 +100,9 @@ export const authOptions = {
       if (user) {
         
         token.Email = user.Email;
-        token.FirtName = user.FirtName;
+        token.FirtName = user.FirstName;
         token.LastName = user.LastName;
+        token.Phone = user.Phone;
         token.Role = user.Role;
       }
       console.log("this is token", token);
@@ -112,8 +113,9 @@ export const authOptions = {
       // Send properties to the client, like an access_token and user id from a provider.
       if(token){
         session.user.Email = token.Email;
-        session.user.FirtName = token.FirtName;
+        session.user.FirtName = token.FirstName;
         session.user.LastName = token.LastName;
+        session.user.Phone = token.Phone;
         session.user.Role = token.Role;
 
       }

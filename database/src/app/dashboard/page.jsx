@@ -9,9 +9,9 @@ import { redirect } from "next/navigation";
 
 const TodayAppointment = async () => {
   const session = await getServerSession(authOptions)
-  // if (!session) {
-  //   redirect('/signin?callbackUrl=/dashboard')
-  // }
+  if (!session) {
+    redirect('/Login?callbackUrl=/dashboard')
+  }
 
 
 
