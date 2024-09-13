@@ -182,13 +182,26 @@ function MyCalendar(context) {
                 )}
               </div>
               {selecteddate && selectedTime && (
-                <div>
-                  <p>
-                    <strong>Selected Date:</strong> {selecteddate}
-                  </p>
-                  <p>
-                    <strong>Selected Time:</strong> {selectedTime}
-                  </p>
+                <div className="selected-el">
+                  <select name="" id="">
+                    <option>Choose Treatment</option>
+                    <option> Teeth Cleaning</option>
+                    <option> Fillings</option>
+                    <option>Root Canal Therapy</option>
+                    <option>Dental Crowns</option>
+                    <option>Dental Bridges</option>
+                    <option>Tooth Extractions</option>
+                    <option> Dental Implants</option>
+                  </select>
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Brief Your Issue"
+                    cols={40}
+                    rows={8}
+                  ></textarea>
+                  <h4 >Selected Date : {selecteddate}</h4>
+                  <h4 >Selected Time : {selectedTime}</h4>
                 </div>
               )}
               <div className="Continue-Btn">
@@ -216,5 +229,3 @@ function MyCalendar(context) {
 }
 
 export default MyCalendar;
-
-

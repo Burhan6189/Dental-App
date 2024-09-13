@@ -2588,7 +2588,11 @@
   border: 1px solid #c8d4e9;
   border-radius: 5px;
   color: #313131;
-  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+}
+.time-selection .time-selection-btn:focus {
+  background-color: #3788d8;
+  color: white;
 }
 .time-selection .Continue-Btn button {
   padding: 2px 20px;
@@ -2605,6 +2609,38 @@
   align-items: center;
   justify-content: start;
   gap: 10px;
+}
+.time-selection .selected-el {
+  margin-top: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+.time-selection .selected-el select {
+  padding: 5px 10px;
+  outline: none;
+  background-color: white;
+  border: 1px solid #c8d4e9;
+  border-radius: 5px;
+  color: #313131;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+.time-selection .selected-el textarea {
+  padding: 5px 10px;
+  outline: none;
+  /* font-size: 15px; */
+  background-color: white;
+  border: 1px solid #c8d4e9;
+  border-radius: 5px;
+  color: #313131;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.time-selection .selected-el h4 {
+  font-weight: 400;
 }
 
 /* =============== Calendar =============== */
