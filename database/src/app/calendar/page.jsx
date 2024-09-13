@@ -205,7 +205,7 @@ function MyCalendar(context) {
                 </div>
               )}
               <div className="Continue-Btn">
-                <button>Continue</button>
+                <button>Confirm........</button>
                 <button
                   onClick={() => {
                     setselectedate("");
