@@ -2590,9 +2590,14 @@
   color: #313131;
   transition: 0.5s ease-in-out;
 }
-.time-selection .time-selection-btn:focus {
-  background-color: #3788d8;
-  color: white;
+.time-selection .time-selection-btn-active {
+  background-color: #3788d8 !important;
+  color: white !important;
+  transition: 0.5s ease-in-out;
+  border: 1px solid #c8d4e9;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 19px;
 }
 .time-selection .Continue-Btn button {
   padding: 2px 20px;
