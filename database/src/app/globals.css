@@ -3649,6 +3649,7 @@
 
 .Thankyou-Page-Main {
   height: 100vh;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3657,13 +3658,14 @@
   gap: 20px;
 }
 .Thankyou-Page-Main img {
-  max-width: 350px;
+  max-width: 250px;
   width: 100%;
 }
 .Thankyou-Page-Main h3 {
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 1.1px;
+  line-height: 1.1;
 }
 .Thankyou-Page-Main p {
   font-size: 12px;
