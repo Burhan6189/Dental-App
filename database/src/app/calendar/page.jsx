@@ -48,6 +48,10 @@ function MyCalendar(context) {
   const newdata = new Date();
   const todaydate = newdata.toISOString().split("T").at(0);
 
+
+  const [btnactive,setbtnactive] =useState(null);
+
+
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
     const dayOfWeek = eventDate.getDay();
@@ -171,8 +175,11 @@ function MyCalendar(context) {
                   availableTimes.map((time) => (
                     <button
                       key={time}
-                      className="time-selection-btn"
-                      onClick={() => handleTimeSelect(time)}
+                      className={btnactive===time? "time-selection-btn-active": "time-selection-btn" }
+                      onClick={() => 
+                        {handleTimeSelect(time)
+                          setbtnactive(time)
+                        }}
                     >
                       {time}
                     </button>
