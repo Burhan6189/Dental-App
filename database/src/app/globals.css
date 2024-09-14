@@ -3609,6 +3609,9 @@
 
 /* ================ Dashboard ================ */
 
+.calendar-container {
+  padding: 30px;
+}
 .calendar-container .event-card {
   display: flex;
   width: 100%;
@@ -3617,7 +3620,13 @@
   align-items: start;
   flex-direction: column;
   background-color: #e8faff;
+  border: 1px solid #d5e9ee;
   border-radius: 5px;
+}
+.calendar-container .event-card .inner-flex{
+  display: flex;
+  align-items: center;justify-content: center;
+  gap: 5px;
 }
 .calendar-container .event-card img {
   width: 100%;
@@ -3626,6 +3635,9 @@
   max-height: 30px;
   margin-right: 5px;
   border-radius: 50%;
+}
+.calendar-container .event-card h4 {
+  font-weight: 600;
 }
 .calendar-container .event-popup {
   position: fixed;
@@ -3658,10 +3670,21 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.fc .fc-daygrid-event-harness{
-  padding: 5px ;
+.fc .fc-daygrid-event-harness {
+  padding: 5px;
 }
-
+.fc .fc-view-harness {
+  max-width: 1300px;
+  max-height: 1000px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fc .fc-button {
+  background: #fff !important;
+  color: black !important ;
+}
 
 /* ================= Thankyou Page ================= */
 

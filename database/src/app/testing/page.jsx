@@ -12,7 +12,7 @@ const MyCalendar = () => {
   const events = [
     {
       id: "1",
-      title: "Root Canal - Courtney Henry Son",
+      title: "Jerome Bell",
       start: "2024-09-16T09:00:00",
       end: "2024-09-16T11:00:00",
       extendedProps: {
@@ -50,9 +50,9 @@ const MyCalendar = () => {
         height={"90vh"}
         eventContent={(eventInfo) => (
           <div className="event-card">
-            <img src={eventInfo.event.extendedProps.imageUrl} alt="Doctor" />
-            <div className="event-details">
-              <h5>{eventInfo.event.title}</h5>
+            <div className="inner-flex">
+              <img src={eventInfo.event.extendedProps.imageUrl} alt="Doctor" />
+              <h4>{eventInfo.event.title}</h4>
             </div>
           </div>
         )}
