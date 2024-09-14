@@ -54,8 +54,8 @@ const login = () => {
           </div>
           <div>
             <h2>Log in</h2>
-            <input type="text" onChange={e=>setEmail(e.target.value)} placeholder="Email" required/>
-            <input type="password" onChange={e=>setPassword(e.target.value)} placeholder="Password" required/>
+            <input type="email" name="email" onChange={e=>setEmail(e.target.value)} placeholder="Email" required/>
+            <input type="password" name="password" onChange={e=>setPassword(e.target.value)} placeholder="Password" required/>
             
               <button onClick={myfun} className="login-btn">Log in</button>
        
