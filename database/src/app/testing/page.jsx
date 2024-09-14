@@ -12,7 +12,7 @@ const MyCalendar = () => {
   const events = [
     {
       id: "1",
-      title: "Root Canal - Courtney Henry",
+      title: "Root Canal - Courtney Henry Son",
       start: "2024-09-16T09:00:00",
       end: "2024-09-16T11:00:00",
       extendedProps: {
@@ -23,7 +23,7 @@ const MyCalendar = () => {
         contact: "+123456789",
         email: "courtney@example.com",
       },
-    }
+    },
   ];
 
   const handleEventClick = (clickInfo) => {
@@ -45,7 +45,7 @@ const MyCalendar = () => {
         headerToolbar={{
           left: "prev,next today",
           center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay",
+          right: "",
         }}
         height={"90vh"}
         eventContent={(eventInfo) => (
@@ -68,7 +68,7 @@ const MyCalendar = () => {
               <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
             </p>
             <p>
-              <strong>Description:</strong>{" "}
+              <strong>Description:</strong>
               {selectedEvent.extendedProps.description}
             </p>
             <p>
