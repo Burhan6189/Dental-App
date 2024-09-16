@@ -100,7 +100,7 @@ const {data:session} = useSession();
 
   useEffect(()=>{
     if(session){
-      setPatientName(session?.user?.FirstName+" "+session?.user?.LastName || session?.user?.name);
+      setPatientName( session?.user?.FirstName ? session?.user?.FirstName+" "+session?.user?.LastName : session?.user?.name);
       setEmail(session?.user?.Email || session.user?.email);
       setPhone(session?.user?.Phone);
       setImage(session.user?.image || 'https://res.cloudinary.com/dgtk4rthy/image/upload/v1726243691/FHGROUPOC/vg1dgip9oxpqikwad15s.png');
