@@ -3623,9 +3623,10 @@
   border: 1px solid #d5e9ee;
   border-radius: 5px;
 }
-.calendar-container .event-card .inner-flex{
+.calendar-container .event-card .inner-flex {
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
 }
 .calendar-container .event-card img {
@@ -3675,15 +3676,24 @@
 }
 .fc .fc-view-harness {
   max-width: 1300px;
-  max-height: 1000px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .fc .fc-button {
-  background: #fff !important;
-  color: black !important ;
+  background: #3fb6e0 !important;
+  color: #e8faff !important ;
+  border: 1px solid #e8faff !important ;
+  box-shadow: none !important;
+}
+.fc .fc-button:focus{
+  box-shadow: none !important;
+}
+
+:root {
+  --fc-border-color: #eaedf1;
+  --fc-today-bg-color: #f9f9f9;
 }
 
 /* ================= Thankyou Page ================= */
