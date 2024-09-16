@@ -36,7 +36,12 @@ function generateFutureEvents() {
   };
 }
 
+
+
+
 function MyCalendar(context) {
+
+
   const calendarRef = useRef(null);
   const events = generateFutureEvents().events;
   const [selectedTime, setSelectedTime] = useState(null);
@@ -48,16 +53,21 @@ function MyCalendar(context) {
   const [selecteddate, setselectedate] = useState("");
   const newdata = new Date();
   const todaydate = newdata.toISOString().split("T").at(0);
-const {data:session} = useSession();
+  const { data: session } = useSession();
 
 
-  const [btnactive,setbtnactive] =useState(null);
-  const [treatmentname, settreatmentname] =useState('');
-  const [treatmentdec, settreatmentdec] =useState('');
-  const [PatientName,setPatientName] =useState('');
-  const [Email,setEmail] = useState('');
-  const [Phone,setPhone]=useState('');
-  const [Image, setImage]=useState('');
+  const [btnactive, setbtnactive] = useState(null);
+  const [treatmentname, settreatmentname] = useState('');
+  const [treatmentdec, settreatmentdec] = useState('');
+  const [PatientName, setPatientName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Phone, setPhone] = useState('');
+  const [Image, setImage] = useState('');
+
+
+
+  const [appointments, setappointments] = useState([]);
+
 
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
@@ -75,6 +85,10 @@ const {data:session} = useSession();
 
 
   const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
+
+
+
+
 
   useEffect(() => {
     // Access FullCalendar instance
@@ -98,19 +112,58 @@ const {data:session} = useSession();
   }, [mydong]);
 
 
-  useEffect(()=>{
-    if(session){
-      setPatientName( session?.user?.FirstName ? session?.user?.FirstName+" "+session?.user?.LastName : session?.user?.name);
+  useEffect(() => {
+    if (session) {
+      setPatientName(session?.user?.FirstName ? session?.user?.FirstName + " " + session?.user?.LastName : session?.user?.name);
       setEmail(session?.user?.Email || session.user?.email);
       setPhone(session?.user?.Phone);
       setImage(session.user?.image || 'https://res.cloudinary.com/dgtk4rthy/image/upload/v1726243691/FHGROUPOC/vg1dgip9oxpqikwad15s.png');
     }
-  },[session])
+  }, [session])
+
+
+
+
+  useEffect(() => {
+
+
+    const myfun = async () => {
+
+
+      const data = await fetch("/api/doctors");
+      const jsondata = await data.json();
+      const filter = jsondata.filter((item) => item.Name?.trim().toLowerCase()=== doctorname?.trim().toLowerCase())
+   
+      if (!doctorname || filter.length===0) {
+        router.replace('/appointment')
+      }
+
+    }
+    myfun();
+
+  }, [])
+
+
+  useEffect(() => {
+
+    const myfun = async () => {
+      const data = await fetch("/api/appoint");
+      const jsondata = await data.json();
+      const filter = jsondata.filter((item) => item.DoctorName?.trim().toLowerCase() === doctorname?.trim().toLowerCase())
+      setappointments(filter)
+    }
+    myfun();
+
+  }, [])
+
+  console.log(appointments)
+
+
 
 
   const getTimeSlotsForDate = (date) => {
     // Here you can have logic to generate or fetch available time slots for the date
-    return ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM","3:00 PM","4:00 PM"]; // Example time slots
+    return ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"]; // Example time slots
   };
 
   const forwardfun = (event) => {
@@ -141,27 +194,27 @@ const {data:session} = useSession();
   };
 
 
-  const submitappoint =async(event)=>{
+  const submitappoint = async (event) => {
     event.preventDefault();
-    if(selecteddate!=="" && selectedTime!=="" && treatmentname!=="" && doctorname!=="" && PatientName!=="" && Email!==""){
+    if (selecteddate !== "" && selectedTime !== "" && treatmentname !== "" && doctorname !== "" && PatientName !== "" && Email !== "") {
 
-      const postdata = await fetch('/api/appoint',{
-        method:"POST",
-        headers:{
-          'Content-Type':'application/json'
+      const postdata = await fetch('/api/appoint', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
         },
-        body:JSON.stringify({DoctorName:doctorname,PatientName,Email,Phone,Date:selecteddate,Time:selectedTime, Treatment:treatmentname, Treatment_Desc:treatmentdec, Image})
+        body: JSON.stringify({ DoctorName: doctorname, PatientName, Email, Phone, Date: selecteddate, Time: selectedTime, Treatment: treatmentname, Treatment_Desc: treatmentdec, Image })
       });
-      if(postdata.ok){
+      if (postdata.ok) {
         toast.success('success');
         router.push('/thankyou');
       }
-      else{
+      else {
         toast.error('Something went wrong');
       }
-     
+
     }
-    else{
+    else {
       toast.error('All fields are required');
     }
   }
@@ -207,7 +260,7 @@ const {data:session} = useSession();
             }}
             eventDidMount={handleEventDidMount}
             events={events}
-            // eventMouseEnter={handleEventMouseEnter}
+          // eventMouseEnter={handleEventMouseEnter}
           />
 
           {/* Show available times if a date is selected */}
@@ -219,11 +272,11 @@ const {data:session} = useSession();
                   availableTimes.map((time) => (
                     <button
                       key={time}
-                      className={btnactive===time? "time-selection-btn-active": "time-selection-btn" }
-                      onClick={() => 
-                        {handleTimeSelect(time)
-                          setbtnactive(time)
-                        }}
+                      className={btnactive === time ? "time-selection-btn-active" : "time-selection-btn"}
+                      onClick={() => {
+                        handleTimeSelect(time)
+                        setbtnactive(time)
+                      }}
                     >
                       {time}
                     </button>
@@ -233,8 +286,8 @@ const {data:session} = useSession();
                 )}
               </div>
               {selecteddate && selectedTime && (
-                <div  className="selected-el">
-                  <select onChange={e=>settreatmentname(e.target.value)} name="" id="">
+                <div className="selected-el">
+                  <select onChange={e => settreatmentname(e.target.value)} name="" id="">
                     <option selected disabled>Choose Treatment</option>
                     <option value="Teeth Cleaning"> Teeth Cleaning</option>
                     <option value="Fillings"> Fillings</option>
@@ -245,7 +298,7 @@ const {data:session} = useSession();
                     <option value='Dental Implants'> Dental Implants</option>
                   </select>
                   <textarea
-                  onChange={e=>settreatmentdec(e.target.value)}
+                    onChange={e => settreatmentdec(e.target.value)}
                     name="treatmentDesc"
                     id=""
                     placeholder="Brief Your Issue"
