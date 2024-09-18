@@ -3587,8 +3587,8 @@
   flex-direction: column;
   box-shadow: #c2e7f3 0px 0px 3px;
   border-radius: 5px;
-  color: #3fb6e0;
-  padding: 5px 5px;
+  color: grey;
+  padding: 20px;
 }
 .popup-content .option {
   background: white;
@@ -3649,9 +3649,9 @@
 }
 .calendar-container .event-popup {
   position: fixed;
-  top: 20%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -80%);
   background: white;
   padding: 20px;
   border: 1px solid #ddd;
