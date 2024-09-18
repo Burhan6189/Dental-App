@@ -47,7 +47,7 @@ const MyCalendar = () => {
           center: "title",
           right: "",
         }}
-        height={"90vh"}
+        height={"95vh"}
         eventContent={(eventInfo) => (
           <div className="event-card">
             <div className="inner-flex">
