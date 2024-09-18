@@ -54,6 +54,12 @@ const MyCalendar = () => {
               <img src={eventInfo.event.extendedProps.imageUrl} alt="Doctor" />
               <h4>{eventInfo.event.title}</h4>
             </div>
+            <div className="inner-flex">
+              <h5>Root Canal</h5>
+            </div>
+            <div className="inner-flex">
+              <h5>09:00 AM - 11:00AM</h5>
+            </div>
           </div>
         )}
       />
