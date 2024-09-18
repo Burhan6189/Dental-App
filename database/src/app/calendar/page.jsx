@@ -14,7 +14,7 @@ import { useSession } from "next-auth/react";
 function generateFutureEvents() {
   const events = [];
   const currentDate = new Date();
-  const daysToGenerate = 30; // Generate events for the next 365 days
+  const daysToGenerate = 60; // Generate events for the next 365 days
   const counts = 8;
   for (let i = 0; i < daysToGenerate; i++) {
     const date = new Date(currentDate);
@@ -22,7 +22,7 @@ function generateFutureEvents() {
 
     events.push({
       id: `event-${i}`, // Unique ID for each event
-      title: `${counts}  Available `, //  on ${date.toDateString()}`,
+      title: `Slots Available = ${counts} `, //  on ${date.toDateString()}`,
       date: date.toISOString().split("T")[0], // Format as YYYY-MM-DD
       // extendedProps: {
       //   customValue: `Custom value for ${date.toDateString()}`,
@@ -74,7 +74,7 @@ function MyCalendar(context) {
     const dayOfWeek = eventDate.getDay();
 
     // Check if the event is on Saturday (6) or Sunday (0)
-    if (dayOfWeek === 6 || dayOfWeek === 0) {
+    if (dayOfWeek === 6 || dayOfWeek === 0 ) {
       // Hide the title by setting the innerHTML of the element to an empty string
       const eventTitleElement = info.el.querySelector(".fc-event-title");
       if (eventTitleElement) {
@@ -84,8 +84,7 @@ function MyCalendar(context) {
   };
 
 
-  const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
-
+  // const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
 
 
 
@@ -96,20 +95,29 @@ function MyCalendar(context) {
 
     // Find the event for the specific date you want to change (e.g., 2024-09-01)
 
-    if (doctorname == "Dr Bushra") {
-      mydong.map((items) => {
+    // if (doctorname == "Dr Bushra") {
+      appointments.map((items) => {
         const eventToUpdate = calendarApi
           .getEvents()
-          .find((event) => event.startStr === items);
+          .find((event) => event.startStr === items.Date);
 
         if (eventToUpdate) {
+          const repeatedata = appointments.filter(item=>item?.Date===items.Date);
           // Update the event's title and custom value
-          eventToUpdate.setProp("title", `only ${counts - 1} available`);
-          eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
+          if(counts - repeatedata.length===0){
+            eventToUpdate.setProp("title", `Not available`);
+            eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
+            return "fc-day-disabled"
+          }
+          else{
+            eventToUpdate.setProp("title", ` slots available = ${counts - repeatedata.length} `);
+            eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
+          }
+       
         }
       });
-    }
-  }, [mydong]);
+    // }
+  }, [Date.now()]);
 
 
   useEffect(() => {
@@ -141,7 +149,7 @@ function MyCalendar(context) {
     }
     myfun();
 
-  }, [])
+  }, [router,appointments,doctorname])
 
 
   useEffect(() => {
@@ -162,8 +170,18 @@ function MyCalendar(context) {
 
 
   const getTimeSlotsForDate = (date) => {
+
+    const getdate = appointments.filter(item=>item.Date===date);
+
+    const times = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
+
+    getdate.map((item)=>{
+      const index = times.indexOf(item.Time);
+      times.splice(index,1)
+    })
+    
     // Here you can have logic to generate or fetch available time slots for the date
-    return ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"]; // Example time slots
+    return times // Example time slots
   };
 
   const forwardfun = (event) => {
