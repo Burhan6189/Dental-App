@@ -30,8 +30,8 @@ const MyCalendar = () => {
       events.push({
         id:items?._id,
         title: items?.PatientName,
-        start: `${items?.Date}T${items?.Time.substring(0,5)}`,
-        end: `${items?.Date}T${items?.Time.substring(0,5)}`,
+        start: `${items?.Date}`,
+        end: `${items?.Date}`,
         extendedProps: {
           treatment:items?.Treatment,
           doctor: items?.DoctorName,
