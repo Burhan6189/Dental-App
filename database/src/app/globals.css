@@ -2019,6 +2019,27 @@
   .Thankyou-Page-Main img {
     max-width: 180px !important;
   }
+  .calendar-container .event-card h4 {
+    display: none;
+  }
+  .calendar-container .event-card h5 {
+    display: none;
+  }
+  .calendar-container .event-card {
+    gap: 0px !important;
+    align-items: center !important;
+    padding: 5px 5px !important;
+  }
+  .fc table {
+    font-size: 0.85em;
+  }
+  .fc .fc-toolbar-title {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .fc .fc-button {
+    padding: 2px 10px;
+  }
 }
 
 /* ============= Header ============= */
@@ -3579,15 +3600,15 @@
   color: #c2e7f3;
 }
 .popup-content {
-  background: #ecf1ff;
-  width: 100px;
+  background: #fff;
+  width: 100%;
   display: flex;
   align-items: start;
   justify-content: start;
   flex-direction: column;
   box-shadow: #c2e7f3 0px 0px 3px;
   border-radius: 5px;
-  color: grey;
+  color: #313131;
   padding: 20px;
 }
 .popup-content .option {
@@ -3614,6 +3635,7 @@
 }
 .calendar-container .event-card {
   display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
   padding: 5px 10px;
@@ -3635,7 +3657,6 @@
   height: 100%;
   max-width: 30px;
   max-height: 30px;
-  margin-right: 5px;
   border-radius: 50%;
 }
 .calendar-container .event-card h4 {
@@ -3652,12 +3673,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -80%);
-  background: white;
-  padding: 20px;
+  background: #e8faff;
+  padding: 5px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+.calendar-container .profile-flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+.calendar-container .event-popup p {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.calendar-container .event-popup h3 {
+  font-size: 15px;
+  font-weight: 500;
 }
 .calendar-container .popup-content {
   max-width: 700px;

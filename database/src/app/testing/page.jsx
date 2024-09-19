@@ -68,8 +68,10 @@ const MyCalendar = () => {
       {selectedEvent && (
         <div className="event-popup">
           <div className="popup-content">
-            <h3>{selectedEvent.title}</h3>
-            <img src={selectedEvent.extendedProps.imageUrl} alt="Doctor" />
+            <div className="profile-flex">
+              <img src={selectedEvent.extendedProps.imageUrl} alt="Doctor" />
+              <h3>{selectedEvent.title}</h3>
+            </div>
             <p>
               <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
             </p>
