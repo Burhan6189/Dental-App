@@ -3633,6 +3633,7 @@
 .calendar-container {
   padding: 25px;
 }
+
 .calendar-container .event-card {
   display: flex;
   position: relative;
@@ -3668,6 +3669,7 @@
   color: #6f737f;
   font-size: 11px;
 }
+
 .calendar-container .event-popup {
   position: fixed;
   top: 50%;

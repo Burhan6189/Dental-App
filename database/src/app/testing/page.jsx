@@ -1,31 +1,68 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
 import { IoMdClose } from "react-icons/io";
 
+
+
+
 const MyCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  const [appointments,setappointments] = useState([]);
+  const events = [];
+
+  useEffect(()=>{
+    const fun = async()=>{
+      const data = await fetch('/api/appoint');
+      const jsondata = await data.json();
+      setappointments(jsondata)
+    }
+    fun();
+  },[])
+
+
   // Example events with images and descriptions
-  const events = [
-    {
-      id: "1",
-      title: "Jerome Bell",
-      start: "2024-09-16T09:00:00",
-      end: "2024-09-16T11:00:00",
-      extendedProps: {
-        doctor: "Dr. Wade Warren",
-        imageUrl:
-          "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
-        description: "Root Canal Treatment for Courtney Henry",
-        contact: "+123456789",
-        email: "courtney@example.com",
-      },
-    },
-  ];
+  
+    appointments.map((items)=>{
+      events.push({
+        id:items?._id,
+        title: items?.PatientName,
+        start: `${items?.Date}`,
+        end: `${items?.Date}`,
+        extendedProps: {
+          treatment:items?.Treatment,
+          doctor: items?.DoctorName,
+          starttime:items?.Time,
+          endtime:Number(items?.Time.split(" ")[0].split(":")[0])+1+":"+items?.Time.split(" ")[0].split(":")[1],
+          imageUrl:
+            items?.Image,
+          description:items?.Treatment_Desc,
+          contact: items?.Phone,
+          email: items?.Email,
+        },
+      }
+      )});
+
+
+  //  , {
+  //     id: "1",
+  //     title: "Jerome Bell",
+  //     start: "2024-09-16T09:00:00",
+  //     end: "2024-09-16T11:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  // ];
 
   const handleEventClick = (clickInfo) => {
     setSelectedEvent(clickInfo.event);
@@ -56,10 +93,10 @@ const MyCalendar = () => {
               <h4>{eventInfo.event.title}</h4>
             </div>
             <div className="inner-flex">
-              <h5>Root Canal</h5>
+              <h5>{eventInfo.event.extendedProps.treatment}</h5>
             </div>
             <div className="inner-flex">
-              <h5>09:00 AM - 11:00AM</h5>
+              <h5>{eventInfo.event.extendedProps.starttime+ "- "+ eventInfo.event.extendedProps.endtime}</h5>
             </div>
           </div>
         )}
@@ -82,8 +119,15 @@ const MyCalendar = () => {
               <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
             </p>
             <p>
+              <strong>Treatment:</strong> {selectedEvent.extendedProps.treatment}
+            </p>
+            <p>
               <strong>Description:</strong>
               {selectedEvent.extendedProps.description}
+            </p>
+            <p>
+              <strong>Time: </strong>
+              {selectedEvent.extendedProps.starttime} - {selectedEvent.extendedProps.endtime}
             </p>
             <p>
               <strong>Contact:</strong> {selectedEvent.extendedProps.contact}
