@@ -106,9 +106,9 @@ const Calendar = () => {
                 </h5>
               </div>
             </div>
-            <div className="more-appointment">
-              <button>8 more</button>
-            </div>
+              <div className="more-appointment">
+                <button>8 more</button>
+              </div>
           </>
         )}
       />
