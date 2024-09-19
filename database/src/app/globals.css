@@ -12,7 +12,7 @@
   background-color: white;
   position: fixed;
   top: 100%;
-  z-index: 9999;
+  z-index: 999999999;
   text-align: center;
   display: flex;
   align-items: center;
@@ -2041,16 +2041,15 @@
     padding: 2px 10px;
   }
   .fc .fc-daygrid-event-harness {
-    
     margin-top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .calendar-container .more-appointment{
+  .calendar-container .more-appointment {
     margin: 0px !important;
   }
-  .calendar-container .more-appointment button{
+  .calendar-container .more-appointment button {
     font-size: 0.8em;
   }
 }
