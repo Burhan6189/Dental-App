@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 /* ======== Icons ======== */
 import { FaTooth } from "react-icons/fa";
@@ -18,6 +18,9 @@ import { IoIosMenu } from "react-icons/io";
 /* ======== Icons ======== */
 
 const Sidebar = () => {
+
+  const [doctors, setdoctors] = useState([]);
+
   const apointfilters = useRef(null);
   const FiltersHide = () => {
     if (apointfilters.current) {
@@ -29,6 +32,20 @@ const Sidebar = () => {
       apointfilters.current.classList.remove("filter-hide");
     }
   };
+  const oye=(event)=>{
+event.preventDefault();
+console.log(event.target.value)
+  }
+
+  useEffect(() => {
+    async function myfun() {
+      const data = await fetch('/api/doctors');
+      const jsondata = await data.json();
+      setdoctors(jsondata)
+    }
+    myfun()
+  }, [])
+
   return (
     <>
       <div className="Sidebar-Main">
@@ -70,11 +87,15 @@ const Sidebar = () => {
             <div className="second-section">
               <h5>AVAILABLE DOCTOR</h5>
               <div className="filter-main">
-                <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Drg.Dianne Russell</h4>
-                </div>
-                <div className="checkbox-flex">
+                {doctors.map((item) => {
+                  return (
+                    <div className="checkbox-flex">
+                      <input type="checkbox" onChange={oye} value={item?.Name} name="doctor" id="" />
+                      <h4>{item?.Name}</h4>
+                    </div>
+                  )
+                })}
+                {/* <div className="checkbox-flex">
                   <input type="checkbox" name="" id="" />
                   <h4>Drg.Marvin McKinney</h4>
                 </div>
@@ -85,35 +106,39 @@ const Sidebar = () => {
                 <div className="checkbox-flex">
                   <input type="checkbox" name="" id="" />
                   <h4>Drg.Wade Warren</h4>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="second-section">
               <h5>TYPE TREATMENT</h5>
               <div className="filter-main">
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Implants</h4>
+                  <input type="checkbox" value={"Teeth Cleaning"} name="" id="" />
+                  <h4>Teeth Cleaning</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Dentures</h4>
+                  <input type="checkbox" value={'Fillings'} name="" id="" />
+                  <h4>Fillings</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Whitening</h4>
+                  <input type="checkbox" value={'Root Canal Therapy'} name="" id="" />
+                  <h4>Root Canal Therapy</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Root Canal</h4>
+                  <input type="checkbox" value={'Dental Crowns'} name="" id="" />
+                  <h4>Dental Crowns</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Bleaching</h4>
+                  <input type="checkbox" value={'Dental Bridges'} name="" id="" />
+                  <h4>Dental Bridges</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" name="" id="" />
-                  <h4>Scaling</h4>
+                  <input type="checkbox" value={'Tooth Extractions'} name="" id="" />
+                  <h4>Tooth Extractions</h4>
+                </div>
+                <div className="checkbox-flex">
+                  <input type="checkbox" value={'Dental Implants'} name="" id="" />
+                  <h4> Dental Implants</h4>
                 </div>
               </div>
             </div>
