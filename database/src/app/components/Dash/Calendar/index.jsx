@@ -151,9 +151,9 @@ const Calendar = () => {
                 />
                 <h4>{eventInfo.event.title}</h4>
               </div>
-              <div className="inner-flex">
+              {/* <div className="inner-flex">
                 <h5>{eventInfo.event.extendedProps.treatment}</h5>
-              </div>
+              </div> */}
               <div className="inner-flex">
                 <h5>
                   {eventInfo.event.extendedProps.starttime +
