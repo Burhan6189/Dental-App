@@ -138,7 +138,7 @@ const Calendar = () => {
         headerToolbar={{
           left: "prev,next today",
           center: "title",
-          right: "",
+          right: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
         height={"91vh"}
         eventContent={(eventInfo) => (
