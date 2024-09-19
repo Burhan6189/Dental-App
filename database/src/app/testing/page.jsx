@@ -6,47 +6,45 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
 import { IoMdClose } from "react-icons/io";
 
-
-
-
 const MyCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const [appointments,setappointments] = useState([]);
+  const [appointments, setappointments] = useState([]);
   const events = [];
 
-  useEffect(()=>{
-    const fun = async()=>{
-      const data = await fetch('/api/appoint');
+  useEffect(() => {
+    const fun = async () => {
+      const data = await fetch("/api/appoint");
       const jsondata = await data.json();
-      setappointments(jsondata)
-    }
+      setappointments(jsondata);
+    };
     fun();
-  },[])
-
+  }, []);
 
   // Example events with images and descriptions
-  
-    appointments.map((items)=>{
-      events.push({
-        id:items?._id,
-        title: items?.PatientName,
-        start: `${items?.Date}`,
-        end: `${items?.Date}`,
-        extendedProps: {
-          treatment:items?.Treatment,
-          doctor: items?.DoctorName,
-          starttime:items?.Time,
-          endtime:Number(items?.Time.split(" ")[0].split(":")[0])+1+":"+items?.Time.split(" ")[0].split(":")[1],
-          imageUrl:
-            items?.Image,
-          description:items?.Treatment_Desc,
-          contact: items?.Phone,
-          email: items?.Email,
-        },
-      }
-      )});
 
+  appointments.map((items) => {
+    events.push({
+      id: items?._id,
+      title: items?.PatientName,
+      start: `${items?.Date}`,
+      end: `${items?.Date}`,
+      extendedProps: {
+        treatment: items?.Treatment,
+        doctor: items?.DoctorName,
+        starttime: items?.Time,
+        endtime:
+          Number(items?.Time.split(" ")[0].split(":")[0]) +
+          1 +
+          ":" +
+          items?.Time.split(" ")[0].split(":")[1],
+        imageUrl: items?.Image,
+        description: items?.Treatment_Desc,
+        contact: items?.Phone,
+        email: items?.Email,
+      },
+    });
+  });
 
   //  , {
   //     id: "1",
@@ -96,7 +94,11 @@ const MyCalendar = () => {
               <h5>{eventInfo.event.extendedProps.treatment}</h5>
             </div>
             <div className="inner-flex">
-              <h5>{eventInfo.event.extendedProps.starttime+ "- "+ eventInfo.event.extendedProps.endtime}</h5>
+              <h5>
+                {eventInfo.event.extendedProps.starttime +
+                  "- " +
+                  eventInfo.event.extendedProps.endtime}
+              </h5>
             </div>
           </div>
         )}
@@ -119,7 +121,8 @@ const MyCalendar = () => {
               <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
             </p>
             <p>
-              <strong>Treatment:</strong> {selectedEvent.extendedProps.treatment}
+              <strong>Treatment:</strong>{" "}
+              {selectedEvent.extendedProps.treatment}
             </p>
             <p>
               <strong>Description:</strong>
@@ -127,7 +130,8 @@ const MyCalendar = () => {
             </p>
             <p>
               <strong>Time: </strong>
-              {selectedEvent.extendedProps.starttime} - {selectedEvent.extendedProps.endtime}
+              {selectedEvent.extendedProps.starttime} -{" "}
+              {selectedEvent.extendedProps.endtime}
             </p>
             <p>
               <strong>Contact:</strong> {selectedEvent.extendedProps.contact}
