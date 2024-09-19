@@ -85,22 +85,30 @@ const MyCalendar = () => {
         }}
         height={"95vh"}
         eventContent={(eventInfo) => (
-          <div className="event-card">
-            <div className="inner-flex">
-              <img src={eventInfo.event.extendedProps.imageUrl} alt="Doctor" />
-              <h4>{eventInfo.event.title}</h4>
+          <>
+            <div className="event-card">
+              <div className="inner-flex">
+                <img
+                  src={eventInfo.event.extendedProps.imageUrl}
+                  alt="Doctor"
+                />
+                <h4>{eventInfo.event.title}</h4>
+              </div>
+              <div className="inner-flex">
+                <h5>{eventInfo.event.extendedProps.treatment}</h5>
+              </div>
+              <div className="inner-flex">
+                <h5>
+                  {eventInfo.event.extendedProps.starttime +
+                    "- " +
+                    eventInfo.event.extendedProps.endtime}
+                </h5>
+              </div>
             </div>
-            <div className="inner-flex">
-              <h5>{eventInfo.event.extendedProps.treatment}</h5>
+            <div className="more-appointment">
+              <button>8 more</button>
             </div>
-            <div className="inner-flex">
-              <h5>
-                {eventInfo.event.extendedProps.starttime +
-                  "- " +
-                  eventInfo.event.extendedProps.endtime}
-              </h5>
-            </div>
-          </div>
+          </>
         )}
       />
 
