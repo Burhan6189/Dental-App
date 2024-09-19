@@ -46,7 +46,6 @@ const Calendar = () => {
     });
   });
 
-
   // const events = [
   //   {
   //     id: "1",
@@ -133,7 +132,7 @@ const Calendar = () => {
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
-        events={events}        
+        events={events}
         eventClick={handleEventClick}
         headerToolbar={{
           left: "prev,next today",
@@ -162,7 +161,7 @@ const Calendar = () => {
                 </h5>
               </div>
             </div>
-              {/* <div className="more-appointment">
+            {/* <div className="more-appointment">
                 <button>8 more</button>
               </div> */}
           </>
