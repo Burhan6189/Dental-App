@@ -3663,7 +3663,8 @@
 .calendar-container .event-card .inner-flex {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  flex-wrap: wrap;
   gap: 5px;
 }
 .calendar-container .event-card img {
