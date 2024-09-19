@@ -4,6 +4,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
+import { IoMdClose } from "react-icons/io";
 
 const MyCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -68,6 +69,11 @@ const MyCalendar = () => {
       {selectedEvent && (
         <div className="event-popup">
           <div className="popup-content">
+            <div className="close-btn">
+              <button className="calendar-popup-btn" onClick={handleClosePopup}>
+                <IoMdClose />
+              </button>
+            </div>
             <div className="profile-flex">
               <img src={selectedEvent.extendedProps.imageUrl} alt="Doctor" />
               <h3>{selectedEvent.title}</h3>
@@ -85,9 +91,6 @@ const MyCalendar = () => {
             <p>
               <strong>Email:</strong> {selectedEvent.extendedProps.email}
             </p>
-            <button className="calendar-popup-btn" onClick={handleClosePopup}>
-              Close
-            </button>
           </div>
         </div>
       )}

@@ -3687,10 +3687,13 @@
   gap: 5px;
 }
 .calendar-container .event-popup p {
-  font-size: 13px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   gap: 5px;
+}
+.calendar-container .event-popup p strong {
+  font-weight: 600;
 }
 .calendar-container .event-popup h3 {
   font-size: 15px;
@@ -3706,14 +3709,19 @@
   border-radius: 50%;
   margin-bottom: 10px;
 }
-.calendar-container .calendar-popup-btn button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
+.calendar-container .calendar-popup-btn {
+  background: transparent;
+  color: #313131;
   border: none;
+  font-size: 18px;
   border-radius: 4px;
   cursor: pointer;
+}
+.calendar-container .popup-content .close-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 .fc .fc-daygrid-event-harness {
   padding: 5px;
