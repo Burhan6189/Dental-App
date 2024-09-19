@@ -46,7 +46,8 @@ const Calendar = () => {
   //   });
   // });
 
-   const events=[{
+  const events = [
+    {
       id: "1",
       title: "Jerome Bell",
       start: "2024-09-16T09:00:00",
@@ -100,7 +101,7 @@ const Calendar = () => {
               <div className="inner-flex">
                 <h5>
                   {eventInfo.event.extendedProps.starttime +
-                    "- " +
+                    " - " +
                     eventInfo.event.extendedProps.endtime}
                 </h5>
               </div>
@@ -115,18 +116,31 @@ const Calendar = () => {
       {/* Popup for event details */}
       {selectedEvent && (
         <div className="event-popup">
+          <div className="close-btn">
+            <button className="calendar-popup-btn" onClick={handleClosePopup}>
+              <IoMdClose />
+            </button>
+          </div>
           <div className="popup-content">
-            <div className="close-btn">
-              <button className="calendar-popup-btn" onClick={handleClosePopup}>
-                <IoMdClose />
-              </button>
-            </div>
             <div className="profile-flex">
               <img src={selectedEvent.extendedProps.imageUrl} alt="Doctor" />
               <h3>{selectedEvent.title}</h3>
             </div>
+            <div className="profile-flex">
+              <p>
+                <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
+              </p>
+              <p>
+                <strong>Time: </strong>
+                {selectedEvent.extendedProps.starttime} -{" "}
+                {selectedEvent.extendedProps.endtime}
+              </p>
+            </div>
             <p>
-              <strong>Doctor:</strong> {selectedEvent.extendedProps.doctor}
+              <strong>Contact:</strong> {selectedEvent.extendedProps.contact}
+            </p>
+            <p>
+              <strong>Email:</strong> {selectedEvent.extendedProps.email}
             </p>
             <p>
               <strong>Treatment:</strong>{" "}
@@ -135,17 +149,6 @@ const Calendar = () => {
             <p>
               <strong>Description:</strong>
               {selectedEvent.extendedProps.description}
-            </p>
-            <p>
-              <strong>Time: </strong>
-              {selectedEvent.extendedProps.starttime} -{" "}
-              {selectedEvent.extendedProps.endtime}
-            </p>
-            <p>
-              <strong>Contact:</strong> {selectedEvent.extendedProps.contact}
-            </p>
-            <p>
-              <strong>Email:</strong> {selectedEvent.extendedProps.email}
             </p>
           </div>
         </div>
