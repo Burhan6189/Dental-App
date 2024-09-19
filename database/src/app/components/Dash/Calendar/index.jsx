@@ -46,7 +46,79 @@ const Calendar = () => {
     });
   });
 
-  
+
+  // const events = [
+  //   {
+  //     id: "1",
+  //     title: "Jerome Bell",
+  //     start: "2024-09-16T09:00:00",
+  //     end: "2024-09-16T11:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Jerome Bell222",
+  //     start: "2024-09-16T09:00:00",
+  //     end: "2024-09-16T11:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Jerome Bell",
+  //     start: "2024-09-16T10:00:00",
+  //     end: "2024-09-16T12:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Jerome Bell",
+  //     start: "2024-09-16T012:00:00",
+  //     end: "2024-09-16T14:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Jerome Bell",
+  //     start: "2024-09-17T09:00:00",
+  //     end: "2024-09-17T11:00:00",
+  //     extendedProps: {
+  //       doctor: "Dr. Wade Warren",
+  //       imageUrl:
+  //         "https://res.cloudinary.com/dgtk4rthy/image/upload/c_crop,g_auto,h_200,w_200/Dental/uifaul8xygqr1ml0ba6d.jpg",
+  //       description: "Root Canal Treatment for Courtney Henry",
+  //       contact: "+123456789",
+  //       email: "courtney@example.com",
+  //     },
+  //   },
+  // ];
 
   const handleEventClick = (clickInfo) => {
     setSelectedEvent(clickInfo.event);
