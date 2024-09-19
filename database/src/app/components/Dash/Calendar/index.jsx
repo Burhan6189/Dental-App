@@ -63,7 +63,7 @@ const Calendar = () => {
     },
     {
       id: "2",
-      title: "Jerome Bell",
+      title: "Jerome Bell222",
       start: "2024-09-16T09:00:00",
       end: "2024-09-16T11:00:00",
       extendedProps: {
