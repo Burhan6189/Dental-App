@@ -78,8 +78,8 @@ const Calendar = () => {
     {
       id: "3",
       title: "Jerome Bell",
-      start: "2024-09-16T09:00:00",
-      end: "2024-09-16T11:00:00",
+      start: "2024-09-16T10:00:00",
+      end: "2024-09-16T12:00:00",
       extendedProps: {
         doctor: "Dr. Wade Warren",
         imageUrl:
@@ -92,8 +92,8 @@ const Calendar = () => {
     {
       id: "4",
       title: "Jerome Bell",
-      start: "2024-09-16T09:00:00",
-      end: "2024-09-16T11:00:00",
+      start: "2024-09-16T012:00:00",
+      end: "2024-09-16T14:00:00",
       extendedProps: {
         doctor: "Dr. Wade Warren",
         imageUrl:
