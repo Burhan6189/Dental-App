@@ -3795,8 +3795,8 @@
 }
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
   overflow-y: auto;
-  max-height: 10em !important;
-  min-height: 3em !important;
+  max-height: 10.5em !important;
+  min-height: 5em !important;
 }
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events::-webkit-scrollbar {
   width: 7px;
