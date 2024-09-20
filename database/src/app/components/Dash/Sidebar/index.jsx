@@ -15,13 +15,15 @@ import { BsBell } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { LiaFilterSolid } from "react-icons/lia";
 import { IoIosMenu } from "react-icons/io";
+import { useSession } from "next-auth/react";
 /* ======== Icons ======== */
 
-const Sidebar = () => {
+const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setsearch }) => {
 
-  const [doctors, setdoctors] = useState([]);
+  const {data:session} =useSession();
 
   const apointfilters = useRef(null);
+
   const FiltersHide = () => {
     if (apointfilters.current) {
       apointfilters.current.classList.add("filter-hide");
@@ -32,19 +34,30 @@ const Sidebar = () => {
       apointfilters.current.classList.remove("filter-hide");
     }
   };
-  const oye=(event)=>{
-event.preventDefault();
-console.log(event.target.value)
+
+  useEffect(()=>{
+    FiltersHide();
+  },[apointfilters])
+
+  const oye = (event) => {
+
+    if (event.target.checked) {
+      setdoctorname(event.target.value)
+    }
+    if (!event.target.checked) {
+      setdoctorname('')
+    }
+
   }
 
-  useEffect(() => {
-    async function myfun() {
-      const data = await fetch('/api/doctors');
-      const jsondata = await data.json();
-      setdoctors(jsondata)
-    }
-    myfun()
-  }, [])
+  const treatmentfun = (event) => {
+    settreatmentname(event.target.value)
+  }
+
+  const searchfun = (event)=>{
+    setsearch(event.target.value);
+  }
+
 
   return (
     <>
@@ -89,8 +102,8 @@ console.log(event.target.value)
               <div className="filter-main">
                 {doctors.map((item) => {
                   return (
-                    <div className="checkbox-flex">
-                      <input type="checkbox" onChange={oye} value={item?.Name} name="doctor" id="" />
+                    <div key={item?._id} className="checkbox-flex">
+                      <input type="checkbox" onChange={oye} value={item?.Name} name="doctor" id="doctors" />
                       <h4>{item?.Name}</h4>
                     </div>
                   )
@@ -113,31 +126,31 @@ console.log(event.target.value)
               <h5>TYPE TREATMENT</h5>
               <div className="filter-main">
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={"Teeth Cleaning"} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={"Teeth Cleaning"} name="Treatment" id="" />
                   <h4>Teeth Cleaning</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Fillings'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Fillings'} name="Treatment" id="" />
                   <h4>Fillings</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Root Canal Therapy'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Root Canal Therapy'} name="Treatment" id="" />
                   <h4>Root Canal Therapy</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Dental Crowns'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Dental Crowns'} name="Treatment" id="" />
                   <h4>Dental Crowns</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Dental Bridges'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Dental Bridges'} name="Treatment" id="" />
                   <h4>Dental Bridges</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Tooth Extractions'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Tooth Extractions'} name="Treatment" id="" />
                   <h4>Tooth Extractions</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="checkbox" value={'Dental Implants'} name="" id="" />
+                  <input type="radio" onChange={treatmentfun} value={'Dental Implants'} name="Treatment" id="" />
                   <h4> Dental Implants</h4>
                 </div>
               </div>
@@ -145,69 +158,23 @@ console.log(event.target.value)
             <div className="second-section">
               <div className="flex">
                 <h5>PATIENT QUEUE</h5>
-                <p>6</p>
+                <p>{appointments.length}</p>
               </div>
               <div className="filter-main">
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
+                {appointments?.map((items) => (
+
+                  <div className="patient-info">
+                    <img
+                      src={items?.Image}
+                      alt=""
+                    />
+                    <div>
+                      <h5>{items?.PatientName}</h5>
+                      <h6>{items?.Date} • {items?.Time}</h6>
+                    </div>
                   </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
+                ))}
+
               </div>
             </div>
           </div>
@@ -231,10 +198,17 @@ console.log(event.target.value)
               <div>
                 <h3>Appointment</h3>
               </div>
+
+
+
               <div className="search-bar">
                 <IoIosSearch size={22} />
-                <input type="text" placeholder="Search Appointment" />
+                <input onChange={searchfun} type="text" placeholder="Search Appointment" />
               </div>
+
+
+
+
             </div>
             <div className="mob-menu">
               <IoIosMenu size={26} />
@@ -248,16 +222,16 @@ console.log(event.target.value)
                   <span>|</span>
                 </h3>
               </div>
-              <div className="flex-2">
+          { session?.user &&  <div className="flex-2">
                 <img
-                  src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                  src={session?.user?.Image || session?.user?.image || "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"}
                   alt=""
                 />
                 <div>
-                  <h5>Burhan Ahmad</h5>
-                  <h6>Senior Dentist</h6>
+                  <h5>{(session?.user?.FirstName+ " "+ session?.user?.LastName)||session?.user?.name}</h5>
+                  <h6>{session?.user?.Role}</h6>
                 </div>
-              </div>
+              </div>}
             </div>
           </div>
         </div>
