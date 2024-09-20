@@ -71,11 +71,10 @@ const Header = () => {
               </div>
               <div>
                 <h3>HOME</h3>
-                <h3>PAGES</h3>
-                <h3>SERVICES</h3>
+                <a href="/dash">
+                  <h3>DASHBOARD</h3>
+                </a>
                 <h3>ABOUT</h3>
-                <h3>GALLERY</h3>
-                <h3>NEWS</h3>
                 <a href="/appoinment">
                   <h3>APPOINTMENT</h3>
                 </a>
@@ -87,11 +86,10 @@ const Header = () => {
       </div>{" "}
       <div className="Header-Links">
         <h3>HOME</h3>
-        <h3>PAGES</h3>
-        <h3>SERVICES</h3>
+        <a href="/dash">
+          <h3>DASHBOARD</h3>
+        </a>
         <h3>ABOUT</h3>
-        <h3>GALLERY</h3>
-        <h3>NEWS</h3>
         <a href="/appoinment">
           <h3>APPOINTMENT</h3>
         </a>
