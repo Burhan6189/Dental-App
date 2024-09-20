@@ -23,6 +23,7 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
 
 
   const apointfilters = useRef(null);
+
   const FiltersHide = () => {
     if (apointfilters.current) {
       apointfilters.current.classList.add("filter-hide");
@@ -33,6 +34,11 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
       apointfilters.current.classList.remove("filter-hide");
     }
   };
+
+  useEffect(()=>{
+    FiltersHide();
+  },[apointfilters])
+
   const oye = (event) => {
 
     if (event.target.checked) {
@@ -83,7 +89,7 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
           <div onClick={FiltersShow} className="filter-show-btn">
             <LiaFilterSolid size={17} />
           </div>
-         {apointfilters && <div ref={apointfilters} className="Appointment-Filter">
+          <div ref={apointfilters} className="Appointment-Filter">
             <div onClick={FiltersHide} className="filter-btn">
               <RxCross2 size={17} />
             </div>
@@ -164,10 +170,59 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
                     </div>
                   </div>
                 ))}
-      
+                <div className="patient-info">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    alt=""
+                  />
+                  <div>
+                    <h5>Burhan Ahmad</h5>
+                    <h6>14 Jan 2023 • Implant</h6>
+                  </div>
+                </div>
+                <div className="patient-info">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    alt=""
+                  />
+                  <div>
+                    <h5>Burhan Ahmad</h5>
+                    <h6>14 Jan 2023 • Implant</h6>
+                  </div>
+                </div>
+                <div className="patient-info">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    alt=""
+                  />
+                  <div>
+                    <h5>Burhan Ahmad</h5>
+                    <h6>14 Jan 2023 • Implant</h6>
+                  </div>
+                </div>
+                <div className="patient-info">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    alt=""
+                  />
+                  <div>
+                    <h5>Burhan Ahmad</h5>
+                    <h6>14 Jan 2023 • Implant</h6>
+                  </div>
+                </div>
+                <div className="patient-info">
+                  <img
+                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    alt=""
+                  />
+                  <div>
+                    <h5>Burhan Ahmad</h5>
+                    <h6>14 Jan 2023 • Implant</h6>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>}
+          </div>
         </div>
         <div className="dash-mobile-menu">
           <div className="flex-2">
