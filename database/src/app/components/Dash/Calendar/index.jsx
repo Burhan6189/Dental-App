@@ -6,24 +6,16 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
 import { IoMdClose } from "react-icons/io";
 
-const Calendar = () => {
+const Calendar = ({appoints}) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
-  const [appointments, setappointments] = useState([]);
+ 
   const events = [];
 
-  useEffect(() => {
-    const fun = async () => {
-      const data = await fetch("/api/appoint");
-      const jsondata = await data.json();
-      setappointments(jsondata);
-    };
-    fun();
-  }, []);
 
   // Example events with images and descriptions
 
-  appointments.map((items) => {
+  appoints.map((items) => {
     events.push({
       id: items?._id,
       title: items?.PatientName,
