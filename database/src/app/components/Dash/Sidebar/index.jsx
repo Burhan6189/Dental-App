@@ -20,8 +20,6 @@ import { IoIosMenu } from "react-icons/io";
 const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => {
 
 
-
-
   const apointfilters = useRef(null);
 
   const FiltersHide = () => {
