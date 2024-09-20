@@ -174,56 +174,7 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
                     </div>
                   </div>
                 ))}
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
-                <div className="patient-info">
-                  <img
-                    src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                    alt=""
-                  />
-                  <div>
-                    <h5>Burhan Ahmad</h5>
-                    <h6>14 Jan 2023 • Implant</h6>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
