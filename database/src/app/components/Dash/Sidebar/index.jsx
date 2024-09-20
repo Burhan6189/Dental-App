@@ -18,9 +18,14 @@ import { IoIosMenu } from "react-icons/io";
 import { useSession } from "next-auth/react";
 /* ======== Icons ======== */
 
-const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setsearch }) => {
-
-  const {data:session} =useSession();
+const Sidebar = ({
+  setdoctorname,
+  settreatmentname,
+  doctors,
+  appointments,
+  setsearch,
+}) => {
+  const { data: session } = useSession();
 
   const apointfilters = useRef(null);
 
@@ -35,29 +40,26 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     FiltersHide();
-  },[apointfilters])
+  }, [apointfilters]);
 
   const oye = (event) => {
-
     if (event.target.checked) {
-      setdoctorname(event.target.value)
+      setdoctorname(event.target.value);
     }
     if (!event.target.checked) {
-      setdoctorname('')
+      setdoctorname("");
     }
-
-  }
+  };
 
   const treatmentfun = (event) => {
-    settreatmentname(event.target.value)
-  }
+    settreatmentname(event.target.value);
+  };
 
-  const searchfun = (event)=>{
+  const searchfun = (event) => {
     setsearch(event.target.value);
-  }
-
+  };
 
   return (
     <>
@@ -103,10 +105,16 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
                 {doctors.map((item) => {
                   return (
                     <div key={item?._id} className="checkbox-flex">
-                      <input type="checkbox" onChange={oye} value={item?.Name} name="doctor" id="doctors" />
+                      <input
+                        type="checkbox"
+                        onChange={oye}
+                        value={item?.Name}
+                        name="doctor"
+                        id="doctors"
+                      />
                       <h4>{item?.Name}</h4>
                     </div>
-                  )
+                  );
                 })}
                 {/* <div className="checkbox-flex">
                   <input type="checkbox" name="" id="" />
@@ -126,31 +134,73 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
               <h5>TYPE TREATMENT</h5>
               <div className="filter-main">
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={"Teeth Cleaning"} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Teeth Cleaning"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Teeth Cleaning</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Fillings'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Fillings"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Fillings</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Root Canal Therapy'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Root Canal Therapy"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Root Canal Therapy</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Dental Crowns'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Dental Crowns"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Dental Crowns</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Dental Bridges'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Dental Bridges"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Dental Bridges</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Tooth Extractions'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Tooth Extractions"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4>Tooth Extractions</h4>
                 </div>
                 <div className="checkbox-flex">
-                  <input type="radio" onChange={treatmentfun} value={'Dental Implants'} name="Treatment" id="" />
+                  <input
+                    type="radio"
+                    onChange={treatmentfun}
+                    value={"Dental Implants"}
+                    name="Treatment"
+                    id=""
+                  />
                   <h4> Dental Implants</h4>
                 </div>
               </div>
@@ -162,19 +212,16 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
               </div>
               <div className="filter-main">
                 {appointments?.map((items) => (
-
                   <div className="patient-info">
-                    <img
-                      src={items?.Image}
-                      alt=""
-                    />
+                    <img src={items?.Image} alt="" />
                     <div>
                       <h5>{items?.PatientName}</h5>
-                      <h6>{items?.Date} • {items?.Time}</h6>
+                      <h6>
+                        {items?.Date} • {items?.Time}
+                      </h6>
                     </div>
                   </div>
                 ))}
-
               </div>
             </div>
           </div>
@@ -199,16 +246,14 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
                 <h3>Appointment</h3>
               </div>
 
-
-
               <div className="search-bar">
                 <IoIosSearch size={22} />
-                <input onChange={searchfun} type="text" placeholder="Search Appointment" />
+                <input
+                  onChange={searchfun}
+                  type="text"
+                  placeholder="Search Appointment"
+                />
               </div>
-
-
-
-
             </div>
             <div className="mob-menu">
               <IoIosMenu size={26} />
@@ -222,16 +267,26 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setse
                   <span>|</span>
                 </h3>
               </div>
-          { session?.user &&  <div className="flex-2">
-                <img
-                  src={session?.user?.Image || session?.user?.image || "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"}
-                  alt=""
-                />
-                <div>
-                  <h5>{(session?.user?.FirstName+ " "+ session?.user?.LastName)||session?.user?.name}</h5>
-                  <h6>{session?.user?.Role}</h6>
+              {session?.user && (
+                <div className="flex-2">
+                  <img
+                    src={
+                      session?.user?.Image ||
+                      session?.user?.image ||
+                      "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                    }
+                    alt=""
+                  />
+                  <div>
+                    <h5>
+                      {session?.user?.FirstName +
+                        " " +
+                        session?.user?.LastName || session?.user?.name}
+                    </h5>
+                    <h6>{session?.user?.Role}</h6>
+                  </div>
                 </div>
-              </div>}
+              )}
             </div>
           </div>
         </div>

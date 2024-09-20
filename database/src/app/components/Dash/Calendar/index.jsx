@@ -6,12 +6,10 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // For handling click events
 import { IoMdClose } from "react-icons/io";
 
-const Calendar = ({appoints}) => {
+const Calendar = ({ appoints }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
 
- 
   const events = [];
-
 
   // Example events with images and descriptions
 
@@ -131,7 +129,7 @@ const Calendar = ({appoints}) => {
           center: "title",
           right: "",
         }}
-        height={"91vh"}
+        height={"90vh"}
         eventContent={(eventInfo) => (
           <>
             <div className="event-card">

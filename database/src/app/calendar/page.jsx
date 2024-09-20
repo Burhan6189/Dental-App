@@ -36,12 +36,7 @@ function generateFutureEvents() {
   };
 }
 
-
-
-
 function MyCalendar(context) {
-
-
   const calendarRef = useRef(null);
   const events = generateFutureEvents().events;
   const [selectedTime, setSelectedTime] = useState(null);
@@ -55,26 +50,22 @@ function MyCalendar(context) {
   const todaydate = newdata.toISOString().split("T").at(0);
   const { data: session } = useSession();
 
-
   const [btnactive, setbtnactive] = useState(null);
-  const [treatmentname, settreatmentname] = useState('');
-  const [treatmentdec, settreatmentdec] = useState('');
-  const [PatientName, setPatientName] = useState('');
-  const [Email, setEmail] = useState('');
-  const [Phone, setPhone] = useState('');
-  const [Image, setImage] = useState('');
-
-
+  const [treatmentname, settreatmentname] = useState("");
+  const [treatmentdec, settreatmentdec] = useState("");
+  const [PatientName, setPatientName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [Image, setImage] = useState("");
 
   const [appointments, setappointments] = useState([]);
-
 
   const handleEventDidMount = (info) => {
     const eventDate = new Date(info.event.startStr);
     const dayOfWeek = eventDate.getDay();
 
     // Check if the event is on Saturday (6) or Sunday (0)
-    if (dayOfWeek === 6 || dayOfWeek === 0 ) {
+    if (dayOfWeek === 6 || dayOfWeek === 0) {
       // Hide the title by setting the innerHTML of the element to an empty string
       const eventTitleElement = info.el.querySelector(".fc-event-title");
       if (eventTitleElement) {
@@ -83,11 +74,7 @@ function MyCalendar(context) {
     }
   };
 
-
   // const mydong = ["2024-09-12", "2024-09-13", "2024-09-18", "2024-09-25"];
-
-
-
 
   useEffect(() => {
     // Access FullCalendar instance
@@ -96,92 +83,101 @@ function MyCalendar(context) {
     // Find the event for the specific date you want to change (e.g., 2024-09-01)
 
     // if (doctorname == "Dr Bushra") {
-      appointments.map((items) => {
-        const eventToUpdate = calendarApi
-          .getEvents()
-          .find((event) => event.startStr === items.Date);
+    appointments.map((items) => {
+      const eventToUpdate = calendarApi
+        .getEvents()
+        .find((event) => event.startStr === items.Date);
 
-        if (eventToUpdate) {
-          const repeatedata = appointments.filter(item=>item?.Date===items.Date);
-          // Update the event's title and custom value
-          if(counts - repeatedata.length===0){
-            eventToUpdate.setProp("title", `Not available`);
-            eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
-            return "fc-day-disabled"
-          }
-          else{
-            eventToUpdate.setProp("title", ` slots available = ${counts - repeatedata.length} `);
-            eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
-          }
-       
+      if (eventToUpdate) {
+        const repeatedata = appointments.filter(
+          (item) => item?.Date === items.Date
+        );
+        // Update the event's title and custom value
+        if (counts - repeatedata.length === 0) {
+          eventToUpdate.setProp("title", `Not available`);
+          eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
+          return "fc-day-disabled";
+        } else {
+          eventToUpdate.setProp(
+            "title",
+            ` slots available = ${counts - repeatedata.length} `
+          );
+          eventToUpdate.setExtendedProp("customValue", "Updated Custom Value");
         }
-      });
+      }
+    });
     // }
   }, [Date.now()]);
 
-
   useEffect(() => {
     if (session) {
-      setPatientName(session?.user?.FirstName ? session?.user?.FirstName + " " + session?.user?.LastName : session?.user?.name);
+      setPatientName(
+        session?.user?.FirstName
+          ? session?.user?.FirstName + " " + session?.user?.LastName
+          : session?.user?.name
+      );
       setEmail(session?.user?.Email || session.user?.email);
       setPhone(session?.user?.Phone);
-      setImage(session.user?.image || 'https://res.cloudinary.com/dgtk4rthy/image/upload/v1726243691/FHGROUPOC/vg1dgip9oxpqikwad15s.png');
+      setImage(
+        session.user?.image ||
+          "https://res.cloudinary.com/dgtk4rthy/image/upload/v1726243691/FHGROUPOC/vg1dgip9oxpqikwad15s.png"
+      );
     }
-  }, [session])
-
-
-
+  }, [session]);
 
   useEffect(() => {
-
-
     const myfun = async () => {
-
-
       const data = await fetch("/api/doctors");
       const jsondata = await data.json();
-      const filter = jsondata.filter((item) => item.Name?.trim().toLowerCase()=== doctorname?.trim().toLowerCase())
-   
-      if (!doctorname || filter.length===0) {
-        router.replace('/appointment')
+      const filter = jsondata.filter(
+        (item) =>
+          item.Name?.trim().toLowerCase() === doctorname?.trim().toLowerCase()
+      );
+
+      if (!doctorname || filter.length === 0) {
+        router.replace("/appointment");
       }
-
-    }
+    };
     myfun();
-
-  }, [router,appointments,doctorname])
-
+  }, [router, appointments, doctorname]);
 
   useEffect(() => {
-
     const myfun = async () => {
       const data = await fetch("/api/appoint");
       const jsondata = await data.json();
-      const filter = jsondata.filter((item) => item.DoctorName?.trim().toLowerCase() === doctorname?.trim().toLowerCase())
-      setappointments(filter)
-    }
+      const filter = jsondata.filter(
+        (item) =>
+          item.DoctorName?.trim().toLowerCase() ===
+          doctorname?.trim().toLowerCase()
+      );
+      setappointments(filter);
+    };
     myfun();
+  }, []);
 
-  }, [])
-
-  console.log(appointments)
-
-
-
+  console.log(appointments);
 
   const getTimeSlotsForDate = (date) => {
+    const getdate = appointments.filter((item) => item.Date === date);
 
-    const getdate = appointments.filter(item=>item.Date===date);
+    const times = [
+      "9:00 AM",
+      "10:00 AM",
+      "11:00 AM",
+      "12:00 AM",
+      "1:00 PM",
+      "2:00 PM",
+      "3:00 PM",
+      "4:00 PM",
+    ];
 
-    const times = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"];
-
-    getdate.map((item)=>{
+    getdate.map((item) => {
       const index = times.indexOf(item.Time);
-      times.splice(index,1)
-    })
-    
+      times.splice(index, 1);
+    });
+
     // Here you can have logic to generate or fetch available time slots for the date
-    return times // Example time slots
+    return times; // Example time slots
   };
 
   const forwardfun = (event) => {
@@ -211,31 +207,43 @@ function MyCalendar(context) {
     setSelectedTime(time);
   };
 
-
   const submitappoint = async (event) => {
     event.preventDefault();
-    if (selecteddate !== "" && selectedTime !== "" && treatmentname !== "" && doctorname !== "" && PatientName !== "" && Email !== "") {
-
-      const postdata = await fetch('/api/appoint', {
+    if (
+      selecteddate !== "" &&
+      selectedTime !== "" &&
+      treatmentname !== "" &&
+      doctorname !== "" &&
+      PatientName !== "" &&
+      Email !== ""
+    ) {
+      const postdata = await fetch("/api/appoint", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ DoctorName: doctorname, PatientName, Email, Phone, Date: selecteddate, Time: selectedTime, Treatment: treatmentname, Treatment_Desc: treatmentdec, Image })
+        body: JSON.stringify({
+          DoctorName: doctorname,
+          PatientName,
+          Email,
+          Phone,
+          Date: selecteddate,
+          Time: selectedTime,
+          Treatment: treatmentname,
+          Treatment_Desc: treatmentdec,
+          Image,
+        }),
       });
       if (postdata.ok) {
-        toast.success('success');
-        router.push('/thankyou');
+        toast.success("success");
+        router.push("/thankyou");
+      } else {
+        toast.error("Something went wrong");
       }
-      else {
-        toast.error('Something went wrong');
-      }
-
+    } else {
+      toast.error("All fields are required");
     }
-    else {
-      toast.error('All fields are required');
-    }
-  }
+  };
 
   return (
     <>
@@ -278,7 +286,7 @@ function MyCalendar(context) {
             }}
             eventDidMount={handleEventDidMount}
             events={events}
-          // eventMouseEnter={handleEventMouseEnter}
+            // eventMouseEnter={handleEventMouseEnter}
           />
 
           {/* Show available times if a date is selected */}
@@ -290,10 +298,14 @@ function MyCalendar(context) {
                   availableTimes.map((time) => (
                     <button
                       key={time}
-                      className={btnactive === time ? "time-selection-btn-active" : "time-selection-btn"}
+                      className={
+                        btnactive === time
+                          ? "time-selection-btn-active"
+                          : "time-selection-btn"
+                      }
                       onClick={() => {
-                        handleTimeSelect(time)
-                        setbtnactive(time)
+                        handleTimeSelect(time);
+                        setbtnactive(time);
                       }}
                     >
                       {time}
@@ -305,26 +317,34 @@ function MyCalendar(context) {
               </div>
               {selecteddate && selectedTime && (
                 <div className="selected-el">
-                  <select onChange={e => settreatmentname(e.target.value)} name="" id="">
-                    <option selected disabled>Choose Treatment</option>
+                  <select
+                    onChange={(e) => settreatmentname(e.target.value)}
+                    name=""
+                    id=""
+                  >
+                    <option selected disabled>
+                      Choose Treatment
+                    </option>
                     <option value="Teeth Cleaning"> Teeth Cleaning</option>
                     <option value="Fillings"> Fillings</option>
-                    <option value='Root Canal Therapy'>Root Canal Therapy</option>
-                    <option value='Dental Crowns'>Dental Crowns</option>
-                    <option value='Dental Bridges'>Dental Bridges</option>
-                    <option value='Tooth Extractions'>Tooth Extractions</option>
-                    <option value='Dental Implants'> Dental Implants</option>
+                    <option value="Root Canal Therapy">
+                      Root Canal Therapy
+                    </option>
+                    <option value="Dental Crowns">Dental Crowns</option>
+                    <option value="Dental Bridges">Dental Bridges</option>
+                    <option value="Tooth Extractions">Tooth Extractions</option>
+                    <option value="Dental Implants"> Dental Implants</option>
                   </select>
                   <textarea
-                    onChange={e => settreatmentdec(e.target.value)}
+                    onChange={(e) => settreatmentdec(e.target.value)}
                     name="treatmentDesc"
                     id=""
                     placeholder="Brief Your Issue"
                     cols={40}
                     rows={8}
                   ></textarea>
-                  <h4 >Selected Date : {selecteddate}</h4>
-                  <h4 >Selected Time : {selectedTime}</h4>
+                  <h4>Selected Date : {selecteddate}</h4>
+                  <h4>Selected Time : {selectedTime}</h4>
                 </div>
               )}
               <div className="Continue-Btn">
@@ -333,7 +353,7 @@ function MyCalendar(context) {
                   onClick={() => {
                     setselectedate("");
                     setSelectedTime("");
-                    settreatmentname('');
+                    settreatmentname("");
                   }}
                 >
                   Close

@@ -2058,6 +2058,11 @@
   .calendar-container .more-appointment button {
     font-size: 0.8em;
   }
+  .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    overflow-y: auto;
+    max-height: 8em !important;
+    min-height: 7em !important;
+  }
 }
 
 /* ============= Header ============= */
@@ -3134,7 +3139,7 @@
 /* ================ Dashboard ================ */
 
 .dash-items-main {
-  padding: 60px 0px 0px 60px;
+  padding: 60px 12px 0px 95px;
 }
 
 /* ================ Sidebar ================ */
@@ -3152,7 +3157,7 @@
   position: fixed;
   top: 0px;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   z-index: 99;
 }
 
@@ -3366,6 +3371,7 @@
 .filter-hide {
   transform: translateX(-150%);
   opacity: 0;
+  display: none;
 }
 .dash-mobile-menu {
   display: none;
@@ -3649,9 +3655,7 @@
 
 /* ================ Dashboard ================ */
 
-.calendar-container {
-  padding: 25px;
-}
+
 
 .calendar-container .event-card {
   display: flex;
@@ -3795,8 +3799,8 @@
 }
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
   overflow-y: auto;
-  max-height: 10.5em !important;
-  min-height: 5em !important;
+  max-height: 10.5em;
+  min-height: 5em;
 }
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events::-webkit-scrollbar {
   width: 7px;
@@ -3807,8 +3811,8 @@
   .fc-daygrid-body-unbalanced
   .fc-daygrid-day-events::-webkit-scrollbar-track {
   border: 0px;
-    border-radius: 10px;
-    background: #f9f9f9;
+  border-radius: 10px;
+  background: #f9f9f9;
 }
 
 /* Handle */
