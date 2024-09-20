@@ -15,10 +15,12 @@ import { BsBell } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { LiaFilterSolid } from "react-icons/lia";
 import { IoIosMenu } from "react-icons/io";
+import { useSession } from "next-auth/react";
 /* ======== Icons ======== */
 
-const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => {
+const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments, setsearch }) => {
 
+  const {data:session} =useSession();
 
   const apointfilters = useRef(null);
 
@@ -50,6 +52,10 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
 
   const treatmentfun = (event) => {
     settreatmentname(event.target.value)
+  }
+
+  const searchfun = (event)=>{
+    setsearch(event.target.value);
   }
 
 
@@ -241,10 +247,17 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
               <div>
                 <h3>Appointment</h3>
               </div>
+
+
+
               <div className="search-bar">
                 <IoIosSearch size={22} />
-                <input type="text" placeholder="Search Appointment" />
+                <input onChange={searchfun} type="text" placeholder="Search Appointment" />
               </div>
+
+
+
+
             </div>
             <div className="mob-menu">
               <IoIosMenu size={26} />
@@ -258,16 +271,16 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
                   <span>|</span>
                 </h3>
               </div>
-              <div className="flex-2">
+          { session?.user &&  <div className="flex-2">
                 <img
-                  src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                  src={session?.user?.Image || session?.user?.image || "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"}
                   alt=""
                 />
                 <div>
-                  <h5>Burhan Ahmad</h5>
-                  <h6>Senior Dentist</h6>
+                  <h5>{(session?.user?.FirstName+ " "+ session?.user?.LastName)||session?.user?.name}</h5>
+                  <h6>{session?.user?.Role}</h6>
                 </div>
-              </div>
+              </div>}
             </div>
           </div>
         </div>

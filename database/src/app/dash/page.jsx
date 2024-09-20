@@ -10,6 +10,7 @@ const Dash = () => {
   const [doctorname,setdoctorname] = useState('');
   const [treatmentname,settreatmentname] = useState('');
 
+  const [search, setsearch] = useState('')
 
 
   useEffect(() => {
@@ -20,15 +21,6 @@ const Dash = () => {
     }
     myfun()
   }, [])
-
-// useEffect(() => {
-//     async function myfun() {
-   
-//     }
-//     myfun()
-//   }, [appoints])
-
-
 
 
   useEffect(()=>{
@@ -55,17 +47,27 @@ const Dash = () => {
       items?.Treatment?.toLowerCase()===treatmentname.toLowerCase()))
       setappoints(filtereddata)
      }
+     else if(search!==''){
+
+      const filtereddata = jsondata?.filter((items)=>(items?.DoctorName?.toLowerCase().trim().includes(search?.toLowerCase().trim()) ||
+      items?.Treatment?.toLowerCase().includes(search.toLowerCase()) || items?.Time.includes(search) || items?.Date.includes(search) || items?.PatientName?.toLowerCase().trim().includes(search?.toLowerCase().trim())))
+      setappoints(filtereddata)
+
+
+     }
       else{
         setappoints(jsondata)
       }
     }
     fun();
-  },[doctorname,treatmentname])
+  },[doctorname,treatmentname,search])
 
+
+  console.log(search)
 
   return (
     <>
-      <Sidebar doctors={doctors} appointments={appoints}  setdoctorname={setdoctorname} settreatmentname={settreatmentname} />
+      <Sidebar doctors={doctors} appointments={appoints}  setdoctorname={setdoctorname} settreatmentname={settreatmentname} setsearch={setsearch}/>
       <div className="dash-items-main">
         <Calendar appoints={appoints} />
       </div>
