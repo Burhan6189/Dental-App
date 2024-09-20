@@ -3150,6 +3150,24 @@
   /* height: 100vh; */
   background-color: #f6f7f9;
 }
+.profile-option {
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid #e8faff;
+  outline: none;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.profile-option a {
+  text-decoration:none;
+  color: #017ca5;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
 .Right-Menu {
   display: flex;
   align-items: start;

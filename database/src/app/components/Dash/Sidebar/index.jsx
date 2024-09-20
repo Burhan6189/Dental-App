@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Popup from "reactjs-popup";
 
 /* ======== Icons ======== */
 import { FaTooth } from "react-icons/fa";
@@ -15,8 +16,10 @@ import { BsBell } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import { LiaFilterSolid } from "react-icons/lia";
 import { IoIosMenu } from "react-icons/io";
-import { useSession } from "next-auth/react";
+import { CiLogout } from "react-icons/ci";
 /* ======== Icons ======== */
+
+import { useSession } from "next-auth/react";
 
 const Sidebar = ({
   setdoctorname,
@@ -269,14 +272,26 @@ const Sidebar = ({
               </div>
               {session?.user && (
                 <div className="flex-2">
-                  <img
-                    src={
-                      session?.user?.Image ||
-                      session?.user?.image ||
-                      "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                  <Popup
+                    trigger={
+                      <img
+                        src={
+                          session?.user?.Image ||
+                          session?.user?.image ||
+                          "https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
+                        }
+                        alt=""
+                      ></img>
                     }
-                    alt=""
-                  />
+                    position="bottom center"
+                  >
+                    <div className="profile-option">
+                      <a href="">
+                        <CiLogout />
+                        <h5>Logout</h5>
+                      </a>
+                    </div>
+                  </Popup>
                   <div>
                     <h5>
                       {session?.user?.FirstName +
