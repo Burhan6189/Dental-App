@@ -43,6 +43,13 @@ const Dash = () => {
         setappoints(filtereddata)
      
       }
+      else  if( treatmentname==="" && doctorname!=="" ){
+        const filtereddata = jsondata?.filter((items)=>(
+          items?.DoctorName?.toLowerCase().trim()===doctorname?.toLowerCase().trim()))
+           setappoints(filtereddata)
+        
+         }
+      
      else if(doctorname!=="" && treatmentname!=="" ){
       const filtereddata = jsondata?.filter((items)=>(items?.DoctorName?.toLowerCase().trim()===doctorname?.toLowerCase().trim() &&
       items?.Treatment?.toLowerCase()===treatmentname.toLowerCase()))
