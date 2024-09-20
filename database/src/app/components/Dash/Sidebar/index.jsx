@@ -83,7 +83,7 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
           <div onClick={FiltersShow} className="filter-show-btn">
             <LiaFilterSolid size={17} />
           </div>
-          <div ref={apointfilters} className="Appointment-Filter">
+         {apointfilters && <div ref={apointfilters} className="Appointment-Filter">
             <div onClick={FiltersHide} className="filter-btn">
               <RxCross2 size={17} />
             </div>
@@ -167,7 +167,7 @@ const Sidebar = ({ setdoctorname, settreatmentname, doctors, appointments }) => 
       
               </div>
             </div>
-          </div>
+          </div>}
         </div>
         <div className="dash-mobile-menu">
           <div className="flex-2">
