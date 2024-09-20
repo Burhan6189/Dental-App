@@ -3621,10 +3621,10 @@
 .new-doctor-btn h4 {
   font-weight: 500;
 }
-.popup-arrow {
+.All-Doctors-Main .popup-arrow {
   color: #c2e7f3;
 }
-.popup-content {
+.All-Doctors-Main .popup-content {
   background: #fff;
   width: 100%;
   display: flex;
@@ -3636,7 +3636,7 @@
   color: #313131;
   padding: 20px;
 }
-.popup-content .option {
+.All-Doctors-Main .popup-content .option {
   background: white;
   display: flex;
   padding: 3px 10px;
@@ -3646,7 +3646,7 @@
   border-radius: 5px;
   width: 100%;
 }
-.popup-content .option p {
+.All-Doctors-Main .popup-content .option p {
   font-size: 12px;
   color: #313131;
 }
@@ -3654,8 +3654,6 @@
 /* ================ All Doctor Details ================ */
 
 /* ================ Dashboard ================ */
-
-
 
 .calendar-container .event-card {
   display: flex;
@@ -3729,6 +3727,15 @@
 .calendar-container .popup-content {
   max-width: 700px;
   width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  box-shadow: #c2e7f3 0px 0px 3px;
+  border-radius: 5px;
+  color: #313131;
+  padding: 20px;
 }
 .calendar-container .popup-content img {
   width: 50px;
