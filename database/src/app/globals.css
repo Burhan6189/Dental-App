@@ -3660,7 +3660,8 @@
   height: 100%;
   padding: 5px 10px;
   flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 5px;
   background-color: #e8faff;
   border: 1px solid #d5e9ee;
@@ -3793,8 +3794,36 @@
   border-radius: 10px;
 }
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
-  min-height: 2.2em !important;
-  max-height: 100% !important;
+  overflow-y: auto;
+  max-height: 10em !important;
+  min-height: 3em !important;
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.fc
+  .fc-daygrid-body-unbalanced
+  .fc-daygrid-day-events::-webkit-scrollbar-track {
+  border: 0px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+/* Handle */
+.fc
+  .fc-daygrid-body-unbalanced
+  .fc-daygrid-day-events::-webkit-scrollbar-thumb {
+  background: #0096c7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.fc
+  .fc-daygrid-body-unbalanced
+  .fc-daygrid-day-events::-webkit-scrollbar-thumb:hover {
+  background: rgb(1, 124, 165);
 }
 
 /* ================= Thankyou Page ================= */
