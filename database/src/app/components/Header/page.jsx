@@ -78,7 +78,7 @@ const Header = () => {
                 <h3>PAGES</h3>
                 <h3>SERVICES</h3>
                 <h3>ABOUT</h3>
-                <a href="/appoinment">
+                <a href="/appointment">
                   <h3>APPOINTMENT</h3>
                 </a>
                 <h3>CONTACTS</h3>
@@ -93,7 +93,7 @@ const Header = () => {
           <h3>DASHBOARD</h3>
         </a>
         <h3>ABOUT</h3>
-        <a href="/appoinment">
+        <a href="/appointment">
           <h3>APPOINTMENT</h3>
         </a>
         <h3>CONTACTS</h3>
