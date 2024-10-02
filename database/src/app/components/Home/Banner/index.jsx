@@ -23,7 +23,7 @@ const HomeBanner = () => {
               veniam nobis voluptatibus expedita dolorum, et maxime nihil
               explicabo hic alias sed id.
             </p>
-            <a href="/calendar">
+            <a href="/appointment">
               <button>Make an Appointment</button>
             </a>
           </div>

@@ -124,7 +124,7 @@ const PatientDashboard = () => {
  const {data: session} = useSession();
 
 
-if(session?.user.Role === "Super Admin" || session?.user.Role === "User") 
+if(session?.user.Role === "Admin" || session?.user.Role === "User") 
 {
  return (
     <div className="Patient-Details-BG">

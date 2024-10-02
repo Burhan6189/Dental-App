@@ -3,8 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import Link from "next/link";
 
-const Team = () => {
+const Team = async () => {
+
+
+  const data = await fetch('http://localhost:3000/api/doctors');
+  const jsondata = await data.json();
+
+
   return (
     <>
       <div className="Meet-Our-Team-Header">
@@ -29,76 +36,26 @@ const Team = () => {
             2560: { slidesPerView: 4, spaceBetween: 0 },
           }}
         >
-          <SwiperSlide className="team-slide">
-            <div className="person">
-              <img
-                src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                alt=""
-              />
-              <h4>Dr. Joseph Phillips</h4>
-              <h5>Senior Doctor</h5>
-              <p>
-                Types of bridges may vary, depending upon how they are
-                fabricated.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="team-slide">
-            <div className="person">
-              <img
-                src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                alt=""
-              />
-              <h4>Dr. Joseph Phillips</h4>
-              <h5>Senior Doctor</h5>
-              <p>
-                Types of bridges may vary, depending upon how they are
-                fabricated.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="team-slide">
-            <div className="person">
-              <img
-                src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                alt=""
-              />
-              <h4>Dr. Joseph Phillips</h4>
-              <h5>Senior Doctor</h5>
-              <p>
-                Types of bridges may vary, depending upon how they are
-                fabricated.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="team-slide">
-            <div className="person">
-              <img
-                src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                alt=""
-              />
-              <h4>Dr. Joseph Phillips</h4>
-              <h5>Senior Doctor</h5>
-              <p>
-                Types of bridges may vary, depending upon how they are
-                fabricated.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="team-slide">
-            <div className="person">
-              <img
-                src="https://i.pinimg.com/564x/b4/e0/16/b4e016f63a4973233994c40bdeb30ede.jpg"
-                alt=""
-              />
-              <h4>Dr. Joseph Phillips</h4>
-              <h5>Senior Doctor</h5>
-              <p>
-                Types of bridges may vary, depending upon how they are
-                fabricated.
-              </p>
-            </div>
-          </SwiperSlide>
+          {jsondata?.map((item) => (
+
+            <SwiperSlide className="team-slide">
+              <Link style={{textDecoration:'none'}} href={'/dentistprofile/'+item?._id}>
+              <div className="person">
+                <img
+                  src={item?.Image}
+                  alt={item?.Image}
+                />
+                <h4>{item?.Name}</h4>
+                <h5>{item?.Desigination}</h5>
+                <p>
+                 {item?.Description}
+                </p>
+              </div>
+              </Link>
+            </SwiperSlide>
+
+          ))}
+  
         </Swiper>
       </div>
     </>

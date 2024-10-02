@@ -74,6 +74,9 @@ const Header = () => {
                 <a href="/dash">
                   <h3>DASHBOARD</h3>
                 </a>
+               <a href="/home"><h3>HOME</h3></a> 
+                <h3>PAGES</h3>
+                <h3>SERVICES</h3>
                 <h3>ABOUT</h3>
                 <a href="/appoinment">
                   <h3>APPOINTMENT</h3>
@@ -85,7 +88,7 @@ const Header = () => {
         </div>
       </div>{" "}
       <div className="Header-Links">
-        <h3>HOME</h3>
+     <a href="/home">  <h3>HOME</h3></a> 
         <a href="/dash">
           <h3>DASHBOARD</h3>
         </a>
