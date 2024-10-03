@@ -1948,6 +1948,31 @@
   .calendar-container .event-card h4 {
     font-size: 8px !important;
   }
+
+  .reviewhead{
+
+    width: 90% !important;
+
+    left: 5% !important;
+    right: 5% !important;
+ 
+    input{
+      width: 230px !important;
+   
+    }
+    .close-button{
+      position: absolute;
+      left: 82% !important;
+      bottom: 92% !important;
+      
+    }
+    textarea{
+      max-width: 230px !important;
+      min-width: 230px !important;
+  
+    }
+  } 
+
 }
 @media only screen and (min-width: 768px) {
   .tablet-menu {
@@ -1956,6 +1981,30 @@
   .mob-menu {
     display: none !important;
   }
+  .reviewhead{
+
+    width: 50% !important;
+
+    left: 25% !important;
+    right: 25% !important;
+ 
+    input{
+      width: 330px !important;
+   
+    }
+    .close-button{
+      position: absolute;
+      left: 82% !important;
+      bottom: 92% !important;
+      
+    }
+    textarea{
+      max-width: 330px !important;
+      min-width: 330px !important;
+  
+    }
+  } 
+ 
 }
 
 @media only screen and (max-width: 425px) {
@@ -2063,6 +2112,32 @@
     max-height: 8em !important;
     min-height: 7em !important;
   }
+
+  .reviewhead{
+
+    width: 80% !important;
+
+    left: 10% !important;
+    right: 10% !important;
+ 
+    input{
+      width: 230px !important;
+   
+    }
+    .close-button{
+      position: absolute;
+      left: 82% !important;
+      bottom: 92% !important;
+      
+    }
+    textarea{
+      max-width: 230px !important;
+      min-width: 230px !important;
+  
+    }
+  }  
+
+ 
 }
 
 /* ============= Header ============= */
@@ -2426,6 +2501,8 @@
   .Add-Doctor-Details .Add-Doctor-flex .fields-flex {
     max-width: 415px !important;
   }
+ 
+
 }
 @media only screen and (max-width: 769px) {
   .doctor-image img {
@@ -2777,6 +2854,72 @@
   /* border: 1px solid black; */
   max-width: 1200px;
 }
+
+.reviewhead{
+  position: absolute;
+  margin-top: 10px;
+  padding: 30px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #dbf7fb;
+  border-radius: 20px;
+  left: 35%;
+  right: 35%;
+  z-index: 100;
+
+  input{
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+  textarea{
+    max-width: 300px;
+    min-width: 300px;
+    padding: 5px;
+    margin: 20px 0px 20px 0px;
+    height: 150px;
+    border-radius: 10px;
+    max-height: 200px;
+  }
+
+  .close-button{
+    position: absolute;
+    left: 87%;
+    bottom: 90%;
+
+    button{
+      border: 0.5px solid black;
+  border-radius: 10px ;
+  background-color: #fbbf23;
+  padding: 3px;
+
+    }
+  }
+  .submit-button{
+    margin-top: 10px;
+    border: 0.5px solid black;
+    border-radius: 10px ;
+    background-color: #fbbf23;
+    padding: 5px 20px;
+  }
+}
+
+
+.popupfields{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.popuptitle{
+  display: flex;
+  justify-content: end;
+}
+
 .review {
   height: 30vh;
 }
