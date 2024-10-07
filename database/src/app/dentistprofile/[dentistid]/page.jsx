@@ -15,7 +15,7 @@ function DentistProfile(context) {
     <Header/>
     <div className='top-container'></div>
     <DoctorProfile id={id}/>
-    <RatingReview/>
+    <RatingReview id={id}/>
     <Footer/>
 
    </>

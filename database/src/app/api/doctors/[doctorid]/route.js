@@ -29,3 +29,11 @@ export const DELETE =async(req,context)=>{
     const data = await DoctorModel.findOneAndDelete({_id:doctorid})
     return NextResponse.json(data);
 }
+
+export const PATCH  =async(payload, context)=>{
+    const {doctorid} =context.params
+    await mongoose.connect(DBcon)
+    const newdata = await payload.json();
+    const update = await DoctorModel.findOneAndUpdate({_id:doctorid},{$push:{Reviews:newdata}})
+    return NextResponse.json(update);
+}

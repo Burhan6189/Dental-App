@@ -6,7 +6,20 @@ const doctormodel = mongoose.Schema({
     Desigination:String,
     Location:String,
     Department:String,
-    Description:String
+    Description:String,
+    Reviews:[{
+        Name:String,
+        Rating:String,
+        Message:String,
+        Email:String,
+        Avatar:String,
+        Status:{type:String, default:'Pending'},
+        createdAt :{
+            type:Date,
+            default:Date.now
+        }
+    }]
+
 })
 
 
