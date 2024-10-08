@@ -294,9 +294,9 @@ const Sidebar = ({
                   </Popup>
                   <div>
                     <h5>
-                      {session?.user?.FirstName +
+                      {session?.user?.FirstName &&(session?.user?.FirstName +
                         " " +
-                        session?.user?.LastName || session?.user?.name}
+                        session?.user?.LastName) || session?.user?.name}
                     </h5>
                     <h6>{session?.user?.Role}</h6>
                   </div>

@@ -18,6 +18,8 @@ const Doctors = () => {
 
 
   const [doctordata, setdoctordata] = useState([]);
+  
+
 
   useEffect(() => {
 
@@ -25,6 +27,7 @@ const Doctors = () => {
       const data = await fetch('/api/doctors');
       const jsondata = await data.json();
       setdoctordata(jsondata)
+   
     }
     myfun()
 
@@ -49,8 +52,7 @@ const Doctors = () => {
       toast.error("Something is wrong")
     }
 
-  }
-
+    }
 
 
   return (
@@ -82,7 +84,7 @@ const Doctors = () => {
                   <div className="option-flex">
                     <div className="flex-1">
                       <FaStar />
-                      <h5>4.5</h5>
+                      <h5>{(items?.Reviews?.reduce((total, items)=> total=total+Number(items?.Rating), 0)/items?.Reviews.length).toString().substring(0,4)}</h5>
                     </div>
                     <div className="flex-2">
                       <Popup

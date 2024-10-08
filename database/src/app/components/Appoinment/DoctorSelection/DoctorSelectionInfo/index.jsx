@@ -38,7 +38,7 @@ const DoctorSelectionInfo = () => {
                     </div>
                     <div className="rating">
                       <FaStar className="i" />
-                      <h5>(124)</h5>
+                      <h5>{((items?.Reviews?.reduce((total, items)=> total=total+Number(items?.Rating), 0)/items?.Reviews.length).toString().substring(0,4))}</h5>
                     </div>
                   </div>
                   <div className="Name">

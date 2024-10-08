@@ -108,7 +108,7 @@ function RatingReview({ id, data }) {
               height='7px'
               width='260px'
               className='progressbar'
-              completed={20 * Number(fivestar)}
+              completed={100 *( Number(fivestar)/counts)}
 
               bgColor='#FBBF24'
               isLabelVisible={false}
@@ -123,7 +123,7 @@ function RatingReview({ id, data }) {
               height='7px'
               width='260px'
               isLabelVisible={false}
-              completed={20 * Number(fourstar)}
+              completed={100 *( Number(fourstar)/counts)}
 
               bgColor='#FBBF24'
               baseBgColor='#FFFBEB'
@@ -137,7 +137,7 @@ function RatingReview({ id, data }) {
               height='7px'
               width='260px'
               isLabelVisible={false}
-              completed={20 * Number(threestar)}
+              completed={100 *( Number(threestar)/counts)}
 
               bgColor='#FBBF24'
               baseBgColor='#FFFBEB'
@@ -151,7 +151,7 @@ function RatingReview({ id, data }) {
               height='7px'
               isLabelVisible={false}
               width='260px'
-              completed={20 * Number(twostar)}
+              completed={100 *( Number(twostar)/counts)}
 
               bgColor='#FBBF24'
               baseBgColor='#FFFBEB'
@@ -165,7 +165,7 @@ function RatingReview({ id, data }) {
               height='7px'
               width='260px'
               isLabelVisible={false}
-              completed={20 * Number(onsstar)}
+              completed={100 *( Number(onsstar)/counts)}
               bgColor='#FBBF24'
               baseBgColor='#FFFBEB'
             />
