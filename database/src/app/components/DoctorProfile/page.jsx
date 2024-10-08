@@ -1,28 +1,11 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 import { FaAngleRight, FaGreaterThan, FaSign } from 'react-icons/fa'
 
 
-function DoctorProfile({ id }) {
+function DoctorProfile({ data }) {
 
 
-    const [data, setdata] = useState([]);
-
-    useEffect(() => {
-        const fun = async () => {
-
-            try {
-                const data = await fetch("/api/doctors/" + id);
-                const jsondata = await data.json();
-                setdata(jsondata)
-            } catch (error) {
-                
-                window.location.replace('/')
-            }
-           
-        }
-        fun();
-    }, [])
 
 
     return (

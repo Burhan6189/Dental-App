@@ -2957,7 +2957,8 @@
 }
 
 .review {
-  min-height: 30vh;
+  height: 40vh;
+  overflow: scroll;
  
 }
 .review-user {
